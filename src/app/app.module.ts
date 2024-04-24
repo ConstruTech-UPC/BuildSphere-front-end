@@ -4,14 +4,36 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { SidenavComponent } from './public/components/sidenav/sidenav.component';
+import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
+import {MatListItem, MatNavList} from "@angular/material/list";
+import {MatDivider} from "@angular/material/divider";
+import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
+import {MatIcon} from "@angular/material/icon";
+import {MatFormField} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavContainer,
+    MatSidenav,
+    MatSidenavContent,
+    MatListItem,
+    MatDivider,
+    MatToolbar,
+    MatNavList,
+    MatIcon,
+    MatFormField,
+    MatInput,
+    NgOptimizedImage,
+    MatToolbarRow
   ],
   providers: [
     provideAnimationsAsync()
