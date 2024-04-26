@@ -1,0 +1,8 @@
+{
+  "documents": [
+    { "id": 1, "name": "Document 1", "description": "Description 1", "createdAT": "2015-01-01T00:00:00Z"},
+    { "id": 2, "name": "Document 2", "description": "Description 2", "createdAT": "2015-01-02T00:00:00Z"},
+    { "id": 3, "name": "Document 3", "description": "Description 3", "createdAT": "2015-01-03T00:00:00Z" }
+  ]
+}
+
