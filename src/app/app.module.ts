@@ -15,18 +15,12 @@ import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
 import { DocumentListComponent } from './document/component/document-list/document-list.component';
-import { WorkersTableComponent } from './colaboration/component/workers-table/workers-table.component';
-import { TeamsTableComponent } from './colaboration/component/teams-table/teams-table.component';
-import { TaskTableComponent } from './colaboration/component/tasks-table/task-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     DocumentListComponent,
-    WorkersTableComponent,
-    TeamsTableComponent,
-    TaskTableComponent
   ],
   imports: [
     BrowserModule,
