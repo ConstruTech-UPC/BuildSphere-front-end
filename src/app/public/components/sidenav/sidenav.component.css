@@ -1,7 +1,9 @@
 /* General styles for the sidenav container */
 .sidenav-container {
-  height: 100%; /* Height of the viewport */
+  height: 100vh; /* Height of the viewport */
   background-color: white; /* Background color of the sidenav */
+  display: flex; /* Set the container to flexbox layout */
+  flex-direction: column; /* Arrange items vertically in a column */
 }
 
 /* Styles for the sidenav panel */
@@ -23,10 +25,6 @@
   margin: 10px 0 0 0;
 }
 
-.mat-toolbar-row .mat-icon {
-  color: black; /* Set the icon color to white */
-}
-
 /* Styles for the logo text */
 .logo {
   width: 260px;
@@ -45,5 +43,37 @@
   margin-right: 10px;
 }
 
+/* Styles for the navigation list */
+.mat-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
+/* Styles for the username */
+.username {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
 
+/* Styles for the user profile section */
+.user-profile {
+  margin-top: auto; /* Push the user profile to the bottom */
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #FBC12E; /* Background color for user profile section */
+}
+
+/* Styles for the profile picture */
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Make it circular */
+  margin-right: 12px;
+}
