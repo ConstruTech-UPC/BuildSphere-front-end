@@ -14,11 +14,13 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
+import { DocumentListComponent } from './document/component/document-list/document-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent
+    SidenavComponent,
+    DocumentListComponent
   ],
   imports: [
     BrowserModule,
