@@ -15,6 +15,7 @@ import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
 import { DocumentListComponent } from './document/component/document-list/document-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DocumentListComponent } from './document/component/document-list/docume
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatSidenavContainer,
     MatSidenav,
     MatSidenavContent,

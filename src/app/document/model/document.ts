@@ -10,5 +10,5 @@ export class Document {
     this.description = description;
     this.createdAt = createdAt;
   }
-  
+
 }
