@@ -1,20 +1,21 @@
 {
   "Projects": [
-    "id": 1,
-    "name": "ConstrucTech",
-    "documents": [
-      { "id": 1, "name": "Document 1", "description": "Description 1", "createdAT": "2015-01-01T00:00:00Z"},
-      { "id": 2, "name": "Document 2", "description": "Description 2", "createdAT": "2015-01-02T00:00:00Z"},
-      { "id": 3, "name": "Document 3", "description": "Description 3", "createdAT": "2015-01-03T00:00:00Z" }
-    ],
-    "workers": [
-      {
-        "id": 1,
-        "fullName": "Juan Perez",
-        "teamId": 1,
-        "role": "Architect",
-        "hoursWorked": 40
-      },
+    {
+      "id": 1,
+      "name": "ConstrucTech",
+      "documents": [
+        { "id": 1, "name": "Document 1", "description": "Description 1", "createdAt": "2015-01-01T00:00:00Z"},
+        { "id": 2, "name": "Document 2", "description": "Description 2", "createdAt": "2015-01-02T00:00:00Z"},
+        { "id": 3, "name": "Document 3", "description": "Description 3", "createdAt": "2015-01-03T00:00:00Z" }
+      ],
+      "workers": [
+        {
+          "id": 1,
+          "fullName": "Juan Perez",
+          "teamId": 1,
+          "role": "Architect",
+          "hoursWorked": 40
+        },
         {
           "id": 2,
           "fullName": "Maria Gonzalez",
@@ -68,15 +69,16 @@
           "startDate": "2024-04-05",
           "maxEndDate": "2024-04-20",
           "completionPercentage": 90
-      },
-      {
+        },
+        {
           "id": 4,
           "taskName": "Install lighting fixtures",
           "description": "Install lighting fixtures in the building",
           "startDate": "2024-04-15",
           "maxEndDate": "2024-05-05",
           "completionPercentage": 30
-      }
-    ]  
-  ]  
+        }
+      ]
+    }
+  ]
 }
