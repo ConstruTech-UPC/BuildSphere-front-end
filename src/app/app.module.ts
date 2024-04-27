@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     SidenavComponent,
-    DocumentListComponent
+    DocumentListComponent,
   ],
   imports: [
     BrowserModule,
