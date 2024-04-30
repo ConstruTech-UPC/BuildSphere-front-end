@@ -1,12 +1,37 @@
 {
+  "projects": [
+    {
+      "id": 1,
+      "name": "ConstrucTech"
+    }
+  ],
   "documents": [
-    { "id": 1, "name": "Document 1", "description": "Description 1", "createdAT": "2015-01-01T00:00:00Z"},
-    { "id": 2, "name": "Document 2", "description": "Description 2", "createdAT": "2015-01-02T00:00:00Z"},
-    { "id": 3, "name": "Document 3", "description": "Description 3", "createdAT": "2015-01-03T00:00:00Z" }
+    {
+      "id": 1,
+      "projectId": 1,
+      "name": "Document 1",
+      "description": "Description 1",
+      "createdAt": "2015-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "name": "Document 2",
+      "description": "Description 2",
+      "createdAt": "2015-01-02T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "projectId": 1,
+      "name": "Document 3",
+      "description": "Description 3",
+      "createdAt": "2015-01-03T00:00:00Z"
+    }
   ],
   "workers": [
     {
       "id": 1,
+      "projectId": 1,
       "fullName": "Juan Perez",
       "teamId": 1,
       "role": "Architect",
@@ -14,6 +39,7 @@
     },
     {
       "id": 2,
+      "projectId": 1,
       "fullName": "Maria Gonzalez",
       "teamId": 2,
       "role": "Civil Engineer",
@@ -21,6 +47,7 @@
     },
     {
       "id": 3,
+      "projectId": 1,
       "fullName": "Pedro Ramirez",
       "teamId": 1,
       "role": "Builder",
@@ -30,12 +57,14 @@
   "teams": [
     {
       "id": 1,
+      "projectId": 1,
       "teamName": "Team A",
       "description": "Construction team for the structure",
       "assignedTasks": [1, 2]
     },
     {
       "id": 2,
+      "projectId": 1,
       "teamName": "Team B",
       "description": "Electrical installations team",
       "assignedTasks": [3, 4]
@@ -44,6 +73,7 @@
   "tasks": [
     {
       "id": 1,
+      "projectId": 1,
       "taskName": "Excavate terrain",
       "description": "Excavate the terrain to prepare for construction",
       "startDate": "2024-04-01",
@@ -52,6 +82,7 @@
     },
     {
       "id": 2,
+      "projectId": 1,
       "taskName": "Lay foundations",
       "description": "Lay the foundations of the structure",
       "startDate": "2024-04-10",
@@ -60,6 +91,7 @@
     },
     {
       "id": 3,
+      "projectId": 1,
       "taskName": "Install wiring",
       "description": "Install electrical wiring in the building",
       "startDate": "2024-04-05",
@@ -68,6 +100,7 @@
     },
     {
       "id": 4,
+      "projectId": 1,
       "taskName": "Install lighting fixtures",
       "description": "Install lighting fixtures in the building",
       "startDate": "2024-04-15",
@@ -76,4 +109,3 @@
     }
   ]
 }
-
