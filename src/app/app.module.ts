@@ -19,6 +19,13 @@ import { WorkersTableComponent } from './colaboration/component/workers-table/wo
 import { TeamsTableComponent } from './colaboration/component/teams-table/teams-table.component';
 import { TaskTableComponent } from './colaboration/component/tasks-table/task-table.component';
 
+import {HttpClientModule} from "@angular/common/http";
+import {TasksService} from "./colaboration/service/tasks-api.service";
+import {TeamsService} from "./colaboration/service/teams-api.service";
+import {WorkersService} from "./colaboration/service/workers-api.service";
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +50,16 @@ import { TaskTableComponent } from './colaboration/component/tasks-table/task-ta
     MatInput,
     NgOptimizedImage,
     MatToolbarRow,
-    MatIconButton
+    MatIconButton,///
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),///
+    TasksService,
+    WorkersService,
+    TeamsService,
   ],
   bootstrap: [AppComponent]
 })
