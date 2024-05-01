@@ -14,7 +14,7 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
-import { DocumentListComponent } from './document/component/document-list/document-list.component';
+
 import { WorkersTableComponent } from './colaboration/component/workers-table/workers-table.component';
 import { TeamsTableComponent } from './colaboration/component/teams-table/teams-table.component';
 import { TaskTableComponent } from './colaboration/component/tasks-table/task-table.component';
@@ -25,15 +25,17 @@ import {TeamsService} from "./colaboration/service/teams-api.service";
 import {WorkersService} from "./colaboration/service/workers-api.service";
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
+import {FormsModule} from "@angular/forms";
+import { CollaborationManagementComponent } from './colaboration/pages/collaboration-management/collaboration-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    DocumentListComponent,
     WorkersTableComponent,
     TeamsTableComponent,
-    TaskTableComponent
+    TaskTableComponent,
+    CollaborationManagementComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatIconButton,///
     HttpClientModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync(),///

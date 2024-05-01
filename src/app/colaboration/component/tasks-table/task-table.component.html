@@ -1,1 +1,27 @@
-<p>task-table works!</p>
+
+
+<h2>{{editMode ? 'Edit Task' : 'New Task'}}</h2>
+<div class="form-section">
+  <form (submit)="onSubmit()" #taskForm='ngForm' class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="Task name" name="taskName" required [(ngModel)]="task.taskName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description" name="taskDescription" required [(ngModel)]="task.description">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Start Date" name="taskStartDate" required [(ngModel)]="task.startDate">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="End Date" name="taskEndDate" required [(ngModel)]="task.maxEndDate">
+    </mat-form-field>
+    <ng-container *ngIf="editMode; else elseTemplate">
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-raised-button color="primary">Add</button>
+    </ng-template>
+  </form>
+</div>
+
