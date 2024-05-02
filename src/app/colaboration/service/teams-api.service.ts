@@ -32,7 +32,10 @@ export class TeamsService {
   }
 
   createTeam(projectId: number, team: Team): Observable<Team> {
-    return this.http.post<Team>(`${this.basePath}/projects/${projectId}/tasks`, team)
+
+    team.projectId = Number(team.projectId);
+
+    return this.http.post<Team>(`${this.basePath}/projects/${projectId}/teams`, team)
       .pipe(
         catchError(this.handleError)
       );
@@ -46,6 +49,9 @@ export class TeamsService {
   }
 
   updateTeam(teamId: number, team: Team): Observable<Team> {
+
+    team.projectId = Number(team.projectId);
+
     return this.http.put<Team>(`${this.basePath}/teams/${teamId}`, team)
       .pipe(
         catchError(this.handleError)
@@ -54,7 +60,7 @@ export class TeamsService {
   }
 
   deleteTeam(teamId: number): Observable<any> {
-    return this.http.delete<any>(`${this.basePath}/tasks/${teamId}`)
+    return this.http.delete<any>(`${this.basePath}/teams/${teamId}`)
       .pipe(
         catchError(this.handleError)
       );

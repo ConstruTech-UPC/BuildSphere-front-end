@@ -1,4 +1,4 @@
-<h2>Agregar Nueva Tarea</h2>
+<h2>Add new task</h2>
 
 <mat-form-field>
   <input matInput placeholder="Task name" [(ngModel)]="task.taskName">
@@ -13,9 +13,7 @@
   <input matInput placeholder="Max end date" [(ngModel)]="task.maxEndDate">
 </mat-form-field>
 
-<!-- Agrega más campos según las propiedades de la tarea que quieras agregar -->
-
 <div>
-  <button mat-raised-button color="primary" (click)="addTask()">Agregar</button>
-  <button mat-raised-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="addTask()">Add</button>
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
 </div>

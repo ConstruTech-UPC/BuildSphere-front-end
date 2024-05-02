@@ -30,6 +30,9 @@ import { CollaborationManagementComponent } from './colaboration/pages/collabora
 import { AddTaskDialogComponent } from './colaboration/component/add-delete-edit-task-dialogs/add-task-dialog/add-task-dialog.component';
 import { EditTaskDialogComponent } from './colaboration/component/add-delete-edit-task-dialogs/edit-task-dialog/edit-task-dialog.component';
 import { DeleteTaskDialogComponent } from './colaboration/component/add-delete-edit-task-dialogs/delete-task-dialog/delete-task-dialog.component';
+import { AddTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/add-team-dialog/add-team-dialog.component';
+import { DeleteTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/delete-team-dialog/delete-team-dialog.component';
+import { EditTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/edit-team-dialog/edit-team-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { DeleteTaskDialogComponent } from './colaboration/component/add-delete-e
     CollaborationManagementComponent,
     AddTaskDialogComponent,
     EditTaskDialogComponent,
-    DeleteTaskDialogComponent
+    DeleteTaskDialogComponent,
+    AddTeamDialogComponent,
+    DeleteTeamDialogComponent,
+    EditTeamDialogComponent
   ],
   imports: [
     BrowserModule,
