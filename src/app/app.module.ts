@@ -27,6 +27,8 @@ import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
 import { CollaborationManagementComponent } from './colaboration/pages/collaboration-management/collaboration-management.component';
+import { AddTaskDialogComponent } from './colaboration/component/add-task-dialog/add-task-dialog.component';
+import { EditTaskDialogComponent } from './colaboration/component/edit-task-dialog/edit-task-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CollaborationManagementComponent } from './colaboration/pages/collabora
     WorkersTableComponent,
     TeamsTableComponent,
     TaskTableComponent,
-    CollaborationManagementComponent
+    CollaborationManagementComponent,
+    AddTaskDialogComponent,
+    EditTaskDialogComponent
   ],
   imports: [
     BrowserModule,
