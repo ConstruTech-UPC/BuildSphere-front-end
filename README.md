@@ -1,6 +1,6 @@
-# FeatureInventory
+# BuildSphere
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+This project was develop by the team of ConstruTech. The main goal of this project is to made a platform where the users can manage projects of construction efficiently. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
 ## Development server
 

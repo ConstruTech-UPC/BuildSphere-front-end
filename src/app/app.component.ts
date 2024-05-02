@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'feature-inventory';
+  options = [
+      {
+        path: '/inventory', title: 'Resource Management'
+      }
+    ]
 }
