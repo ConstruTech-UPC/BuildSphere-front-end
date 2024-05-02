@@ -48,7 +48,7 @@ export class TaskTableComponent implements OnInit{
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        // Actualizar las tareas después de cerrar el diálogo
+        console.log(`Dialog result: ${result}`);
         this.loadTasks();
       });
     }

@@ -1,1 +1,20 @@
-<p>edit-worker-dialog works!</p>
+
+<h2>Edit worker</h2>
+
+<mat-form-field>
+  <input matInput placeholder="Worker name" [(ngModel)]="worker.fullName">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Team Id" [(ngModel)]="worker.teamId">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Role" [(ngModel)]="worker.role">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Hours worked" [(ngModel)]="worker.hoursWorked">
+</mat-form-field>
+
+<div>
+  <button mat-raised-button color="primary" (click)="updateWorker()">Save</button>
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+</div>
