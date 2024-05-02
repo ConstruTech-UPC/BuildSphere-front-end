@@ -1,46 +1,41 @@
-import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Task} from "../../model/task.entity";
+import {TasksService} from "../../service/tasks-api.service";
 import {NgForm} from "@angular/forms";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-tasks-table',
   templateUrl: './task-table.component.html',
   styleUrl: './task-table.component.css'
 })
-export class TaskTableComponent {
+export class TaskTableComponent implements OnInit{
 
-  @Input() task: Task;
-  @Input() editMode = false;
-  @Output() taskAdded = new EventEmitter<Task>();
-  @Output() taskUpdated = new EventEmitter<Task>();
-  @Output() editCanceled = new EventEmitter();
-  @ViewChild('taskForm', {static: false}) taskForm!: NgForm;
+  projectId: number = 1;
+  tasks: Task[] = [];
 
-  constructor() {
-    this.task = {} as Task;
+  constructor(private dialog: MatDialog, private tasksApiService: TasksService) { }
+
+  ngOnInit(): void {
+    this.loadTasks();
   }
 
-  private resetEditState(){
-    this.editMode = false;
-    this.taskForm.reset();
-    this.task = {} as Task;
+  loadTasks() {
+    this.tasksApiService.getTasksByProject(this.projectId)
+      .subscribe(tasks => {
+        this.tasks = tasks;
+      });
   }
 
-  onSubmit(){
-    if(this.taskForm.form.valid){
-      if(this.editMode){
-        this.taskUpdated.emit(this.task);
-      }else{
-        this.taskAdded.emit(this.task);
-      }
-      this.resetEditState();
-    }else {
-      console.log('invalid data');
-    }
-  }
-  onCancel(){
-    this.resetEditState();
-    this.editCanceled.emit();
+  openAddDialog() {
+    // Aquí abrirías el diálogo para agregar una nueva tarea
   }
 
+  openDeleteDialog(task: Task) {
+    // Aquí abrirías el diálogo para eliminar la tarea seleccionada
+  }
+
+  openEditDialog(task: Task) {
+    // Aquí abrirías el diálogo para editar la tarea seleccionada
+  }
 }
