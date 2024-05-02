@@ -155,7 +155,7 @@
     }
   ],
 
-  "machines":[
+  "machinery":[
     { "id": 1,
       "projectId": 1,
       "machineName": "Excavator",
