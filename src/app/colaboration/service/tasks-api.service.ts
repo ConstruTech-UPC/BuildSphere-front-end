@@ -32,21 +32,34 @@ export class TasksService {
   }
 
   createTask(projectId: number, task: Task): Observable<Task> {
+
+    task.projectId = Number(task.projectId);
+    task.completionPercentage = Number(task.completionPercentage);
     return this.http.post<Task>(`${this.basePath}/projects/${projectId}/tasks`, task)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  updateTask(projectId: number, taskId: number, task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.basePath}/projects/${projectId}/tasks/${taskId}`, task)
+  getTaskById(taskId: number): Observable<Task> {
+    return this.http.get<Task>(`${this.basePath}/tasks/${taskId}`)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  deleteTask(projectId: number, taskId: number): Observable<any> {
-    return this.http.delete<any>(`${this.basePath}/projects/${projectId}/tasks/${taskId}`)
+  updateTask(taskId: number, task: Task): Observable<Task> {
+
+    task.projectId = Number(task.projectId);
+    task.completionPercentage = Number(task.completionPercentage);
+    return this.http.put<Task>(`${this.basePath}/tasks/${taskId}`, task)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  deleteTask(taskId: number): Observable<any> {
+    return this.http.delete<any>(`${this.basePath}/tasks/${taskId}`)
       .pipe(
         catchError(this.handleError)
       );

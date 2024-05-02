@@ -1,1 +1,21 @@
-<p>add-task-dialog works!</p>
+<h2>Agregar Nueva Tarea</h2>
+
+<mat-form-field>
+  <input matInput placeholder="Task name" [(ngModel)]="task.taskName">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Task Description" [(ngModel)]="task.taskDescription">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Start date" [(ngModel)]="task.startDate">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Max end date" [(ngModel)]="task.maxEndDate">
+</mat-form-field>
+
+<!-- Agrega más campos según las propiedades de la tarea que quieras agregar -->
+
+<div>
+  <button mat-raised-button color="primary" (click)="addTask()">Agregar</button>
+  <button mat-raised-button (click)="dialogRef.close()">Cancelar</button>
+</div>

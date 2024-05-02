@@ -29,6 +29,7 @@ import {FormsModule} from "@angular/forms";
 import { CollaborationManagementComponent } from './colaboration/pages/collaboration-management/collaboration-management.component';
 import { AddTaskDialogComponent } from './colaboration/component/add-task-dialog/add-task-dialog.component';
 import { EditTaskDialogComponent } from './colaboration/component/edit-task-dialog/edit-task-dialog.component';
+import { DeleteTaskDialogComponent } from './colaboration/component/delete-task-dialog/delete-task-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EditTaskDialogComponent } from './colaboration/component/edit-task-dial
     TaskTableComponent,
     CollaborationManagementComponent,
     AddTaskDialogComponent,
-    EditTaskDialogComponent
+    EditTaskDialogComponent,
+    DeleteTaskDialogComponent
   ],
   imports: [
     BrowserModule,

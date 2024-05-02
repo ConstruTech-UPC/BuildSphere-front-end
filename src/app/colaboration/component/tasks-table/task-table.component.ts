@@ -3,6 +3,9 @@ import {Task} from "../../model/task.entity";
 import {TasksService} from "../../service/tasks-api.service";
 import {NgForm} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
+import {AddTaskDialogComponent} from "../add-task-dialog/add-task-dialog.component";
+import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
+import {DeleteTaskDialogComponent} from "../delete-task-dialog/delete-task-dialog.component";
 
 @Component({
   selector: 'app-tasks-table',
@@ -28,14 +31,39 @@ export class TaskTableComponent implements OnInit{
   }
 
   openAddDialog() {
-    // Aquí abrirías el diálogo para agregar una nueva tarea
+    const dialogRef = this.dialog.open(AddTaskDialogComponent, {
+      data: { projectId: this.projectId } // Pasamos el projectId al diálogo
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.loadTasks();
+      // Puedes realizar acciones adicionales después de cerrar el diálogo si es necesario
+    });
+  }
+  openEditDialog(taskId: number): void {
+    if (taskId) {
+      const dialogRef = this.dialog.open(EditTaskDialogComponent, {
+        data: {taskId: taskId}
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        // Actualizar las tareas después de cerrar el diálogo
+        this.loadTasks();
+      });
+    }
   }
 
-  openDeleteDialog(task: Task) {
-    // Aquí abrirías el diálogo para eliminar la tarea seleccionada
+  openDeleteDialog(taskId: number) {
+    const dialogRef = this.dialog.open(DeleteTaskDialogComponent, {
+      data: { taskId: taskId }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Actualizar las tareas después de cerrar el diálogo
+      this.loadTasks();
+    });
   }
 
-  openEditDialog(task: Task) {
-    // Aquí abrirías el diálogo para editar la tarea seleccionada
-  }
+
 }
