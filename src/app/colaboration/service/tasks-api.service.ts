@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BaseService} from "../../shared/services/base.service";
+
 import {Task} from "../model/task.entity";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
@@ -35,6 +35,7 @@ export class TasksService {
 
     task.projectId = Number(task.projectId);
     task.completionPercentage = Number(task.completionPercentage);
+
     return this.http.post<Task>(`${this.basePath}/projects/${projectId}/tasks`, task)
       .pipe(
         catchError(this.handleError)

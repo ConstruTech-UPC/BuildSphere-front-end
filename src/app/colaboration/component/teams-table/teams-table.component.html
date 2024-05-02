@@ -1,1 +1,38 @@
-<p>teams-table works!</p>
+<h2>Teams Project</h2>
+
+<mat-table [dataSource]="teams">
+  <ng-container matColumnDef="teamsName">
+    <mat-header-cell *matHeaderCellDef> Team name </mat-header-cell>
+    <mat-cell *matCellDef="let team"> {{ team.teamName }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="teamDescription">
+    <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+    <mat-cell *matCellDef="let team"> {{ team.description }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="assignedTasks">
+    <mat-header-cell *matHeaderCellDef> Assigned tasks </mat-header-cell>
+    <mat-cell *matCellDef="let team"> {{ team.assignedTasks }} </mat-cell>
+  </ng-container>
+
+  <!-- Columna de acciones -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let team">
+      <button mat-icon-button (click)="openEditDialog()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openDeleteDialog()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['teamsName', 'teamDescription', 'assignedTasks','actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['teamsName', 'teamDescription', 'assignedTasks','actions'];"></mat-row>
+</mat-table>
+
+<div>
+  <!-- Botones de acciones -->
+  <button mat-raised-button color="primary" (click)="openAddDialog()">Add team</button>
+</div>
+

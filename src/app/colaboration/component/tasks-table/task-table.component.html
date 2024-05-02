@@ -1,11 +1,11 @@
 
 
-<h2>Task Project</h2>
+<h2>Tasks Project</h2>
 
 <mat-table [dataSource]="tasks">
 
   <ng-container matColumnDef="taskName">
-    <mat-header-cell *matHeaderCellDef> Nombre de la Tarea </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Task name </mat-header-cell>
     <mat-cell *matCellDef="let task"> {{ task.taskName }} </mat-cell>
   </ng-container>
   <ng-container matColumnDef="taskDescription">
@@ -43,5 +43,5 @@
 
 <div>
   <!-- Botones de acciones -->
-  <button mat-raised-button color="primary" (click)="openAddDialog()">Agregar Tarea</button>
+  <button mat-raised-button color="primary" (click)="openAddDialog()">Add task</button>
 </div>
