@@ -3,9 +3,9 @@ import {Task} from "../../model/task.entity";
 import {TasksService} from "../../service/tasks-api.service";
 import {NgForm} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
-import {AddTaskDialogComponent} from "../add-task-dialog/add-task-dialog.component";
-import {EditTaskDialogComponent} from "../edit-task-dialog/edit-task-dialog.component";
-import {DeleteTaskDialogComponent} from "../delete-task-dialog/delete-task-dialog.component";
+import {AddTaskDialogComponent} from "../add-delete-edit-task-dialogs/add-task-dialog/add-task-dialog.component";
+import {EditTaskDialogComponent} from "../add-delete-edit-task-dialogs/edit-task-dialog/edit-task-dialog.component";
+import {DeleteTaskDialogComponent} from "../add-delete-edit-task-dialogs/delete-task-dialog/delete-task-dialog.component";
 
 @Component({
   selector: 'app-tasks-table',

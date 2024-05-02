@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {TasksService} from "../../service/tasks-api.service";
-import {Task} from "../../model/task.entity";
+import {TasksService} from "../../../service/tasks-api.service";
+import {Task} from "../../../model/task.entity";
 
 @Component({
   selector: 'app-edit-task-dialog',
