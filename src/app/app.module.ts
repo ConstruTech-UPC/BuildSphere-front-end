@@ -33,6 +33,9 @@ import { DeleteTaskDialogComponent } from './colaboration/component/add-delete-e
 import { AddTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/add-team-dialog/add-team-dialog.component';
 import { DeleteTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/delete-team-dialog/delete-team-dialog.component';
 import { EditTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/edit-team-dialog/edit-team-dialog.component';
+import { AddWorkerDialogComponent } from './colaboration/component/add-delete-edit-worker-dialogs/add-worker-dialog/add-worker-dialog.component';
+import { DeleteWorkerDialogComponent } from './colaboration/component/add-delete-edit-worker-dialogs/delete-worker-dialog/delete-worker-dialog.component';
+import { EditWorkerDialogComponent } from './colaboration/component/add-delete-edit-worker-dialogs/edit-worker-dialog/edit-worker-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { EditTeamDialogComponent } from './colaboration/component/add-delete-edi
     DeleteTaskDialogComponent,
     AddTeamDialogComponent,
     DeleteTeamDialogComponent,
-    EditTeamDialogComponent
+    EditTeamDialogComponent,
+    AddWorkerDialogComponent,
+    DeleteWorkerDialogComponent,
+    EditWorkerDialogComponent
   ],
   imports: [
     BrowserModule,
