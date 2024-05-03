@@ -30,6 +30,39 @@ import {
   MatTable
 } from "@angular/material/table";
 import {FormsModule} from "@angular/forms";
+import {
+  AddTaskDialogComponent
+} from "./colaboration/component/add-delete-edit-task-dialogs/add-task-dialog/add-task-dialog.component";
+import {
+  DeleteTaskDialogComponent
+} from "./colaboration/component/add-delete-edit-task-dialogs/delete-task-dialog/delete-task-dialog.component";
+import {
+  EditTaskDialogComponent
+} from "./colaboration/component/add-delete-edit-task-dialogs/edit-task-dialog/edit-task-dialog.component";
+import {
+  AddTeamDialogComponent
+} from "./colaboration/component/add-delete-edit-team-dialogs/add-team-dialog/add-team-dialog.component";
+import {
+  DeleteTeamDialogComponent
+} from "./colaboration/component/add-delete-edit-team-dialogs/delete-team-dialog/delete-team-dialog.component";
+import {
+  EditTeamDialogComponent
+} from "./colaboration/component/add-delete-edit-team-dialogs/edit-team-dialog/edit-team-dialog.component";
+import {
+  AddWorkerDialogComponent
+} from "./colaboration/component/add-delete-edit-worker-dialogs/add-worker-dialog/add-worker-dialog.component";
+import {
+  DeleteWorkerDialogComponent
+} from "./colaboration/component/add-delete-edit-worker-dialogs/delete-worker-dialog/delete-worker-dialog.component";
+import {
+  EditWorkerDialogComponent
+} from "./colaboration/component/add-delete-edit-worker-dialogs/edit-worker-dialog/edit-worker-dialog.component";
+import {TaskTableComponent} from "./colaboration/component/tasks-table/task-table.component";
+import {TeamsTableComponent} from "./colaboration/component/teams-table/teams-table.component";
+import {WorkersTableComponent} from "./colaboration/component/workers-table/workers-table.component";
+import {
+  CollaborationManagementComponent
+} from "./colaboration/pages/collaboration-management/collaboration-management.component";
 
 @NgModule({
   declarations: [
@@ -40,6 +73,19 @@ import {FormsModule} from "@angular/forms";
     EditDocumentDialogComponent,
     DeleteDocumentDialogComponent,
     AddDocumentDialogComponent,
+    AddTaskDialogComponent,
+    DeleteTaskDialogComponent,
+    EditTaskDialogComponent,
+    AddTeamDialogComponent,
+    DeleteTeamDialogComponent,
+    EditTeamDialogComponent,
+    AddWorkerDialogComponent,
+    DeleteWorkerDialogComponent,
+    EditWorkerDialogComponent,
+    TaskTableComponent,
+    TeamsTableComponent,
+    WorkersTableComponent,
+    CollaborationManagementComponent
   ],
   imports: [
     BrowserModule,
