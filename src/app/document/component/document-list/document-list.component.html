@@ -1,9 +1,37 @@
-<div class="document-list">
-  <h2>Document List</h2>
-  <!-- Aquí se mostrará la lista de documentos -->
-  <ul>
-    <li *ngFor="let document of documents">
-      {{ document.name }} - {{ document.description }}
-    </li>
-  </ul>
+<h2>Documents Project</h2>
+
+<mat-table [dataSource]="documents">
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> DocumentEntity name </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.name }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.description }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="createdAt">
+    <mat-header-cell *matHeaderCellDef> Created At </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.createdAt }} </mat-cell>
+  </ng-container>
+  <!-- Columna de acciones -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let document">
+      <button mat-icon-button (click)="openEditDialog(document.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openDeleteDialog(document.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['name', 'description', 'createdAt', 'actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'description', 'createdAt', 'actions'];"></mat-row>
+</mat-table>
+
+<div>
+  <!-- Botones de acciones -->
+  <button mat-raised-button color="primary" (click)="openAddDialog()">Add Document</button>
 </div>
