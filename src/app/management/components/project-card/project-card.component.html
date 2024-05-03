@@ -1,0 +1,15 @@
+<mat-card class="project-card">
+  <mat-card-header>
+    <div mat-card-avatar class="project-image" [style.background-image]="'url(' + project.urlImage + ')'"></div>
+    <mat-card-title>{{ project.name }}</mat-card-title>
+    <mat-card-subtitle>{{ project.location }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="project.urlImage" alt="Photo of the project">
+  <mat-card-content>
+    <p>{{ project.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="onEdit()">EDIT</button>
+    <button mat-button (click)="onDelete()">DELETE</button>
+  </mat-card-actions>
+</mat-card>
