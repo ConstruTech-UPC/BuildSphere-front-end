@@ -132,9 +132,9 @@
       "completionPercentage": 50
     }
   ],
-
   "materials": [
-    { "id": 1,
+    {
+      "id": 1,
       "projectId": 1,
       "materialName": "Bricks",
       "description": "Construction Unit",
@@ -154,9 +154,9 @@
       "totalCost": 120000
     }
   ],
-
-  "machinery":[
-    { "id": 1,
+  "machinery": [
+    {
+      "id": 1,
       "projectId": 1,
       "machineName": "Excavator",
       "description": "Machinery used to excavate ground",

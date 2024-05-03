@@ -23,8 +23,7 @@ export class MaterialsService {
   }
 
   getMaterialsByProject(projectId: number) {
-    return this.http.get
-      < Material > (`${this.basePath}/projects/${projectId}/materials`)
+    return this.http.get<Material[]> (`${this.basePath}/projects/${projectId}/materials`)
         .pipe(retry(2), catchError(this.handleError));
   }
 
