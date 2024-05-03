@@ -53,7 +53,8 @@ import { EditWorkerDialogComponent } from './colaboration/component/add-delete-e
     EditTeamDialogComponent,
     AddWorkerDialogComponent,
     DeleteWorkerDialogComponent,
-    EditWorkerDialogComponent
+    EditWorkerDialogComponent,
+    CollaborationManagementComponent
   ],
   imports: [
     BrowserModule,

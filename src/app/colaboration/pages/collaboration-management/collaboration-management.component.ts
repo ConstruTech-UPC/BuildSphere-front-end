@@ -10,9 +10,15 @@ import {TasksService} from "../../service/tasks-api.service";
   templateUrl: './collaboration-management.component.html',
   styleUrl: './collaboration-management.component.css'
 })
-export class CollaborationManagementComponent  {
+export class CollaborationManagementComponent implements OnInit {
 
+  projectId!: number;
 
+  constructor(){}
 
+  ngOnInit(): void {
+    // Lógica para obtener o establecer projectId
+    this.projectId = 1;
+  }
 
 }

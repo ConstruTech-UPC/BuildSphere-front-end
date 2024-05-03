@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {WorkersService} from "../../service/workers-api.service";
 import {Worker} from "../../model/worker.entity";
@@ -17,7 +17,7 @@ import {
 })
 export class WorkersTableComponent implements OnInit {
 
-  projectId: number = 1;
+  @Input() projectId!: number;
   workers: Worker[] = [];
 
   constructor(private dialog: MatDialog, private workerService: WorkersService) { }

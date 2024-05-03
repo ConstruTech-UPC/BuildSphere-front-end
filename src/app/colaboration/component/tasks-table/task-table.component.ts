@@ -14,7 +14,7 @@ import {DeleteTaskDialogComponent} from "../add-delete-edit-task-dialogs/delete-
 })
 export class TaskTableComponent implements OnInit{
 
-  projectId: number = 1;
+  @Input() projectId!: number;
   tasks: Task[] = [];
 
   constructor(private dialog: MatDialog, private tasksApiService: TasksService) { }

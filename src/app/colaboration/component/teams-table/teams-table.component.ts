@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Task} from "../../model/task.entity";
 import {Team} from "../../model/team.entity";
 import {MatDialog} from "@angular/material/dialog";
@@ -14,7 +14,7 @@ import {EditTeamDialogComponent} from "../add-delete-edit-team-dialogs/edit-team
 })
 export class TeamsTableComponent implements OnInit {
 
-  projectId: number = 1;
+  @Input() projectId!: number;
   teams: Team[] = [];
 
   constructor(private dialog: MatDialog, private teamsApiService: TeamsService) { }

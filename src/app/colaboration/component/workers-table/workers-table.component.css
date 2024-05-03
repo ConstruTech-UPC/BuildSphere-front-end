@@ -1,0 +1,22 @@
+
+.mat-table {
+  width: 100%; /* Haz que la tabla ocupe el 100% del contenedor */
+  max-width: 900px; /* Fija un ancho máximo para la tabla */
+  margin: 0 auto; /* Centra la tabla horizontalmente */
+  overflow-x: auto; /* Añade scroll horizontal si la tabla es demasiado ancha */
+}
+
+/* Estilo para las celdas */
+.mat-cell, .mat-header-cell {
+  padding: 10px; /* Añade un espacio interno a las celdas */
+}
+
+/* Estilo para los botones de acción */
+.mat-icon-button {
+  margin: 0 5px; /* Añade un pequeño margen a los botones de acción */
+}
+
+/* Estilo para el botón "Add worker" */
+.add-worker-button {
+  margin-top: 20px; /* Añade un margen superior al botón "Add worker" */
+}

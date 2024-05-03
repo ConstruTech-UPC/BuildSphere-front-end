@@ -52,14 +52,6 @@
       "teamId": 1,
       "role": "Builder",
       "hoursWorked": 45
-    },
-    {
-      "id": 4,
-      "projectId": 1,
-      "fullName": "Piero Mendoza Editado",
-      "teamId": "12",
-      "role": "Ingeniero de Sistemas",
-      "hoursWorked": "20"
     }
   ],
   "teams": [
