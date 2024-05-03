@@ -8,18 +8,16 @@ import {HttpClientModule} from "@angular/common/http";
 import {MaterialsService} from "./inventory/services/materials.service";
 import {MachineryService} from "./inventory/services/machinery.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatInputModule} from "@angular/material/input";
+import {MatFormField, MatInput, MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatButtonModule} from "@angular/material/button";
+import {MatButtonModule, MatIconButton} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
-import {MatIconModule} from "@angular/material/icon";
+import {MatIcon, MatIconModule} from "@angular/material/icon";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
-import { AddDeleteEditMaterialComponent } from './inventory/components/add-delete-edit-material/add-delete-edit-material.component';
-import { AddDeleteEditMachineComponent } from './inventory/components/add-delete-edit-machine/add-delete-edit-machine.component';
 import { MachineryTableComponent } from './inventory/components/machinery-table/machinery-table.component';
 import { MaterialsTableComponent } from './inventory/components/materials-table/materials-table.component';
 import {InventoryManagementComponent} from "./inventory/pages/inventory-management/inventory-management.component";
@@ -29,13 +27,17 @@ import { DeleteMachineDialogComponent } from './inventory/components/add-delete-
 import { AddMaterialDialogComponent } from './inventory/components/add-delete-edit-material-dialogs/add-material-dialog/add-material-dialog.component';
 import { EditMaterialDialogComponent } from './inventory/components/add-delete-edit-material-dialogs/edit-material-dialog/edit-material-dialog.component';
 import { DeleteMaterialDialogComponent } from './inventory/components/add-delete-edit-material-dialogs/delete-material-dialog/delete-material-dialog.component';
+import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
+import {MatDivider} from "@angular/material/divider";
+import {MatListItem, MatNavList} from "@angular/material/list";
+import {MatSidenavContent} from "@angular/material/sidenav";
+import {SidenavComponent} from "./public/components/sidenav/sidenav.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryManagementComponent,
-    AddDeleteEditMaterialComponent,
-    AddDeleteEditMachineComponent,
     MachineryTableComponent,
     MaterialsTableComponent,
     AddMachineDialogComponent,
@@ -43,7 +45,8 @@ import { DeleteMaterialDialogComponent } from './inventory/components/add-delete
     DeleteMachineDialogComponent,
     AddMaterialDialogComponent,
     EditMaterialDialogComponent,
-    DeleteMaterialDialogComponent
+    DeleteMaterialDialogComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,19 @@ import { DeleteMaterialDialogComponent } from './inventory/components/add-delete
     MatPaginatorModule,
     MatToolbarModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSidenavContainer,
+    MatSidenav,
+    MatDivider,
+    MatNavList,
+    MatListItem,
+    MatSidenavContent,
+    MatIcon,
+    MatFormField,
+    MatInput,
+    NgOptimizedImage,
+    MatIconButton,
+    MatButtonModule
 
   ],
   providers: [
