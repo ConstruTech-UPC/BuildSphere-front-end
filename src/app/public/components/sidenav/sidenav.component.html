@@ -10,12 +10,12 @@
     <mat-divider></mat-divider>
     <mat-nav-list>
       <mat-list-item>
-        <a mat-list-item routerLink="/inventory">
+        <a mat-list-item routerLink="/resource-management">
           <mat-icon mat-list-icon>build</mat-icon>Resource Management
         </a>
       </mat-list-item>
       <mat-list-item>
-        <a mat-list-item routerLink="/collaboration">
+        <a mat-list-item routerLink="/communication">
           <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
         </a>
       </mat-list-item>
@@ -30,8 +30,8 @@
         </a>
       </mat-list-item>
       <mat-list-item>
-        <a mat-list-item routerLink="/settings">
-          <mat-icon mat-list-icon>settings</mat-icon>Settings
+        <a mat-list-item routerLink="/projects">
+          <mat-icon mat-list-icon>settings</mat-icon>Projects
         </a>
       </mat-list-item>
     </mat-nav-list>
@@ -46,6 +46,7 @@
     <button mat-icon-button (click)="toggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
+
 
     <router-outlet></router-outlet>
 

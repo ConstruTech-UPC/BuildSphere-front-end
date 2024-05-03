@@ -1,0 +1,8 @@
+.project-card {
+  max-width: 400px;
+  margin: 20px;
+}
+.project-image {
+  background-size: cover;
+  background-position: center;
+}
