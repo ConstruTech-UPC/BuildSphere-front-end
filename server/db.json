@@ -74,13 +74,6 @@
         3,
         4
       ]
-    },
-    {
-      "id": 3,
-      "projectId": 1,
-      "teamName": "Team prueba editado",
-      "description": "editado de la prueba",
-      "assignedTasks": "2,3"
     }
   ],
   "tasks": [
