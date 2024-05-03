@@ -13,15 +13,33 @@ import {MatIcon} from "@angular/material/icon";
 import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
-import {MatIconButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import { DocumentListComponent } from './document/component/document-list/document-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DocumentsManagementComponent } from './document/pages/documents-management/documents-management.component';
+import { EditDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/edit-document-dialog/edit-document-dialog.component';
+import { DeleteDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/delete-document-dialog/delete-document-dialog.component';
+import { AddDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/add-document-dialog/add-document-dialog.component';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
+  MatTable
+} from "@angular/material/table";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     DocumentListComponent,
+    DocumentsManagementComponent,
+    EditDocumentDialogComponent,
+    DeleteDocumentDialogComponent,
+    AddDocumentDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +57,19 @@ import { HttpClientModule } from '@angular/common/http';
     MatInput,
     NgOptimizedImage,
     MatToolbarRow,
-    MatIconButton
+    MatIconButton,
+    MatTable,
+    MatHeaderCell,
+    MatCell,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatHeaderRow,
+    MatRow,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatButton,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()
