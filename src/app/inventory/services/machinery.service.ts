@@ -23,8 +23,8 @@ export class MachineryService {
     return throwError(() => new Error('Something happened with the request. Please try again later.'));
   }
 
-  getMachinesByProject(projectId: number): Observable<Machine> {
-    return this.http.get<Machine>(`${this.basePath}/projects/${projectId}/machines`)
+  getMachinesByProject(projectId: number) {
+    return this.http.get<Machine[]>(`${this.basePath}/projects/${projectId}/machines`)
       .pipe(retry(2), catchError(this.handleError));
   }
 
