@@ -1,7 +1,7 @@
-import { Document } from './document';
+import { DocumentEntity } from './document.entity';
 
 describe('Document', () => {
   it('should create an instance', () => {
-    expect(new Document()).toBeTruthy();
+    expect(new DocumentEntity()).toBeTruthy();
   });
 });
