@@ -5,9 +5,11 @@ import {DocumentsManagementComponent} from "./document/pages/documents-managemen
 import {
   CollaborationManagementComponent
 } from "./colaboration/pages/collaboration-management/collaboration-management.component";
+import {InventoryManagementComponent} from "./inventory/pages/inventory-management/inventory-management.component";
 const routes: Routes = [
   { path: 'documents', component: DocumentsManagementComponent },
   { path: 'collaboration', component: CollaborationManagementComponent },
+  { path: 'inventory', component: InventoryManagementComponent }
 ];
 
 @NgModule({

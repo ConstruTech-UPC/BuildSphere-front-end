@@ -63,6 +63,27 @@ import {WorkersTableComponent} from "./colaboration/component/workers-table/work
 import {
   CollaborationManagementComponent
 } from "./colaboration/pages/collaboration-management/collaboration-management.component";
+import {InventoryManagementComponent} from "./inventory/pages/inventory-management/inventory-management.component";
+import {MachineryTableComponent} from "./inventory/components/machinery-table/machinery-table.component";
+import {MaterialsTableComponent} from "./inventory/components/materials-table/materials-table.component";
+import {
+  AddMachineDialogComponent
+} from "./inventory/components/add-delete-edit-machine-dialogs/add-machine-dialog/add-machine-dialog.component";
+import {
+  EditMachineDialogComponent
+} from "./inventory/components/add-delete-edit-machine-dialogs/edit-machine-dialog/edit-machine-dialog.component";
+import {
+  DeleteMachineDialogComponent
+} from "./inventory/components/add-delete-edit-machine-dialogs/delete-machine-dialog/delete-machine-dialog.component";
+import {
+  AddMaterialDialogComponent
+} from "./inventory/components/add-delete-edit-material-dialogs/add-material-dialog/add-material-dialog.component";
+import {
+  EditMaterialDialogComponent
+} from "./inventory/components/add-delete-edit-material-dialogs/edit-material-dialog/edit-material-dialog.component";
+import {
+  DeleteMaterialDialogComponent
+} from "./inventory/components/add-delete-edit-material-dialogs/delete-material-dialog/delete-material-dialog.component";
 
 @NgModule({
   declarations: [
@@ -85,7 +106,16 @@ import {
     TaskTableComponent,
     TeamsTableComponent,
     WorkersTableComponent,
-    CollaborationManagementComponent
+    CollaborationManagementComponent,
+    InventoryManagementComponent,
+    MachineryTableComponent,
+    MaterialsTableComponent,
+    AddMachineDialogComponent,
+    EditMachineDialogComponent,
+    DeleteMachineDialogComponent,
+    AddMaterialDialogComponent,
+    EditMaterialDialogComponent,
+    DeleteMaterialDialogComponent
   ],
   imports: [
     BrowserModule,
