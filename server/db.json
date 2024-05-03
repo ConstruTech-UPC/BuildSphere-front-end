@@ -60,14 +60,20 @@
       "projectId": 1,
       "teamName": "Team A",
       "description": "Construction team for the structure",
-      "assignedTasks": [1, 2]
+      "assignedTasks": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
       "projectId": 1,
       "teamName": "Team B",
       "description": "Electrical installations team",
-      "assignedTasks": [3, 4]
+      "assignedTasks": [
+        3,
+        4
+      ]
     }
   ],
   "tasks": [
@@ -75,7 +81,7 @@
       "id": 1,
       "projectId": 1,
       "taskName": "Excavate terrain",
-      "description": "Excavate the terrain to prepare for construction",
+      "taskDescription": "Excavate the terrain to prepare for construction",
       "startDate": "2024-04-01",
       "maxEndDate": "2024-04-15",
       "completionPercentage": 70
@@ -84,7 +90,7 @@
       "id": 2,
       "projectId": 1,
       "taskName": "Lay foundations",
-      "description": "Lay the foundations of the structure",
+      "taskDescription": "Lay the foundations of the structure",
       "startDate": "2024-04-10",
       "maxEndDate": "2024-04-30",
       "completionPercentage": 50
@@ -93,7 +99,7 @@
       "id": 3,
       "projectId": 1,
       "taskName": "Install wiring",
-      "description": "Install electrical wiring in the building",
+      "taskDescription": "Install electrical wiring in the building",
       "startDate": "2024-04-05",
       "maxEndDate": "2024-04-20",
       "completionPercentage": 90
@@ -102,10 +108,28 @@
       "id": 4,
       "projectId": 1,
       "taskName": "Install lighting fixtures",
-      "description": "Install lighting fixtures in the building",
+      "taskDescription": "Install lighting fixtures in the building",
       "startDate": "2024-04-15",
       "maxEndDate": "2024-05-05",
       "completionPercentage": 30
+    },
+    {
+      "id": 7,
+      "projectId": 1,
+      "taskName": "Tarea prueba 2",
+      "taskDescription": "Descripcion de la tarea de prueba 2",
+      "startDate": "24-10-10",
+      "maxEndDate": "24-10-12",
+      "completionPercentage": 10
+    },
+    {
+      "id": 8,
+      "projectId": 1,
+      "taskName": "Nueva tarea",
+      "taskDescription": "Descripcion nueva tarea",
+      "startDate": "24-12-1",
+      "maxEndDate": "24-12-2",
+      "completionPercentage": 50
     }
   ]
 }

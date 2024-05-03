@@ -14,19 +14,47 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
-import { DocumentListComponent } from './document/component/document-list/document-list.component';
+
 import { WorkersTableComponent } from './colaboration/component/workers-table/workers-table.component';
 import { TeamsTableComponent } from './colaboration/component/teams-table/teams-table.component';
 import { TaskTableComponent } from './colaboration/component/tasks-table/task-table.component';
+
+import {HttpClientModule} from "@angular/common/http";
+import {TasksService} from "./colaboration/service/tasks-api.service";
+import {TeamsService} from "./colaboration/service/teams-api.service";
+import {WorkersService} from "./colaboration/service/workers-api.service";
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+import {FormsModule} from "@angular/forms";
+import { CollaborationManagementComponent } from './colaboration/pages/collaboration-management/collaboration-management.component';
+import { AddTaskDialogComponent } from './colaboration/component/add-delete-edit-task-dialogs/add-task-dialog/add-task-dialog.component';
+import { EditTaskDialogComponent } from './colaboration/component/add-delete-edit-task-dialogs/edit-task-dialog/edit-task-dialog.component';
+import { DeleteTaskDialogComponent } from './colaboration/component/add-delete-edit-task-dialogs/delete-task-dialog/delete-task-dialog.component';
+import { AddTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/add-team-dialog/add-team-dialog.component';
+import { DeleteTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/delete-team-dialog/delete-team-dialog.component';
+import { EditTeamDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/edit-team-dialog/edit-team-dialog.component';
+import { AddWorkerDialogComponent } from './colaboration/component/add-delete-edit-worker-dialogs/add-worker-dialog/add-worker-dialog.component';
+import { DeleteWorkerDialogComponent } from './colaboration/component/add-delete-edit-worker-dialogs/delete-worker-dialog/delete-worker-dialog.component';
+import { EditWorkerDialogComponent } from './colaboration/component/add-delete-edit-worker-dialogs/edit-worker-dialog/edit-worker-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    DocumentListComponent,
     WorkersTableComponent,
     TeamsTableComponent,
-    TaskTableComponent
+    TaskTableComponent,
+    CollaborationManagementComponent,
+    AddTaskDialogComponent,
+    EditTaskDialogComponent,
+    DeleteTaskDialogComponent,
+    AddTeamDialogComponent,
+    DeleteTeamDialogComponent,
+    EditTeamDialogComponent,
+    AddWorkerDialogComponent,
+    DeleteWorkerDialogComponent,
+    EditWorkerDialogComponent,
+    CollaborationManagementComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +71,17 @@ import { TaskTableComponent } from './colaboration/component/tasks-table/task-ta
     MatInput,
     NgOptimizedImage,
     MatToolbarRow,
-    MatIconButton
+    MatIconButton,///
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule,
+    FormsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),///
+    TasksService,
+    WorkersService,
+    TeamsService,
   ],
   bootstrap: [AppComponent]
 })

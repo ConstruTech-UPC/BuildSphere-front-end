@@ -1,7 +1,7 @@
-import { WorkerEntity } from './worker.entity';
+import { Worker } from './worker.entity';
 
 describe('WorkerEntity', () => {
   it('should create an instance', () => {
-    expect(new WorkerEntity()).toBeTruthy();
+    expect(new Worker()).toBeTruthy();
   });
 });

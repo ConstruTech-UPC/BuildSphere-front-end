@@ -1,0 +1,19 @@
+<h2>Add new task</h2>
+
+<mat-form-field>
+  <input matInput placeholder="Task name" [(ngModel)]="task.taskName">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Task Description" [(ngModel)]="task.taskDescription">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Start date" [(ngModel)]="task.startDate">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Max end date" [(ngModel)]="task.maxEndDate">
+</mat-form-field>
+
+<div>
+  <button mat-raised-button color="primary" (click)="addTask()">Add</button>
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+</div>
