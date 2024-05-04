@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>{{ editing ? 'Edit Project' : 'Create Project' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <!-- Campos del formulario -->
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+<mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+<mat-form-field appearance="fill">
+      <mat-label>Location</mat-label>
+      <input matInput formControlName="location">
+    </mat-form-field>
+<mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput formControlName="startDate">
+    </mat-form-field>
+<mat-form-field appearance="fill">
+      <mat-label>Expected End Date</mat-label>
+      <input matInput formControlName="expectedEndDate">
+    </mat-form-field>
+<mat-form-field appearance="fill">
+      <mat-label>Budget</mat-label>
+      <input matInput formControlName="budget">
+    </mat-form-field>
+<mat-form-field appearance="fill">
+      <mat-label>URL Image</mat-label>
+      <input matInput formControlName="urlImage">
+    </mat-form-field>
+    <!-- Fin de los campos del formulario -->
+
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="null">Cancel</button>
+      <button mat-button type="submit">{{ editing ? 'Update' : 'Create' }}</button>
+    </div>
+  </form>
+</div>
+

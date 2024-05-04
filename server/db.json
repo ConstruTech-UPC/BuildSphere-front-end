@@ -1,0 +1,223 @@
+{
+  "projects": [
+    {
+      "id": "c3be",
+      "name": "sdf2313123131231223123213132",
+      "description": "d",
+      "location": "d",
+      "startDate": "d",
+      "expectedEndDate": "d",
+      "budget": "d",
+      "urlImage": "d"
+    },
+    {
+      "id": "e4d2",
+      "name": "2333",
+      "description": "333",
+      "location": "33",
+      "startDate": "3",
+      "expectedEndDate": "3",
+      "budget": "3",
+      "urlImage": "3"
+    },
+    {
+      "id": "6ecd",
+      "name": "Hola mundo1234",
+      "description": "1212",
+      "location": "123",
+      "startDate": "22",
+      "expectedEndDate": "123",
+      "budget": "2",
+      "urlImage": "3"
+    },
+    {
+      "id": "08af",
+      "name": "123",
+      "description": "123",
+      "location": "123",
+      "startDate": "123",
+      "expectedEndDate": "123",
+      "budget": "123",
+      "urlImage": "123"
+    },
+    {
+      "id": "e029",
+      "name": "123333",
+      "description": "123",
+      "location": "123",
+      "startDate": "123",
+      "expectedEndDate": "123",
+      "budget": "123",
+      "urlImage": "123"
+    }
+  ],
+  "documents": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "name": "Document 1",
+      "description": "Description 1",
+      "createdAt": "2015-01-01T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "projectId": 1,
+      "name": "Document 2",
+      "description": "Description 2",
+      "createdAt": "2015-01-02T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "projectId": 1,
+      "name": "Document 3",
+      "description": "Description 3",
+      "createdAt": "2015-01-03T00:00:00Z"
+    }
+  ],
+  "workers": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "fullName": "Juan Perez",
+      "teamId": 1,
+      "role": "Architect",
+      "hoursWorked": 40
+    },
+    {
+      "id": "2",
+      "projectId": 1,
+      "fullName": "Maria Gonzalez",
+      "teamId": 2,
+      "role": "Civil Engineer",
+      "hoursWorked": 35
+    },
+    {
+      "id": "3",
+      "projectId": 1,
+      "fullName": "Pedro Ramirez",
+      "teamId": 1,
+      "role": "Builder",
+      "hoursWorked": 45
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "teamName": "Team A",
+      "description": "Construction team for the structure",
+      "assignedTasks": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "2",
+      "projectId": 1,
+      "teamName": "Team B",
+      "description": "Electrical installations team",
+      "assignedTasks": [
+        3,
+        4
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "taskName": "Excavate terrain",
+      "taskDescription": "Excavate the terrain to prepare for construction",
+      "startDate": "2024-04-01",
+      "maxEndDate": "2024-04-15",
+      "completionPercentage": 70
+    },
+    {
+      "id": "2",
+      "projectId": 1,
+      "taskName": "Lay foundations",
+      "taskDescription": "Lay the foundations of the structure",
+      "startDate": "2024-04-10",
+      "maxEndDate": "2024-04-30",
+      "completionPercentage": 50
+    },
+    {
+      "id": "3",
+      "projectId": 1,
+      "taskName": "Install wiring",
+      "taskDescription": "Install electrical wiring in the building",
+      "startDate": "2024-04-05",
+      "maxEndDate": "2024-04-20",
+      "completionPercentage": 90
+    },
+    {
+      "id": "4",
+      "projectId": 1,
+      "taskName": "Install lighting fixtures",
+      "taskDescription": "Install lighting fixtures in the building",
+      "startDate": "2024-04-15",
+      "maxEndDate": "2024-05-05",
+      "completionPercentage": 30
+    },
+    {
+      "id": 7,
+      "projectId": 1,
+      "taskName": "Tarea prueba 2",
+      "taskDescription": "Descripcion de la tarea de prueba 2",
+      "startDate": "24-10-10",
+      "maxEndDate": "24-10-12",
+      "completionPercentage": 10
+    },
+    {
+      "id": 8,
+      "projectId": 1,
+      "taskName": "Nueva tarea",
+      "taskDescription": "Descripcion nueva tarea",
+      "startDate": "24-12-1",
+      "maxEndDate": "24-12-2",
+      "completionPercentage": 50
+    }
+  ],
+  "materials": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "materialName": "Bricks",
+      "description": "Construction Unit",
+      "receptionDate": "2024-04-10T00:00:00Z",
+      "materialStatus": "New",
+      "amount": 50000,
+      "totalCost": 40000
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "materialName": "Steel",
+      "description": "Strong iron-carbon alloy",
+      "receptionDate": "2024-04-11T00:00:00Z",
+      "materialStatus": "New",
+      "amount": 2000,
+      "totalCost": 120000
+    }
+  ],
+  "machinery": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "machineName": "Excavator",
+      "description": "Machinery used to excavate ground",
+      "receptionDate": "2024-01-04T00:00:00Z",
+      "endDate": "2024-10-04",
+      "totalCost": 20000
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "machineName": "Concrete Mixer",
+      "description": "Machinery for mixing cement, sand and water",
+      "receptionDate": "2024-02-04T00:00:00Z",
+      "endDate": "2024-05-17",
+      "totalCost": 12000
+    }
+  ]
+}

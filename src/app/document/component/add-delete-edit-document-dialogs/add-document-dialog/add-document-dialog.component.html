@@ -1,0 +1,16 @@
+<h2>Add new document</h2>
+
+<mat-form-field>
+  <input matInput placeholder="DocumentEntity name" [(ngModel)]="document.name">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Description" [(ngModel)]="document.description">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Created At" [(ngModel)]="document.createdAt">
+</mat-form-field>
+
+<div>
+  <button mat-raised-button color="primary" (click)="addDocument()">Add</button>
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+</div>
