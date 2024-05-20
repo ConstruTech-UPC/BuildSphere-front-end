@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-inventory-management',
   templateUrl: './inventory-management.component.html',
   styleUrl: './inventory-management.component.css'
 })
-export class InventoryManagementComponent {
+export class InventoryManagementComponent implements OnInit {
   projectId!: number;
 
   constructor() { }

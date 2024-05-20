@@ -26,5 +26,4 @@ export class AddMachineDialogComponent implements OnInit {
   }
 
 
-
 }
