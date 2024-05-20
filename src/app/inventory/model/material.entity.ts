@@ -3,7 +3,7 @@ export class Material {
   projectId: number;
   materialName: string;
   description: string;
-  receptionDate: string;
+  receptionDate: Date;
   materialStatus: string;
   amount: number;
   totalCost: number;
@@ -13,7 +13,7 @@ export class Material {
     this.projectId = 0;
     this.materialName = '';
     this.description = '';
-    this.receptionDate = '';
+    this.receptionDate = new Date();
     this.materialStatus = '';
     this.amount = 0;
     this.totalCost = 0;

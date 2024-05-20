@@ -29,7 +29,8 @@ export class MaterialsTableComponent implements OnInit {
   }
 
   loadMaterials(){
-    this.materialsService.getMaterialsByProject(this.projectId).subscribe(materials => {this.materials = materials;});
+    this.materialsService.getMaterialsByProject(this.projectId)
+        .subscribe(materials => {this.materials = materials;});
   }
 
   openAddDialog(){
