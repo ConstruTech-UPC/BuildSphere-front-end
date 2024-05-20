@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "untitled1": {
+    "feature-inventory": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/untitled1",
+            "outputPath": "dist/feature-inventory",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "untitled1:build:production"
+              "buildTarget": "feature-inventory:build:production"
             },
             "development": {
-              "buildTarget": "untitled1:build:development"
+              "buildTarget": "feature-inventory:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "untitled1:build"
+            "buildTarget": "feature-inventory:build"
           }
         },
         "test": {
@@ -109,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "790d68ba-db8d-4167-bdfe-53390a8ea524"
   }
 }
