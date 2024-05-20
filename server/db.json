@@ -53,21 +53,21 @@
   ],
   "documents": [
     {
-      "id": "1",
+      "id": 1,
       "projectId": 1,
       "name": "Document 1",
       "description": "Description 1",
       "createdAt": "2015-01-01T00:00:00Z"
     },
     {
-      "id": "2",
+      "id": 2,
       "projectId": 1,
       "name": "Document 2",
       "description": "Description 2",
       "createdAt": "2015-01-02T00:00:00Z"
     },
     {
-      "id": "3",
+      "id": 3,
       "projectId": 1,
       "name": "Document 3",
       "description": "Description 3",
@@ -76,7 +76,7 @@
   ],
   "workers": [
     {
-      "id": "1",
+      "id": 1,
       "projectId": 1,
       "fullName": "Juan Perez",
       "teamId": 1,
@@ -84,7 +84,7 @@
       "hoursWorked": 40
     },
     {
-      "id": "2",
+      "id": 2,
       "projectId": 1,
       "fullName": "Maria Gonzalez",
       "teamId": 2,
@@ -92,7 +92,7 @@
       "hoursWorked": 35
     },
     {
-      "id": "3",
+      "id": 3,
       "projectId": 1,
       "fullName": "Pedro Ramirez",
       "teamId": 1,
@@ -102,7 +102,7 @@
   ],
   "teams": [
     {
-      "id": "1",
+      "id": 1,
       "projectId": 1,
       "teamName": "Team A",
       "description": "Construction team for the structure",
@@ -124,7 +124,7 @@
   ],
   "tasks": [
     {
-      "id": "1",
+      "id": 1,
       "projectId": 1,
       "taskName": "Excavate terrain",
       "taskDescription": "Excavate the terrain to prepare for construction",
@@ -133,7 +133,7 @@
       "completionPercentage": 70
     },
     {
-      "id": "2",
+      "id": 2,
       "projectId": 1,
       "taskName": "Lay foundations",
       "taskDescription": "Lay the foundations of the structure",
@@ -142,7 +142,7 @@
       "completionPercentage": 50
     },
     {
-      "id": "3",
+      "id": 3,
       "projectId": 1,
       "taskName": "Install wiring",
       "taskDescription": "Install electrical wiring in the building",
@@ -151,7 +151,7 @@
       "completionPercentage": 90
     },
     {
-      "id": "4",
+      "id": 4,
       "projectId": 1,
       "taskName": "Install lighting fixtures",
       "taskDescription": "Install lighting fixtures in the building",
