@@ -32,7 +32,7 @@ export class DeleteMachineDialogComponent implements OnInit {
         });
         this.dialogRef.close();
       });
-    console.log('Material deleted successfully', this.data.machineId);
+    console.log('Machine deleted successfully', this.data.machineId);
   }
 
   cancel() {
