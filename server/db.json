@@ -200,7 +200,7 @@
       "totalCost": 120000
     }
   ],
-  "machinery": [
+  "machines": [
     {
       "id": 1,
       "projectId": 1,
