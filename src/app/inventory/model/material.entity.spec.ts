@@ -1,7 +1,7 @@
-import { MaterialEntity } from './material.entity';
+import { Material } from './material.entity';
 
 describe('MaterialEntity', () => {
   it('should create an instance', () => {
-    expect(new MaterialEntity()).toBeTruthy();
+    expect(new Material()).toBeTruthy();
   });
 });
