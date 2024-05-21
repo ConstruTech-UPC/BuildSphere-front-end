@@ -3,37 +3,21 @@
 
         <mat-toolbar>
             <mat-toolbar-row>
-                <h1>Project Name</h1>
+                <h1>{{ selectedProject.name }}</h1>
             </mat-toolbar-row>
         </mat-toolbar>
 
         <mat-divider></mat-divider>
         <mat-nav-list>
-            <mat-list-item>
-                <a mat-list-item routerLink="/inventory">
-                    <mat-icon mat-list-icon>build</mat-icon>Resource Management
-                </a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item routerLink="/collaboration">
-                    <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
-                </a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item routerLink="/documents">
-                    <mat-icon mat-list-icon>file_copy</mat-icon>Documents
-                </a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item routerLink="/support">
-                    <mat-icon mat-list-icon>help</mat-icon>Support & Help
-                </a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item routerLink="/projects">
-                    <mat-icon mat-list-icon>settings</mat-icon>Projects
-                </a>
-            </mat-list-item>
+            <a mat-list-item routerLink="documents">
+                <mat-icon mat-list-icon>file_copy</mat-icon>Documents
+            </a>
+            <a mat-list-item routerLink="collaboration">
+                <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
+            </a>
+            <a mat-list-item routerLink="inventory">
+                <mat-icon mat-list-icon>build</mat-icon>Resource Management
+            </a>
         </mat-nav-list>
 
         <mat-divider></mat-divider>
@@ -43,8 +27,6 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content>
-
         <router-outlet></router-outlet>
-
     </mat-sidenav-content>
 </mat-sidenav-container>

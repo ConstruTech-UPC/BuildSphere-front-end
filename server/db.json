@@ -9,29 +9,60 @@
       "expectedEndDate": "2024-12-31",
       "budget": "1000000",
       "urlImage": "https://www.google.com"
+    },
+    {
+      "id": 2,
+      "name": "Project 2",
+      "description": "Description of Project 2",
+      "location": "456 Main Street, City, Country",
+      "startDate": "2024-06-01",
+      "expectedEndDate": "2024-12-31",
+      "budget": "2000000",
+      "urlImage": "https://www.google.com"
     }
   ],
   "documents": [
     {
       "id": 1,
       "projectId": 1,
-      "name": "Document 1",
+      "name": "PROJECT 1",
       "description": "Description 1",
       "createdAt": "2015-01-01T00:00:00Z"
     },
     {
       "id": 2,
       "projectId": 1,
-      "name": "Document 2",
+      "name": "PROJECT 1",
       "description": "Description 2",
       "createdAt": "2015-01-01T00:00:00Z"
     },
     {
       "id": 3,
       "projectId": 1,
-      "name": "Document 3",
+      "name": "PROJECT 1",
       "description": "Description 3",
       "createdAt": "2015-01-03T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "projectId": 2,
+      "name": "PROJECT 2",
+      "description": "Description 4",
+      "createdAt": "2015-01-04T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "projectId": 2,
+      "name": "PROJECT 2",
+      "description": "Description 5",
+      "createdAt": "2015-01-05T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "projectId": 2,
+      "name": "PROJECT 2",
+      "description": "Description 6",
+      "createdAt": "2015-01-06T00:00:00Z"
     }
   ],
   "workers": [
@@ -58,6 +89,30 @@
       "teamId": 1,
       "role": "Builder",
       "hoursWorked": 45
+    },
+    {
+      "id": 4,
+      "projectId": 2,
+      "fullName": "Ana Lopez",
+      "teamId": 2,
+      "role": "Electrician",
+      "hoursWorked": 30
+    },
+    {
+      "id": 5,
+      "projectId": 2,
+      "fullName": "Carlos Martinez",
+      "teamId": 1,
+      "role": "Plumber",
+      "hoursWorked": 50
+    },
+    {
+      "id": 6,
+      "projectId": 2,
+      "fullName": "Laura Rodriguez",
+      "teamId": 2,
+      "role": "Painter",
+      "hoursWorked": 25
     }
   ],
   "teams": [
@@ -79,6 +134,26 @@
       "assignedTasks": [
         3,
         4
+      ]
+    },
+    {
+      "id": 3,
+      "projectId": 2,
+      "teamName": "Team C",
+      "description": "Plumbing installations team",
+      "assignedTasks": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 4,
+      "projectId": 2,
+      "teamName": "Team D",
+      "description": "Painting team",
+      "assignedTasks": [
+        7,
+        8
       ]
     }
   ],
@@ -136,6 +211,42 @@
       "startDate": "24-12-1",
       "maxEndDate": "24-12-2",
       "completionPercentage": 50
+    },
+    {
+      "id": 5,
+      "projectId": 2,
+      "taskName": "Install plumbing",
+      "taskDescription": "Install plumbing in the building",
+      "startDate": "2024-06-01",
+      "maxEndDate": "2024-06-15",
+      "completionPercentage": 80
+    },
+    {
+      "id": 6,
+      "projectId": 2,
+      "taskName": "Paint walls",
+      "taskDescription": "Paint the walls of the building",
+      "startDate": "2024-06-10",
+      "maxEndDate": "2024-06-30",
+      "completionPercentage": 60
+    },
+    {
+      "id": 9,
+      "projectId": 2,
+      "taskName": "Tarea 1",
+      "taskDescription": "Descripcion de la tarea 1",
+      "startDate": "24-10-10",
+      "maxEndDate": "24-10-12",
+      "completionPercentage": 10
+    },
+    {
+      "id": 10,
+      "projectId": 2,
+      "taskName": "Tarea 2",
+      "taskDescription": "Descripcion de la tarea 2",
+      "startDate": "24-12-1",
+      "maxEndDate": "24-12-2",
+      "completionPercentage": 50
     }
   ],
   "materials": [
@@ -158,6 +269,26 @@
       "materialStatus": "New",
       "amount": 2000,
       "totalCost": 120000
+    },
+    {
+      "id": 3,
+      "projectId": 2,
+      "materialName": "Cement",
+      "description": "Construction material",
+      "receptionDate": "2024-06-01T00:00:00Z",
+      "materialStatus": "New",
+      "amount": 10000,
+      "totalCost": 20000
+    },
+    {
+      "id": 4,
+      "projectId": 2,
+      "materialName": "Pipes",
+      "description": "Plumbing material",
+      "receptionDate": "2024-06-05T00:00:00Z",
+      "materialStatus": "New",
+      "amount": 500,
+      "totalCost": 10000
     }
   ],
   "machines": [
@@ -178,6 +309,24 @@
       "receptionDate": "2024-02-04T00:00:00Z",
       "endDate": "2024-05-17",
       "totalCost": 12000
+    },
+    {
+      "id": 3,
+      "projectId": 2,
+      "machineName": "Crane",
+      "description": "Machinery for lifting heavy objects",
+      "receptionDate": "2024-03-01T00:00:00Z",
+      "endDate": "2024-07-01",
+      "totalCost": 30000
+    },
+    {
+      "id": 4,
+      "projectId": 2,
+      "machineName": "Paint Sprayer",
+      "description": "Machinery for painting walls",
+      "receptionDate": "2024-04-01T00:00:00Z",
+      "endDate": "2024-08-01",
+      "totalCost": 15000
     }
   ]
 }

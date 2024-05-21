@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectsService } from '../../../management/services/projects.service';
 import { Project } from '../../../management/model/project.entity';
@@ -8,13 +8,15 @@ import { Project } from '../../../management/model/project.entity';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent {
+export class SidenavComponent implements OnInit {
   isSidenavOpen: boolean = true;
-  selectedProject: Project | undefined = undefined;
+  selectedProject: Project | undefined;
 
-  constructor(private route: ActivatedRoute, private projectsService: ProjectsService) {
+  constructor(private route: ActivatedRoute, private projectsService: ProjectsService) { }
+
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const projectId = params['projectId'];
+      const projectId = +params['projectId'];
       if (projectId) {
         this.projectsService.getProjects().subscribe((projects: Project[]) => {
           this.selectedProject = projects.find(project => project.id === projectId);
