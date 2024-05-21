@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectFormComponent } from '../project-form/project-form.component';
 import { Project } from '../../model/project.entity';
@@ -11,6 +11,8 @@ import { ProjectsService } from '../../services/projects.service';
 })
 export class ProjectListComponent implements OnInit {
   projects: Project[] = [];
+
+  @Output() projectSelect = new EventEmitter<number>(); // Add this line
 
   constructor(private projectService: ProjectsService, private dialog: MatDialog) {}
 
@@ -27,6 +29,11 @@ export class ProjectListComponent implements OnInit {
       error: (error) => console.error('There was an error!', error)
     });
   }
+
+  onProjectClick(projectId: number) {
+    this.projectSelect.emit(projectId);
+  }
+
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(ProjectFormComponent, {
       width: '500px',

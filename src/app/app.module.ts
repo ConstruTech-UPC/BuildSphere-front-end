@@ -94,6 +94,7 @@ import {ProjectCardComponent} from "./management/components/project-card/project
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardImage} from "@angular/material/card";
 import {ProjectFormComponent} from "./management/components/project-form/project-form.component";
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from
     ProjectDashboardComponent,
     ProjectListComponent,
     ProjectCardComponent,
-    ProjectFormComponent
+    ProjectFormComponent,
+    ProjectInformationManagementComponent
   ],
   imports: [
     BrowserModule,

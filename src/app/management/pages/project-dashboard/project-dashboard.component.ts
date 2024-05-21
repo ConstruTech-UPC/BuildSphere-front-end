@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ProjectFormComponent } from '../../components/project-form/project-form.component';
 import { Project } from '../../model/project.entity';
 import { ProjectsService } from '../../services/projects.service';
@@ -12,6 +13,11 @@ import { ProjectsService } from '../../services/projects.service';
 export class ProjectDashboardComponent {
   projects: Project[] = [];
 
-  constructor(public dialog: MatDialog, private projectsService: ProjectsService) {}
+  constructor(public dialog: MatDialog, private projectsService: ProjectsService, private router: Router) {}
 
+  onProjectSelect(projectId: number) {
+    this.router.navigate(['/documents', projectId]);
+  }
 }
+
+

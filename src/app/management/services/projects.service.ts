@@ -6,7 +6,7 @@ import {Project} from "../model/project.entity";
   providedIn: 'root'
 })
 export class ProjectsService {
-  private apiUrl = 'http://localhost:3000/projects';
+  private apiUrl = 'http://localhost:3000/api/v1/projects';
 
   constructor(private http: HttpClient) { }
 
