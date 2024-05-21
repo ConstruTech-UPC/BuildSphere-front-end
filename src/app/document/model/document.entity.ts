@@ -4,6 +4,9 @@ export class Document {
   description: string;
   createdAt: Date;
   projectId: number;
+  fileName?: string;
+  fileType?: string;
+  fileUrl?: string;
 
   constructor() {
     this.id = 0;
@@ -11,5 +14,8 @@ export class Document {
     this.description = '';
     this.createdAt = new Date();
     this.projectId = 0;
+    this.fileName = '';
+    this.fileType = '';
+    this.fileUrl = '';
   }
 }
