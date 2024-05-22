@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { ProjectFormComponent } from '../../components/project-form/project-form.component';
-import { Project } from '../../model/project.entity';
+import { ActivatedRoute } from '@angular/router';
 import { ProjectsService } from '../../services/projects.service';
+import { Project } from '../../model/project.entity';
 
 @Component({
   selector: 'app-project-dashboard',
@@ -11,24 +9,14 @@ import { ProjectsService } from '../../services/projects.service';
   styleUrls: ['./project-dashboard.component.scss']
 })
 export class ProjectDashboardComponent implements OnInit {
-  projects: Project[] = [];
+  project: Project | undefined;
+  projects: Project[] = []; // Declare the projects property here
 
-  constructor(public dialog: MatDialog, private projectsService: ProjectsService, private router: Router) {}
+  constructor(private route: ActivatedRoute, private projectsService: ProjectsService) {}
 
   ngOnInit(): void {
-    this.loadProjects();
-  }
-
-  loadProjects(): void {
-    this.projectsService.getProjects().subscribe({
-      next: (projects) => {
-        this.projects = projects;
-      },
-      error: (error) => console.error('There was an error!', error)
+    this.projectsService.getProjects().subscribe(projects => {
+      this.projects = projects;
     });
-  }
-
-  onProjectSelect(projectId: number) {
-    this.router.navigate(['/projects', projectId]);
   }
 }
