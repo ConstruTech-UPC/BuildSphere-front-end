@@ -18,8 +18,8 @@ export class SidenavComponent implements OnInit {
     this.route.params.subscribe(params => {
       const projectId = +params['projectId'];
       if (projectId) {
-        this.projectsService.getProjects().subscribe((projects: Project[]) => {
-          this.selectedProject = projects.find(project => project.id === projectId);
+        this.projectsService.getProjectById(projectId).subscribe((project: Project) => {
+          this.selectedProject = project;
         });
       }
     });
