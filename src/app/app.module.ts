@@ -94,6 +94,14 @@ import {ProjectCardComponent} from "./management/components/project-card/project
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardImage} from "@angular/material/card";
 import {ProjectFormComponent} from "./management/components/project-form/project-form.component";
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {WorkersService} from "./colaboration/service/workers-api.service";
+import {TasksService} from "./colaboration/service/tasks-api.service";
+import {TeamsService} from "./colaboration/service/teams-api.service";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatHint} from "@angular/material/form-field";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -172,10 +180,17 @@ import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from
     MatDialogActions,
     MatDialogClose,
     MatCardSubtitle,
-    MatCardTitle
+    MatCardTitle,
+    MatDatepickerInput,
+    MatDatepickerToggle,
+    MatDatepicker,
+    MatHint,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginatorModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(), WorkersService, TasksService, TeamsService
   ],
   bootstrap: [AppComponent]
 })

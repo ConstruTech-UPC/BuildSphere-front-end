@@ -33,7 +33,6 @@ export class TasksService {
 
   createTask(projectId: number, task: Task): Observable<Task> {
 
-    task.projectId = Number(task.projectId);
     task.completionPercentage = Number(task.completionPercentage);
 
     return this.http.post<Task>(`${this.basePath}/projects/${projectId}/tasks`, task)
