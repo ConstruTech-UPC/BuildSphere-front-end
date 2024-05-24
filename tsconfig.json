@@ -2,6 +2,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,

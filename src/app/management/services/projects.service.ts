@@ -6,7 +6,7 @@ import {Project} from "../model/project.entity";
   providedIn: 'root'
 })
 export class ProjectsService {
-  private apiUrl = 'http://localhost:3000/projects';
+  private apiUrl = 'http://localhost:3000/api/v1/projects';
 
   constructor(private http: HttpClient) { }
 
@@ -39,4 +39,8 @@ export class ProjectsService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
+  //get projects by id
+    getProjectById(id: number): Observable<Project> {
+        return this.http.get<Project>(`${this.apiUrl}/${id}`);
+    }
 }
