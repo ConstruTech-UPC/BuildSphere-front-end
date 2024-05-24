@@ -32,24 +32,56 @@ export class ProjectListComponent implements OnInit {
 
   onProjectClick(projectId: number) {
     this.projectSelect.emit(projectId);
+    this.router.navigate(['/projects', projectId]); // Navigate to the project-specific route
   }
 
   openCreateDialog(): void {
+  const dialogRef = this.dialog.open(ProjectFormComponent, {
+    width: '500px',
+    data: { project: null }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.projectService.createProject(result).subscribe({
+        next: (newProject) => {
+          this.projects.push(newProject);
+          this.loadProjects();
+        },
+        error: (error) => console.error('Failed to create project', error)
+      });
+    }
+  });
+}
+
+  handleEdit(project: Project): void {
     const dialogRef = this.dialog.open(ProjectFormComponent, {
       width: '500px',
-      data: { project: null }
+      data: { project }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.projectService.createProject(result).subscribe({
-          next: (newProject) => {
-            this.projects.push(newProject);
-            this.loadProjects();
-          },
-          error: (error) => console.error('Failed to create project', error)
-        });
+    dialogRef.afterClosed().subscribe(updatedProject => {
+      if (updatedProject) {
+        const index = this.projects.findIndex(p => p.id === updatedProject.id);
+        if (index > -1) {
+          this.projects[index] = updatedProject;
+        } else {
+          this.projects.push(updatedProject);
+        }
+        this.loadProjects();
       }
     });
+  }
+
+  handleDelete(id: number): void {
+    if (confirm('Are you sure you want to delete this project?')) {
+      this.projectService.deleteProject(id).subscribe({
+        next: () => {
+          this.projects = this.projects.filter(p => p.id !== id);
+          this.loadProjects();
+        },
+        error: err => console.error('Error deleting project', err)
+      });
+    }
   }
 }
