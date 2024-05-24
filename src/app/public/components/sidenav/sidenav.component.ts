@@ -17,7 +17,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const projectId = +params['projectId'];
-      if (projectId) {
+      if (!isNaN(projectId)) {
         this.projectsService.getProjectById(projectId).subscribe((project: Project) => {
           this.selectedProject = project;
         });
