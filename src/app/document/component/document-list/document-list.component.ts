@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Document } from "../../model/document.entity";
 import { DocumentService } from "../../service/documents-api.service";
 import { MatDialog } from "@angular/material/dialog";
@@ -11,7 +11,7 @@ import { DeleteDocumentDialogComponent } from "../add-delete-edit-document-dialo
   templateUrl: './document-list.component.html',
   //styleUrls: ['./document-list.component.css']
 })
-export class DocumentListComponent implements OnInit {
+export class DocumentListComponent implements OnInit, OnChanges {
 
   @Input() projectId!: number;
   documents: Document[] = [];
@@ -23,11 +23,22 @@ export class DocumentListComponent implements OnInit {
     this.loadDocuments();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['projectId'] && !changes['projectId'].firstChange) {
+      this.loadDocuments();
+    }
+  }
+
   loadDocuments() {
-    this.documentService.getDocumentsByProject(this.projectId)
-        .subscribe(documents => {
-          this.documents = documents;
-        });
+    if (this.projectId && !isNaN(this.projectId)) {
+      console.log('Loading documents for projectId:', this.projectId);  // Debug logging
+      this.documentService.getDocumentsByProject(this.projectId).subscribe(documents => {
+        this.documents = documents;
+        console.log('Documents loaded:', documents);  // Debug logging
+      });
+    } else {
+      console.error('Invalid Project ID:', this.projectId);
+    }
   }
 
   openAddDialog() {
@@ -83,10 +94,9 @@ export class DocumentListComponent implements OnInit {
   uploadFile(documentId: number, file: File) {
     const document = this.documents.find(doc => doc.id === documentId);
     if (document) {
-      this.documentService.uploadDocument(this.projectId, document, file)
-          .subscribe(() => {
-            this.loadDocuments();
-          });
+      this.documentService.uploadDocument(this.projectId, document, file).subscribe(() => {
+        this.loadDocuments();
+      });
     }
   }
 }
