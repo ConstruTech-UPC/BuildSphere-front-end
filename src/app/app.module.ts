@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {Input, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +21,9 @@ import { EditDocumentDialogComponent } from './document/component/add-delete-edi
 import { DeleteDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/delete-document-dialog/delete-document-dialog.component';
 import { AddDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/add-document-dialog/add-document-dialog.component';
 import {
-  MatCardSubtitle,
-  MatCardTitle
+    MatCardModule,
+    MatCardSubtitle,
+    MatCardTitle
 } from "@angular/material/card";
 import {
   MatCell,
@@ -96,6 +97,15 @@ import {ProjectFormComponent} from "./management/components/project-form/project
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 import {RouterOutlet} from "@angular/router";
+import { LoginComponent } from './authentication/components/login/login.component';
+import { SignupComponent } from './authentication/components/signup/signup.component';
+import { WelcomeComponent } from './authentication/components/welcome/welcome.component';
+import {InputTextModule} from "primeng/inputtext";
+import {CardModule} from "primeng/card";
+import {ButtonModule} from "primeng/button";
+import {ToastModule} from "primeng/toast";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -132,12 +142,16 @@ import {RouterOutlet} from "@angular/router";
     ProjectListComponent,
     ProjectCardComponent,
     ProjectFormComponent,
-    ProjectInformationManagementComponent
+    ProjectInformationManagementComponent,
+    LoginComponent,
+    SignupComponent,
+    WelcomeComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        InputTextModule,
         MatSidenavContainer,
         MatSidenav,
         MatSidenavContent,
@@ -176,11 +190,15 @@ import {RouterOutlet} from "@angular/router";
         MatDialogClose,
         MatCardSubtitle,
         MatCardTitle,
-        RouterOutlet
+        MatCardModule,
+        RouterOutlet,
+        CardModule,
+        InputTextModule,
+        ButtonModule,
+        ToastModule,
+        BrowserAnimationsModule
     ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [MessageService, provideAnimationsAsync('noop')],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

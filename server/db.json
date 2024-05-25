@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "roles": ["admin"]
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "password": "user123",
+      "roles": ["user"]
+    }
+  ],
   "projects": [
     {
       "id": 1,
@@ -19,6 +33,26 @@
       "expectedEndDate": "2024-12-31",
       "budget": "2000000",
       "urlImage": "https://www.google.com"
+    }
+  ],
+  "projectUsers": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "userId": 1,
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "userId": 2,
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "projectId": 2,
+      "userId": 2,
+      "role": "admin"
     }
   ],
   "documents": [

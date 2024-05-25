@@ -7,8 +7,16 @@ import { InventoryManagementComponent } from './inventory/pages/inventory-manage
 import {
   ProjectInformationManagementComponent
 } from "./public/components/project-information-management/project-information-management.component";
+import {WelcomeComponent} from "./authentication/components/welcome/welcome.component";
+import {LoginComponent} from "./authentication/components/login/login.component";
+import {SignupComponent} from "./authentication/components/signup/signup.component";
 
 const routes: Routes = [
+  {path: 'welcome', component: WelcomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: '',redirectTo: 'welcome', pathMatch: 'full'},
+    
   { path: '', component: ProjectInformationManagementComponent },
   { path: 'projects', component: ProjectInformationManagementComponent },
   {
@@ -18,6 +26,7 @@ const routes: Routes = [
       { path: 'inventory', component: InventoryManagementComponent }
     ]
   }
+
 ];
 
 @NgModule({
