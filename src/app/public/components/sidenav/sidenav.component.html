@@ -1,54 +1,29 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
-
-    <mat-toolbar>
-      <mat-toolbar-row>
-        <h1>Project Name</h1>
-      </mat-toolbar-row>
-    </mat-toolbar>
-
-    <mat-divider></mat-divider>
-    <mat-nav-list>
-      <mat-list-item>
-        <a mat-list-item routerLink="/inventory">
-          <mat-icon mat-list-icon>build</mat-icon>Resource Management
-        </a>
-      </mat-list-item>
-      <mat-list-item>
-        <a mat-list-item routerLink="/collaboration">
-          <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
-        </a>
-      </mat-list-item>
-      <mat-list-item>
-        <a mat-list-item routerLink="/documents">
-          <mat-icon mat-list-icon>file_copy</mat-icon>Documents
-        </a>
-      </mat-list-item>
-      <mat-list-item>
-        <a mat-list-item routerLink="/support">
-          <mat-icon mat-list-icon>help</mat-icon>Support & Help
-        </a>
-      </mat-list-item>
-      <mat-list-item>
-        <a mat-list-item routerLink="/projects">
-          <mat-icon mat-list-icon>settings</mat-icon>Projects
-        </a>
-      </mat-list-item>
-    </mat-nav-list>
-
-    <mat-divider></mat-divider>
-    <div class="user-profile">
-      <img src="./assets/images/BuildSphereLogo.png" alt="User Profile Picture" class="profile-picture">
-      <span class="username">ConstruTech</span>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <button mat-icon-button (click)="toggleSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-
-
-    <router-outlet></router-outlet>
-
-  </mat-sidenav-content>
+<mat-sidenav-container class="sidenav-container" *ngIf="selectedProject">
+    <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <h1>{{ selectedProject.name }}</h1>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'documents']">
+                <mat-icon mat-list-icon>file_copy</mat-icon>Documents
+            </a>
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'collaboration']">
+                <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
+            </a>
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'inventory']">
+                <mat-icon mat-list-icon>build</mat-icon>Resource Management
+            </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <div class="user-profile">
+            <img src="./assets/images/BuildSphereLogo.png" alt="User Profile Picture" class="profile-picture">
+            <span class="username">ConstruTech</span>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

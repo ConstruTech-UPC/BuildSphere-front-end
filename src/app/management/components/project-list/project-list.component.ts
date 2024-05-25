@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ProjectFormComponent } from '../project-form/project-form.component';
+import { Router } from '@angular/router';
 import { Project } from '../../model/project.entity';
 import { ProjectsService } from '../../services/projects.service';
+import { ProjectFormComponent } from '../project-form/project-form.component';
 
 @Component({
   selector: 'app-project-list',
@@ -12,7 +13,9 @@ import { ProjectsService } from '../../services/projects.service';
 export class ProjectListComponent implements OnInit {
   projects: Project[] = [];
 
-  constructor(private projectService: ProjectsService, private dialog: MatDialog) {}
+  @Output() projectSelect = new EventEmitter<number>();
+
+  constructor(private projectService: ProjectsService, private dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
     this.loadProjects();
@@ -22,29 +25,34 @@ export class ProjectListComponent implements OnInit {
     this.projectService.getProjects().subscribe({
       next: (projects) => {
         this.projects = projects;
-        this.updateProjectList(); // Actualiza la lista al cargar para garantizar la UI está sincronizada
       },
       error: (error) => console.error('There was an error!', error)
     });
   }
-  openCreateDialog(): void {
-    const dialogRef = this.dialog.open(ProjectFormComponent, {
-      width: '500px',
-      data: { project: null } // Inicia el diálogo sin un proyecto existente
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.projectService.createProject(result).subscribe({
-          next: (newProject) => {
-            this.projects.push(newProject); // Añade el proyecto nuevo a la lista
-            this.updateProjectList(); // Actualiza la lista para reflejar el cambio en la UI
-          },
-          error: (error) => console.error('Failed to create project', error)
-        });
-      }
-    });
+  onProjectClick(projectId: number) {
+    this.projectSelect.emit(projectId);
+    this.router.navigate(['/projects', projectId]); // Navigate to the project-specific route
   }
+
+  openCreateDialog(): void {
+  const dialogRef = this.dialog.open(ProjectFormComponent, {
+    width: '500px',
+    data: { project: null }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.projectService.createProject(result).subscribe({
+        next: (newProject) => {
+          this.projects.push(newProject);
+          this.loadProjects();
+        },
+        error: (error) => console.error('Failed to create project', error)
+      });
+    }
+  });
+}
 
   handleEdit(project: Project): void {
     const dialogRef = this.dialog.open(ProjectFormComponent, {
@@ -58,12 +66,11 @@ export class ProjectListComponent implements OnInit {
         if (index > -1) {
           this.projects[index] = updatedProject;
         } else {
-          this.projects.push(updatedProject);  // Si es un nuevo proyecto
+          this.projects.push(updatedProject);
         }
-        this.updateProjectList();  // Forzar actualización de la UI tras actualizar
+        this.loadProjects();
       }
     });
-
   }
 
   handleDelete(id: number): void {
@@ -71,14 +78,10 @@ export class ProjectListComponent implements OnInit {
       this.projectService.deleteProject(id).subscribe({
         next: () => {
           this.projects = this.projects.filter(p => p.id !== id);
-          this.updateProjectList(); // Forzar actualización de la UI tras eliminar
+          this.loadProjects();
         },
         error: err => console.error('Error deleting project', err)
       });
     }
-  }
-
-  updateProjectList(): void {
-    this.projects = [...this.projects]; // Reasignación para forzar la detección de cambios en Angular
   }
 }
