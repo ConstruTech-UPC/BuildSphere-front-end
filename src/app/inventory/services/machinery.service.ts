@@ -10,7 +10,7 @@ import {throwError, Observable, catchError, retry} from "rxjs";
 })
 
 export class MachineryService {
-  private basePath = 'http://localhost:3000';
+  private basePath = 'http://localhost:3000/api/v1';
 
   constructor(private http: HttpClient) { }
 
