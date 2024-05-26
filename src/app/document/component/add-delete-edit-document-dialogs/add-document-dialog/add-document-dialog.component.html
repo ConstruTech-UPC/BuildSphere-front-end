@@ -1,0 +1,25 @@
+<h2>Add new document</h2>
+
+<mat-form-field>
+    <input matInput placeholder="Document name" [(ngModel)]="document.name">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Description" [(ngModel)]="document.description">
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Created At" [(ngModel)]="document.createdAt">
+</mat-form-field>
+
+<div>
+    <!-- Hidden file input -->
+    <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+
+    <!-- Custom button to trigger file input click -->
+    <button mat-raised-button color="primary" (click)="fileInput.click()">Select File</button>
+    <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
+</div>
+
+<div>
+    <button mat-raised-button color="primary" (click)="addDocument()">Add</button>
+    <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+</div>

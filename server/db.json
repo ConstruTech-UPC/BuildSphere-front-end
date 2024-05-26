@@ -204,15 +204,6 @@
       "completionPercentage": 10
     },
     {
-      "id": 8,
-      "projectId": 1,
-      "taskName": "Nueva tarea",
-      "taskDescription": "Descripcion nueva tarea",
-      "startDate": "24-12-1",
-      "maxEndDate": "24-12-2",
-      "completionPercentage": 50
-    },
-    {
       "id": 5,
       "projectId": 2,
       "taskName": "Install plumbing",

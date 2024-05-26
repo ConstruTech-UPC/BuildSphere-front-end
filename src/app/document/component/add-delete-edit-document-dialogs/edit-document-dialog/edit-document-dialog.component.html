@@ -1,0 +1,16 @@
+<h2>Edit DocumentEntity</h2>
+
+<mat-form-field>
+  <input matInput placeholder="DocumentEntity name" [(ngModel)]="document.name">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Description" [(ngModel)]="document.description">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Created At" [(ngModel)]="document.createdAt">
+</mat-form-field>
+
+<div>
+  <button mat-raised-button color="primary" (click)="updateDocument()">Save</button>
+  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+</div>
