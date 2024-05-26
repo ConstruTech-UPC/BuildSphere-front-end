@@ -5,7 +5,11 @@
   <input matInput placeholder="Worker name" [(ngModel)]="worker.fullName">
 </mat-form-field>
 <mat-form-field>
-  <input matInput placeholder="Team Id" [(ngModel)]="worker.teamId">
+    <mat-select placeholder="Team" [(ngModel)]="worker.teamName">
+        <mat-option *ngFor="let team of teams" [value]="team.teamName">
+            {{ team.teamName }}
+        </mat-option>
+    </mat-select>
 </mat-form-field>
 <mat-form-field>
   <input matInput placeholder="Role" [(ngModel)]="worker.role">

@@ -99,6 +99,8 @@ import {RouterOutlet} from "@angular/router";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatHint} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -184,7 +186,9 @@ import {MatHint} from "@angular/material/form-field";
         MatDatepickerInput,
         MatDatepickerToggle,
         MatDatepicker,
-        MatHint
+        MatHint,
+        MatSelectModule,
+        MatMenuModule
     ],
   providers: [
     provideAnimationsAsync()

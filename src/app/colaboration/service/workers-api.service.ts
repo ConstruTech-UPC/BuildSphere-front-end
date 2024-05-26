@@ -49,6 +49,7 @@ export class WorkersService {
 
   updateWorker(workerId: number, worker: Worker): Observable<Worker> {
     worker.projectId = Number(worker.projectId);
+    worker.hoursWorked = Number(worker.hoursWorked);
 
     return this.http.put<Worker>(`${this.basePath}/workers/${workerId}`, worker)
       .pipe(

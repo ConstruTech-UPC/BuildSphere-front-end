@@ -3,6 +3,7 @@ import {Worker} from "../../../model/worker.entity";
 import {EditTaskDialogComponent} from "../../add-delete-edit-task-dialogs/edit-task-dialog/edit-task-dialog.component";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {WorkersService} from "../../../service/workers-api.service";
+import {TeamsService} from "../../../service/teams-api.service";
 
 @Component({
   selector: 'app-edit-worker-dialog',
@@ -12,11 +13,13 @@ import {WorkersService} from "../../../service/workers-api.service";
 export class EditWorkerDialogComponent implements OnInit {
 
   worker!: Worker;
+  teams: any[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { workerId: number },
-    private workersApiService: WorkersService
+    @Inject(MAT_DIALOG_DATA) public data: { workerId: number, projectId: number},
+    private workersApiService: WorkersService,
+    private teamsApiService: TeamsService
   ){ }
 
   ngOnInit(): void {
@@ -24,6 +27,7 @@ export class EditWorkerDialogComponent implements OnInit {
       .subscribe(worker =>{
         this.worker = worker;
       });
+    this.loadTeams()
   }
 
   updateWorker(){
@@ -31,5 +35,12 @@ export class EditWorkerDialogComponent implements OnInit {
       .subscribe(() => {
         this.dialogRef.close();
       })
+  }
+
+  loadTeams() {
+    this.teamsApiService.getTeamsByProject(this.data.projectId).subscribe(teams => {
+      this.teams = teams;
+    });
+
   }
 }

@@ -54,7 +54,7 @@ export class TeamsTableComponent implements OnInit {
       const dialogRef = this.dialog.open(EditTeamDialogComponent, {
         width: '500px',
         height: '400px',
-        data: {teamId: teamId}
+        data: {teamId: teamId, projectId: this.projectId}
       });
 
       dialogRef.afterClosed().subscribe(result => {

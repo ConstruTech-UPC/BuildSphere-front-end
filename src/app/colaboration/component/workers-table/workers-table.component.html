@@ -7,9 +7,9 @@
     <mat-header-cell *matHeaderCellDef> Worker name </mat-header-cell>
     <mat-cell *matCellDef="let worker"> {{ worker.fullName }} </mat-cell>
   </ng-container>
-  <ng-container matColumnDef="teamId">
-    <mat-header-cell *matHeaderCellDef> Team Id </mat-header-cell>
-    <mat-cell *matCellDef="let worker"> {{ worker.teamId }} </mat-cell>
+  <ng-container matColumnDef="teamName">
+    <mat-header-cell *matHeaderCellDef> Team name </mat-header-cell>
+    <mat-cell *matCellDef="let worker"> {{ worker.teamName }} </mat-cell>
   </ng-container>
   <ng-container matColumnDef="workerRole">
     <mat-header-cell *matHeaderCellDef> Worker Role </mat-header-cell>
@@ -33,8 +33,8 @@
     </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="['workerName', 'teamId', 'workerRole', 'hoursWorked','actions']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['workerName', 'teamId', 'workerRole', 'hoursWorked','actions'];"></mat-row>
+  <mat-header-row *matHeaderRowDef="['workerName', 'teamName', 'workerRole', 'hoursWorked','actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['workerName', 'teamName', 'workerRole', 'hoursWorked','actions'];"></mat-row>
 </mat-table>
 
 <mat-paginator [pageSizeOptions]="[5, 10, 20]"

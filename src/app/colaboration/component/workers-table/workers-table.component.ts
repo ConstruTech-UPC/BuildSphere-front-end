@@ -57,7 +57,7 @@ export class WorkersTableComponent implements OnInit {
     const dialogRef = this.dialog.open(EditWorkerDialogComponent, {
       width: '500px',
       height: '400px',
-      data: {workerId: workerId}
+      data: {workerId: workerId, projectId: this.projectId}
     });
 
     dialogRef.afterClosed().subscribe(result => {
