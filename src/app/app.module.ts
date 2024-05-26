@@ -96,6 +96,9 @@ import {ProjectFormComponent} from "./management/components/project-form/project
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 import {RouterOutlet} from "@angular/router";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatHint} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -176,7 +179,12 @@ import {RouterOutlet} from "@angular/router";
         MatDialogClose,
         MatCardSubtitle,
         MatCardTitle,
-        RouterOutlet
+        RouterOutlet,
+        MatPaginator,
+        MatDatepickerInput,
+        MatDatepickerToggle,
+        MatDatepicker,
+        MatHint
     ],
   providers: [
     provideAnimationsAsync()

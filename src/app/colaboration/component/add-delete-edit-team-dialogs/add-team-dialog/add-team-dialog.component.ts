@@ -22,6 +22,10 @@ export class AddTeamDialogComponent implements OnInit {
     this.team.projectId = this.data.projectId;
   }
 
+  convertAssignedTasks(tasks: string): number[] {
+    return tasks.split(',').map(task => +task.trim());
+  }
+
   addTeam(){
     this.teamsApiService.createTeam(this.team.projectId,this.team)
     .subscribe(() => {

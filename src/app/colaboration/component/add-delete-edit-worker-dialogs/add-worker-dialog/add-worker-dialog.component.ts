@@ -20,6 +20,7 @@ export class AddWorkerDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.worker.projectId = this.data.projectId;
   }
 

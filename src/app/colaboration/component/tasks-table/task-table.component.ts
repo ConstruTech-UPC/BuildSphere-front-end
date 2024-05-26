@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Task} from "../../model/task.entity";
 import {TasksService} from "../../service/tasks-api.service";
 import {NgForm} from "@angular/forms";
@@ -6,6 +6,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {AddTaskDialogComponent} from "../add-delete-edit-task-dialogs/add-task-dialog/add-task-dialog.component";
 import {EditTaskDialogComponent} from "../add-delete-edit-task-dialogs/edit-task-dialog/edit-task-dialog.component";
 import {DeleteTaskDialogComponent} from "../add-delete-edit-task-dialogs/delete-task-dialog/delete-task-dialog.component";
+import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-tasks-table',
@@ -15,9 +17,13 @@ import {DeleteTaskDialogComponent} from "../add-delete-edit-task-dialogs/delete-
 export class TaskTableComponent implements OnInit{
 
   @Input() projectId!: number;
-  tasks: Task[] = [];
+
+
+  dataSource: MatTableDataSource<Task> = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private dialog: MatDialog, private tasksApiService: TasksService) { }
+
 
   ngOnInit(): void {
     this.loadTasks();
@@ -26,12 +32,15 @@ export class TaskTableComponent implements OnInit{
   loadTasks() {
     this.tasksApiService.getTasksByProject(this.projectId)
       .subscribe(tasks => {
-        this.tasks = tasks;
+        this.dataSource.data = tasks;
+        this.dataSource.paginator = this.paginator;
       });
   }
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddTaskDialogComponent, {
+      width: '500px',
+      height: '400px',
       data: { projectId: this.projectId } // Pasamos el projectId al diálogo
     });
 
@@ -44,6 +53,8 @@ export class TaskTableComponent implements OnInit{
   openEditDialog(taskId: number): void {
     if (taskId) {
       const dialogRef = this.dialog.open(EditTaskDialogComponent, {
+        width: '500px',
+        height: '400px',
         data: {taskId: taskId}
       });
 
