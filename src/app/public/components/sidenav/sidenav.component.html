@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="selectedProject">
+    <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <h1>{{ selectedProject.name }}</h1>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'documents']">
+                <mat-icon mat-list-icon>file_copy</mat-icon>Documents
+            </a>
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'collaboration']">
+                <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
+            </a>
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'inventory']">
+                <mat-icon mat-list-icon>build</mat-icon>Resource Management
+            </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <div class="user-profile">
+            <img src="./assets/images/BuildSphereLogo.png" alt="User Profile Picture" class="profile-picture">
+            <span class="username">ConstruTech</span>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
