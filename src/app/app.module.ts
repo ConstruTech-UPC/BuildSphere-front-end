@@ -10,7 +10,7 @@ import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatDivider} from "@angular/material/divider";
 import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
-import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatFormField, MatHint, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatButton, MatIconButton} from "@angular/material/button";
@@ -106,6 +106,10 @@ import {ButtonModule} from "primeng/button";
 import {ToastModule} from "primeng/toast";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MessageService} from "primeng/api";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatOption, MatSelect} from "@angular/material/select";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -196,7 +200,17 @@ import {MessageService} from "primeng/api";
         InputTextModule,
         ButtonModule,
         ToastModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatDatepickerInput,
+        MatDatepickerToggle,
+        MatDatepicker,
+        MatSelect,
+        MatOption,
+        MatPaginator,
+        MatMenuTrigger,
+        MatMenu,
+        MatMenuItem,
+        MatHint
     ],
   providers: [MessageService, provideAnimationsAsync('noop')],
   bootstrap: [AppComponent]
