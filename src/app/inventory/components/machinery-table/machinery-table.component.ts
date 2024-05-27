@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Machine} from "../../model/machine.entity";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {MachineryService} from "../../services/machinery.service";
@@ -17,7 +17,8 @@ import {
   templateUrl: './machinery-table.component.html',
   styleUrl: './machinery-table.component.css'
 })
-export class MachineryTableComponent implements OnInit {
+
+export class MachineryTableComponent implements OnInit , OnChanges {
   @Input() projectId!: number;
   machinery: Machine[] = [];
 
@@ -27,9 +28,23 @@ export class MachineryTableComponent implements OnInit {
     this.loadMachinery();
   }
 
-  loadMachinery(){
-    this.machineryService.getMachinesByProject(this.projectId)
-      .subscribe(machinery => { this.machinery = machinery;});
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['projectId'] && !changes['projectId'].firstChange){
+      this.loadMachinery();
+    }
+  }
+
+  loadMachinery() {
+    if (this.projectId && !isNaN(this.projectId)) {
+        console.log('Loading machinery for projectId:', this.projectId);
+      this.machineryService.getMachinesByProject(this.projectId)
+          .subscribe(machinery => {
+            this.machinery = machinery;
+            console.log('Machinery loaded:', machinery);
+          });
+    } else {
+      console.error('Invalid projectId:', this.projectId)
+    }
   }
 
   openAddDialog(){

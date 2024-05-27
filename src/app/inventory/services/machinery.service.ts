@@ -10,7 +10,7 @@ import {throwError, Observable, catchError, retry} from "rxjs";
 })
 
 export class MachineryService {
-  private basePath = 'http://localhost:3000';
+  private basePath = 'http://localhost:3000/api/v1';
 
   constructor(private http: HttpClient) { }
 
@@ -28,18 +28,18 @@ export class MachineryService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  createMachine(projectId: number, machine: Machine): Observable<Machine> {
+  createMachine(projectId: number, machine: Machine) {
     machine.projectId = Number(machine.projectId);
     return this.http.post<Machine>(`${this.basePath}/projects/${projectId}/machines`, machine)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getMachineById(machineId: number): Observable<Machine> {
+  getMachineById(machineId: number){
     return this.http.get<Machine>(`${this.basePath}/machines/${machineId}`)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  updateMachine(machineId: number, machine: Machine): Observable<Machine> {
+  updateMachine(machineId: number, machine: Machine) {
     return this.http.put<Machine>(`${this.basePath}/machines/${machineId}`, machine)
       .pipe(retry(2), catchError(this.handleError));
   }

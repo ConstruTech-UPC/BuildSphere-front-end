@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Material} from "../../../model/material.entity";
 import {MaterialsService} from "../../../services/materials.service";
@@ -8,7 +8,7 @@ import {MaterialsService} from "../../../services/materials.service";
   templateUrl: './edit-material-dialog.component.html',
   styleUrl: './edit-material-dialog.component.css'
 })
-export class EditMaterialDialogComponent {
+export class EditMaterialDialogComponent implements OnInit {
   material!: Material; //waits for the edit
 
   constructor( public dialogRef: MatDialogRef<EditMaterialDialogComponent>,

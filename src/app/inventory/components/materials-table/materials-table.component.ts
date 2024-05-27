@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 import {MatDialog} from "@angular/material/dialog";
 import {Material} from "../../model/material.entity";
@@ -18,7 +18,7 @@ import {
   templateUrl: './materials-table.component.html',
   styleUrl: './materials-table.component.css'
 })
-export class MaterialsTableComponent implements OnInit {
+export class MaterialsTableComponent implements OnInit, OnChanges {
   @Input() projectId!: number;
   materials: Material[] = [];
 
@@ -28,8 +28,23 @@ export class MaterialsTableComponent implements OnInit {
     this.loadMaterials();
   }
 
-  loadMaterials(){
-    this.materialsService.getMaterialsByProject(this.projectId).subscribe(materials => {this.materials = materials;});
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['projectId'] && !changes['projectId'].firstChange) {
+      this.loadMaterials();
+    }
+  }
+
+  loadMaterials() {
+    if (this.projectId && !isNaN(this.projectId)) {
+      console.log('Loading materials for projectId: ', this.projectId);
+      this.materialsService.getMaterialsByProject(this.projectId)
+          .subscribe(materials => {
+            this.materials = materials;
+            console.log('Materials loaded: ', materials);
+          });
+    } else {
+      console.error('Invalid projectId: ', this.projectId);
+    }
   }
 
   openAddDialog(){
