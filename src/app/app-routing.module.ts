@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'inventory', component: InventoryManagementComponent }
     ]
   }
-
+  
 ];
 
 @NgModule({
