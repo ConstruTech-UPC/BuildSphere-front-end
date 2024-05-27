@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 
 
@@ -11,11 +12,21 @@ export class CollaborationManagementComponent implements OnInit {
 
   projectId!: number;
 
-  constructor(){}
+  constructor(private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    // Lógica para obtener o establecer projectId
-    this.projectId = 1;
+    if (this.route.parent) {
+      this.route.parent.params.subscribe(params => {
+        this.projectId = +params['projectId'];
+        if (!isNaN(this.projectId)) {
+          console.log('Project ID in Collaboration:', this.projectId);  // Debug logging to verify projectId
+        } else {
+          console.error('Invalid Project ID:', params['projectId']);
+        }
+      });
+    } else {
+      console.error('No parent route found.');
+    }
   }
 
 }

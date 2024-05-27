@@ -7,7 +7,10 @@
   <input matInput placeholder="Team Description" [(ngModel)]="team.description">
 </mat-form-field>
 <mat-form-field>
-  <input matInput placeholder="Team assigned tasks" [(ngModel)]="team.assignedTasks">
+    <mat-label>Assigned tasks</mat-label>
+    <mat-select placeholder="Assigned tasks" [(ngModel)]="team.assignedTasks" multiple>
+        <mat-option *ngFor="let task of tasks" [value]="task.taskName">{{ task.taskName }}</mat-option>
+    </mat-select>
 </mat-form-field>
 
 <div>

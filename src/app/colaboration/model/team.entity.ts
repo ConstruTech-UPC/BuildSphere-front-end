@@ -4,7 +4,7 @@ export class Team {
   projectId: number;
   teamName: string;
   description: string;
-  assignedTasks: number[];
+  assignedTasks: string[];
 
   constructor() {
     this.id = 0;

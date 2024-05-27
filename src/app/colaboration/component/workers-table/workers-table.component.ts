@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {WorkersService} from "../../service/workers-api.service";
 import {Worker} from "../../model/worker.entity";
@@ -9,6 +9,8 @@ import {
 import {
   EditWorkerDialogComponent
 } from "../add-delete-edit-worker-dialogs/edit-worker-dialog/edit-worker-dialog.component";
+import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-workers-table',
@@ -20,6 +22,10 @@ export class WorkersTableComponent implements OnInit {
   @Input() projectId!: number;
   workers: Worker[] = [];
 
+
+  dataSource: MatTableDataSource<Worker> = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private dialog: MatDialog, private workerService: WorkersService) { }
 
   ngOnInit(): void {
@@ -29,12 +35,15 @@ export class WorkersTableComponent implements OnInit {
   loadWorkers(): void {
     this.workerService.getWorkerByProject(this.projectId)
       .subscribe(workers =>{
-        this.workers = workers;
+        this.dataSource.data = workers;
+        this.dataSource.paginator = this.paginator;
       });
   }
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddWorkerDialogComponent, {
+      width: '500px',
+      height: '400px',
       data: {projectId: this.projectId}
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -46,7 +55,9 @@ export class WorkersTableComponent implements OnInit {
   openEditDialog(workerId: number): void {
   if (workerId) {
     const dialogRef = this.dialog.open(EditWorkerDialogComponent, {
-      data: {workerId: workerId}
+      width: '500px',
+      height: '400px',
+      data: {workerId: workerId, projectId: this.projectId}
     });
 
     dialogRef.afterClosed().subscribe(result => {

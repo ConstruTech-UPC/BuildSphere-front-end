@@ -3,10 +3,13 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {TasksService} from "../../../service/tasks-api.service";
 import {Task} from "../../../model/task.entity";
 
+import {provideNativeDateAdapter} from '@angular/material/core';
+
 @Component({
   selector: 'app-add-task-dialog',
   templateUrl: './add-task-dialog.component.html',
-  styleUrl: './add-task-dialog.component.css'
+  styleUrl: './add-task-dialog.component.css',
+  providers: [provideNativeDateAdapter()],
 })
 export class AddTaskDialogComponent implements OnInit{
 
