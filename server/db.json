@@ -48,12 +48,6 @@
     },
     {
       "id": 2,
-      "projectId": 1,
-      "userId": 2,
-      "role": "user"
-    },
-    {
-      "id": 3,
       "projectId": 2,
       "userId": 2,
       "role": "admin"
@@ -234,7 +228,7 @@
     },
     {
       "id": 7,
-      "projectId": 1,
+      "projectId": 2,
       "taskName": "Tarea prueba 2",
       "taskDescription": "Descripcion de la tarea de prueba 2",
       "startDate": "24-10-10",
@@ -243,7 +237,7 @@
     },
     {
       "id": 8,
-      "projectId": 1,
+      "projectId": 2,
       "taskName": "Nueva tarea",
       "taskDescription": "Descripcion nueva tarea",
       "startDate": "24-12-1",
