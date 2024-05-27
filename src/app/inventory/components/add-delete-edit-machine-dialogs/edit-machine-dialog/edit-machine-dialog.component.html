@@ -1,22 +1,40 @@
+<div class="edit-dialog-machine">
+    <div mat-dialog-content>
 <h1> Edit machine's data </h1>
-
+        <div class="form-group-edit-machine">
+<p>Machine Name</p>
 <mat-form-field>
   <input matInput placeholder="Machine name" [(ngModel)]="machine.machineName">
 </mat-form-field>
+</div>
+<div class="form-group-edit-machine">
+<p>Description</p>
 <mat-form-field>
   <input matInput placeholder="Description" [(ngModel)]="machine.description">
 </mat-form-field>
+</div>
+<div class="form-group-edit-machine">
+<p>Reception Date</p>
 <mat-form-field>
   <input matInput placeholder="Reception Date" [(ngModel)]="machine.receptionDate">
 </mat-form-field>
+</div>
+<div class="form-group-edit-machine">
+<p>End Date</p>
 <mat-form-field>
   <input matInput placeholder="End Date" [(ngModel)]="machine.endDate">
 </mat-form-field>
+</div>
+<div class="form-group-edit-machine">
+<p>Total Cost</p>
 <mat-form-field>
   <input matInput placeholder="Total Cost" [(ngModel)]="machine.totalCost">
 </mat-form-field>
+</div>
 
-<div>
-  <button mat-raised-button color="primary" (click)="updateMachine()">Update</button>
-  <button mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>
+<div class="btn-container-machine-edit">
+  <button mat-raised-button class="btn-edit-machine" (click)="updateMachine()">Update</button>
+  <button mat-raised-button color="warn" class="btn-cancel-machine-edit" (click)="dialogRef.close()">Cancel</button>
+</div>
+    </div>
 </div>
