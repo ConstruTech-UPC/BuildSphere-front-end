@@ -4,18 +4,24 @@
     font-family: Roboto, sans-serif;
     background-color: #B79A72;
     color: #F7F4F3;
-    width: 100%;
-    max-width: 500px;
+    width: 800px;
+    max-width: 40vw;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
-    padding: 11px 40px;
+    text-align: left;
+    padding: 20px;
     margin: 0 auto;
     white-space: none;
-    height: 50%;
+    height: 1000px;
     font-weight: 500;
 
+}
+
+.mat-dialog-content {
+    background-color: #B79A72;
 }
 
 p {
@@ -25,6 +31,20 @@ p {
     color: black;
     margin: 0.5px 0.5px 0.5px 0;
     font-weight: 500;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #F7F4F3;
+    margin: 0 0 20px 0;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #B79A72;
 }
 
 .btn-cancel-machine {
@@ -48,3 +68,10 @@ p {
     justify-content: center;
 }
 
+.btn-container-machine {
+    background-color: #B79A72;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
