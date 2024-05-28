@@ -1,2 +1,25 @@
+<div class="inventory-management">
+<h1>Inventory Management</h1>
+<div class="table-management">
 <app-machinery-table [projectId]="projectId"></app-machinery-table>
 <app-materials-table [projectId]="projectId"></app-materials-table>
+</div>
+<div class="budget-project">
+    <table>
+        <tr>
+        <td class="budget-td">Assigned budget: </td>
+        <td class="budget-box">{{project.budget | currency }}</td>
+        </tr>
+        <tr>
+        <td class="budget-td">Current state of costs: </td>
+        <td class="budget-box">{{totalMachineryCost + totalMaterialCost | currency }}</td>
+        </tr>
+        <tr>
+        <td class="budget-td">Current budget status: </td>
+        <td class="budget-box">{{remainingBudget | currency }}</td>
+        </tr>
+    </table>
+
+</div>
+
+</div>

@@ -1,0 +1,73 @@
+.inventory-management {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 65vw;
+    max-height: 100vh;
+    margin-left: 20px;
+    margin-right: 90px;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.table-management {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #B79A72;
+}
+
+h1 {
+    color: black;
+    font-size: 2em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+td {
+    color: black;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.budget-project {
+    height: 100%;
+    width: 100%;
+    color: black;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #B79A72;
+
+
+}
+
+.budget-box {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.budget-box table {
+    width: 100%;
+}
+
+.budget-td {
+    padding-right: 90px;
+    font-weight: 500;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
