@@ -1,18 +1,25 @@
-<h2>Edit Document</h2>
+<div class="dialog-container">
 
-<mat-form-field>
-  <input matInput placeholder="DocumentEntity name" [(ngModel)]="document.name">
-</mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="Description" [(ngModel)]="document.description">
-</mat-form-field>
-<mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Created At" [(ngModel)]="document.createdAt">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+    <h2 class="dialog-title">Edit Document</h2>
 
-<div>
-  <button mat-raised-button color="primary" (click)="updateDocument()">Save</button>
-  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+    <div class="form-container">
+        <mat-form-field>
+            <input matInput placeholder="DocumentEntity name" [(ngModel)]="document.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" [(ngModel)]="document.description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Created At" [(ngModel)]="document.createdAt">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="button-container">
+        <div>
+          <button mat-raised-button class="secondary-button" (click)="dialogRef.close()">Cancel</button>
+          <button mat-raised-button class="primary-button" (click)="updateDocument()">Save</button>
+        </div>
+    </div>
 </div>
