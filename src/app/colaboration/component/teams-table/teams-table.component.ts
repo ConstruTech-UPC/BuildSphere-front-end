@@ -37,8 +37,6 @@ export class TeamsTableComponent implements OnInit {
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddTeamDialogComponent,{
-      width: '500px',
-      height: '400px',
       data: {projectId: this.projectId}
     });
 
@@ -52,8 +50,6 @@ export class TeamsTableComponent implements OnInit {
 
     if(teamId) {
       const dialogRef = this.dialog.open(EditTeamDialogComponent, {
-        width: '500px',
-        height: '400px',
         data: {teamId: teamId, projectId: this.projectId}
       });
 

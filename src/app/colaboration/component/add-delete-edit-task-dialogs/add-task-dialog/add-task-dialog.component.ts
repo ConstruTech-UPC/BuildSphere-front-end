@@ -17,12 +17,12 @@ export class AddTaskDialogComponent implements OnInit{
 
   constructor(
     public dialogRef: MatDialogRef<AddTaskDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { projectId: number }, // Recibimos el projectId como dato
+    @Inject(MAT_DIALOG_DATA) public data: { projectId: number },
     private tasksApiService: TasksService
   ) { }
 
   ngOnInit(): void {
-    this.task.projectId = this.data.projectId; // Asignamos el projectId a la tarea
+    this.task.projectId = this.data.projectId;
   }
 
   addTask() {

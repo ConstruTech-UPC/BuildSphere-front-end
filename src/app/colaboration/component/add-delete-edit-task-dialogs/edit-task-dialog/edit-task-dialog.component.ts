@@ -2,11 +2,13 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {TasksService} from "../../../service/tasks-api.service";
 import {Task} from "../../../model/task.entity";
+import {provideNativeDateAdapter} from "@angular/material/core";
 
 @Component({
   selector: 'app-edit-task-dialog',
   templateUrl: './edit-task-dialog.component.html',
-  styleUrl: './edit-task-dialog.component.css'
+  styleUrl: './edit-task-dialog.component.css',
+  providers: [provideNativeDateAdapter()],
 })
 export class EditTaskDialogComponent implements OnInit{
 

@@ -1,0 +1,65 @@
+.edit-dialog-worker {
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    background-color: #B79A72;
+    color: #F7F4F3;
+    width: 800px;
+    max-width: 40vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
+    white-space: none;
+    height: 500px;
+    font-weight: 500;
+}
+.mat-dialog-content {
+    background-color: #B79A72;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #F7F4F3;
+    margin: 0 0 20px 0;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #B79A72;
+}
+
+.btn-cancel-worker {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-add-worker {
+    border-radius: 5px;
+    color: white;
+    background-color: #FBC12E;
+    padding: 5px 10px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    justify-content: center;
+}
+.btn-container-worker {
+    background-color: #B79A72;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}

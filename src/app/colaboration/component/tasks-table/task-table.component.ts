@@ -39,8 +39,6 @@ export class TaskTableComponent implements OnInit{
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddTaskDialogComponent, {
-      width: '500px',
-      height: '400px',
       data: { projectId: this.projectId } // Pasamos el projectId al diálogo
     });
 
@@ -53,8 +51,6 @@ export class TaskTableComponent implements OnInit{
   openEditDialog(taskId: number): void {
     if (taskId) {
       const dialogRef = this.dialog.open(EditTaskDialogComponent, {
-        width: '500px',
-        height: '400px',
         data: {taskId: taskId}
       });
 
@@ -71,7 +67,6 @@ export class TaskTableComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Actualizar las tareas después de cerrar el diálogo
       this.loadTasks();
     });
   }

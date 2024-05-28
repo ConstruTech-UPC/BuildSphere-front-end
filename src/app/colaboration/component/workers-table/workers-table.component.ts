@@ -42,8 +42,6 @@ export class WorkersTableComponent implements OnInit {
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddWorkerDialogComponent, {
-      width: '500px',
-      height: '400px',
       data: {projectId: this.projectId}
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -55,8 +53,6 @@ export class WorkersTableComponent implements OnInit {
   openEditDialog(workerId: number): void {
   if (workerId) {
     const dialogRef = this.dialog.open(EditWorkerDialogComponent, {
-      width: '500px',
-      height: '400px',
       data: {workerId: workerId, projectId: this.projectId}
     });
 
