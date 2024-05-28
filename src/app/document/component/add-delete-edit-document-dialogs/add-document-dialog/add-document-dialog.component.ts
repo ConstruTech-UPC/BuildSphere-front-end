@@ -32,6 +32,10 @@ export class AddDocumentDialogComponent implements OnInit {
   }
 
   addDocument() {
+    if (!this.document.name || !this.document.description || !this.document.createdAt) {
+      return; // Do not proceed if any required field is missing
+    }
+
     if (this.selectedFile) {
       this.documentService.uploadDocument(this.document.projectId, this.document, this.selectedFile)
           .subscribe(() => {

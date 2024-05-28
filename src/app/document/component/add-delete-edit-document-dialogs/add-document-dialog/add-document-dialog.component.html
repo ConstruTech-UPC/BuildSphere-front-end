@@ -1,27 +1,31 @@
-<h2>Add new document</h2>
+<div class="dialog-container">
+    <h2 class="dialog-title">Add new document</h2>
 
-<mat-form-field>
-    <input matInput placeholder="Document name" [(ngModel)]="document.name">
-</mat-form-field>
-<mat-form-field>
-    <input matInput placeholder="Description" [(ngModel)]="document.description">
-</mat-form-field>
-<mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Created At" [(ngModel)]="document.createdAt">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+    <form class="form-container" #documentForm="ngForm">
+        <mat-form-field>
+            <input matInput placeholder="Document name" [(ngModel)]="document.name" name="name" required>
+            <mat-error *ngIf="documentForm.controls['name']?.invalid">Document name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" [(ngModel)]="document.description" name="description" required>
+            <mat-error *ngIf="documentForm.controls['description']?.invalid">Description is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Created At" [(ngModel)]="document.createdAt" name="createdAt" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="documentForm.controls['createdAt']?.invalid">Date is required</mat-error>
+        </mat-form-field>
+    </form>
 
-<div>
-    <!-- Hidden file input -->
-    <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+    <div class="file-input-container">
+        <button mat-raised-button class="primary-button" (click)="fileInput.click()">Select File</button>
+        <input type="file" #fileInput (change)="onFileSelected($event)" hidden>
+        <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
+    </div>
 
-    <!-- Custom button to trigger file input click -->
-    <button mat-raised-button color="primary" (click)="fileInput.click()">Select File</button>
-    <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
-</div>
-
-<div>
-    <button mat-raised-button color="primary" (click)="addDocument()">Add</button>
-    <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+    <div class="button-container">
+        <button mat-raised-button class="secondary-button" (click)="dialogRef.close()">Cancel</button>
+        <button mat-raised-button class="primary-button" (click)="addDocument()" [disabled]="!documentForm.valid">Add</button>
+    </div>
 </div>
