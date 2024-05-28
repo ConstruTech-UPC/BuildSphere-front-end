@@ -25,22 +25,22 @@
     {
       "id": 1,
       "projectId": 1,
-      "name": "PROJECT 1",
-      "description": "Description 1",
+      "name": "Architectural Plans",
+      "description": "Plans for the construction of the building",
       "createdAt": "2015-01-01T00:00:00Z"
     },
     {
       "id": 2,
       "projectId": 1,
-      "name": "PROJECT 1",
-      "description": "Description 2",
-      "createdAt": "2015-01-01T00:00:00Z"
+      "name": "Building Permits",
+      "description": "Permits for the construction of the building",
+      "createdAt": "2016-01-01T00:00:00Z"
     },
     {
       "id": 3,
       "projectId": 1,
-      "name": "PROJECT 1",
-      "description": "Description 3",
+      "name": "Construction Contracts",
+      "description": "Contracts for the construction of the building",
       "createdAt": "2015-01-03T00:00:00Z"
     },
     {

@@ -1,0 +1,26 @@
+/* document-list.component.css */
+.mat-table {
+    width: 100%; /* Ensure table fills available space */
+    border-collapse: collapse; /* Remove default table borders */
+}
+
+.mat-header-row, .mat-row {
+    border-bottom: 1px solid #e0e0e0; /* Add subtle row separators */
+}
+
+.mat-header-cell, .mat-cell {
+    padding: 16px 8px; /* Consistent padding for readability */
+    font-size: 14px; /* Adjust font size for clarity */
+}
+
+.mat-header-cell {
+    font-weight: bold; /* Distinguish headers visually */
+}
+
+.mat-cell button {
+    margin-right: 4px; /* Space buttons for better interaction */
+}
+
+.mat-raised-button {
+    margin-top: 16px; /* Add space between table and button */
+}
