@@ -97,6 +97,8 @@ import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from
 import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 import {RouterOutlet} from "@angular/router";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -179,9 +181,14 @@ import {MatSort, MatSortHeader} from "@angular/material/sort";
         MatCardTitle,
         RouterOutlet,
         MatSortHeader,
-        MatSort
+        MatSort,
+        MatDatepickerToggle,
+        MatDatepicker,
+        MatDatepickerInput,
+        MatNativeDateModule
     ],
   providers: [
+
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

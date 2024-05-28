@@ -7,7 +7,9 @@
     <input matInput placeholder="Description" [(ngModel)]="document.description">
 </mat-form-field>
 <mat-form-field>
-    <input matInput placeholder="Created At" [(ngModel)]="document.createdAt">
+    <input matInput [matDatepicker]="picker" placeholder="Created At" [(ngModel)]="document.createdAt">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
 <div>

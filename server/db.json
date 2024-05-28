@@ -63,6 +63,16 @@
       "name": "PROJECT 2",
       "description": "Description 6",
       "createdAt": "2015-01-06T00:00:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Direction of providers",
+      "description": "Direction for all providers of the project",
+      "createdAt": "2024-06-04T05:00:00.000Z",
+      "projectId": "1",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     }
   ],
   "workers": [

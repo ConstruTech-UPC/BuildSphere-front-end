@@ -21,6 +21,7 @@ export class AddDocumentDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.document.projectId = this.data.projectId;
+    this.document.createdAt = new Date(); // Set current date as default
   }
 
   onFileSelected(event: Event) {
