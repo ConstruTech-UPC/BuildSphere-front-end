@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {Machine} from "../../model/machine.entity";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {MachineryService} from "../../services/machinery.service";
@@ -11,6 +11,8 @@ import {
 import {
   DeleteMachineDialogComponent
 } from "../add-delete-edit-machine-dialogs/delete-machine-dialog/delete-machine-dialog.component";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-machinery-table',
@@ -21,6 +23,8 @@ import {
 export class MachineryTableComponent implements OnInit , OnChanges {
   @Input() projectId!: number;
   machinery: Machine[] = [];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  dataSource: MatTableDataSource<Machine> = new MatTableDataSource();
 
   constructor(private dialog:MatDialog, private machineryService: MachineryService) { }
 
@@ -40,6 +44,7 @@ export class MachineryTableComponent implements OnInit , OnChanges {
       this.machineryService.getMachinesByProject(this.projectId)
           .subscribe(machinery => {
             this.machinery = machinery;
+            this.dataSource.paginator = this.paginator;
             console.log('Machinery loaded:', machinery);
           });
     } else {
