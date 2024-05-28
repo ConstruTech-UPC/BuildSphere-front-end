@@ -48,7 +48,9 @@
   <mat-row *matRowDef="let row; columns: ['materialName', 'materialDescription', 'materialReceptionDate', 'materialStatus', 'materialAmount', 'materialTotalCost','actions'];"></mat-row>
 </mat-table>
 
-<div>
+<mat-paginator class="paginator-mat" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select a page of the material table"/>
 
-  <button mat-raised-button color="primary" (click)="openAddDialog()">Add Material</button>
+<div class="btn-container-mat">
+
+  <button mat-raised-button class="btn-add-mat" (click)="openAddDialog()">Add Material</button>
 </div>
