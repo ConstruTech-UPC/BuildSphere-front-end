@@ -1,26 +1,23 @@
-/* document-list.component.css */
-.mat-table {
-    width: 100%; /* Ensure table fills available space */
-    border-collapse: collapse; /* Remove default table borders */
+.list-container{
+    padding: 20px;
 }
 
-.mat-header-row, .mat-row {
-    border-bottom: 1px solid #e0e0e0; /* Add subtle row separators */
+.list-title {
+    margin-bottom: 20px;
+    font-size: 40px;
 }
 
-.mat-header-cell, .mat-cell {
-    padding: 16px 8px; /* Consistent padding for readability */
-    font-size: 14px; /* Adjust font size for clarity */
+.table-container {
+    margin: 20px;
+    background-color: #B79A72;
 }
 
-.mat-header-cell {
-    font-weight: bold; /* Distinguish headers visually */
+.table-field {
+    padding: 50px;
 }
 
-.mat-cell button {
-    margin-right: 4px; /* Space buttons for better interaction */
-}
-
-.mat-raised-button {
-    margin-top: 16px; /* Add space between table and button */
+.add-button {
+    margin: 20px;
+    background-color: #192829; /* Customize this color as needed */
+    color: white;
 }
