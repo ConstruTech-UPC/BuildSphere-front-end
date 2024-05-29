@@ -112,6 +112,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatNativeDateModule} from "@angular/material/core";
+import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -216,7 +217,9 @@ import {MatNativeDateModule} from "@angular/material/core";
         MatError,
         MatSort,
         MatSortHeader,
-        MatNativeDateModule
+        MatNativeDateModule,
+        MatGridList,
+        MatGridListModule
     ],
   providers: [MessageService, provideAnimationsAsync('noop')],
   bootstrap: [AppComponent]
