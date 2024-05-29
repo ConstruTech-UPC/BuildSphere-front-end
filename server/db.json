@@ -55,8 +55,8 @@
     {
       "id": 4,
       "projectId": 2,
-      "name": "PROJECT 2",
-      "description": "Description 4",
+      "name": "Construction Contracts with providers",
+      "description": "This document contains the contracts with the providers of the project",
       "createdAt": "2015-01-04T00:00:00Z",
       "fileName": "",
       "fileType": "",
@@ -65,8 +65,8 @@
     {
       "id": 5,
       "projectId": 2,
-      "name": "PROJECT 2",
-      "description": "Description 5",
+      "name": "Contracts of workers",
+      "description": "The contract is able to be signed by the workers",
       "createdAt": "2015-01-05T00:00:00Z",
       "fileName": "",
       "fileType": "",
@@ -75,8 +75,8 @@
     {
       "id": 6,
       "projectId": 2,
-      "name": "PROJECT 2",
-      "description": "Description 6",
+      "name": "Order contract of materials",
+      "description": "The order contract of steels for the project",
       "createdAt": "2015-01-06T00:00:00Z",
       "fileName": "",
       "fileType": "",
