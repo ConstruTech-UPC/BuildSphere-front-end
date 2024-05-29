@@ -14,6 +14,21 @@
     padding: 50px;
 }
 
+.button-container {
+    background-color: #B79A72;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
 .add-button {
-    margin: 0 0 50px 50px;
+    border-radius: 5px !important;
+    color: white !important;
+    background-color: #FBC12E !important;
+    margin: 0 0 50px 50px !important;
+    cursor: pointer !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    justify-content: center !important;
 }
