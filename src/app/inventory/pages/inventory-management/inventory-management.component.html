@@ -8,15 +8,15 @@
     <table>
         <tr>
         <td class="budget-td">Assigned budget: </td>
-        <td class="budget-box">{{project.budget | currency }}</td>
+        <td class="budget-box" *appRechargeDirectives="project.budget">{{project.budget | currency }}</td>
         </tr>
         <tr>
         <td class="budget-td">Current state of costs: </td>
-        <td class="budget-box">{{ totalInventoryCost | currency }}</td>
+        <td class="budget-box" *appRechargeDirectives="totalInventoryCost">{{ totalInventoryCost | currency }}</td>
         </tr>
         <tr>
         <td class="budget-td">Current budget status: </td>
-        <td class="budget-box">{{remainingBudget | currency }}</td>
+        <td class="budget-box" *appRechargeDirectives="remainingBudget">{{remainingBudget | currency }}</td>
         </tr>
     </table>
 

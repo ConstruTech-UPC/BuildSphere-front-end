@@ -99,6 +99,7 @@ import {RouterOutlet} from "@angular/router";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {RechargeDirectives} from "./shared/directives/recharge-directives";
 
 @NgModule({
     declarations: [
@@ -184,7 +185,8 @@ import {MatNativeDateModule} from "@angular/material/core";
         MatNativeDateModule,
         MatDatepickerInput,
         MatDatepickerToggle,
-        MatDatepicker
+        MatDatepicker,
+        RechargeDirectives
     ],
   providers: [
     provideAnimationsAsync()

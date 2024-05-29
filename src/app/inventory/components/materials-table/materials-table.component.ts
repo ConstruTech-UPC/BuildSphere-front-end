@@ -58,7 +58,9 @@ export class MaterialsTableComponent implements OnInit, OnChanges {
 
     dialogRef.afterClosed()
       .subscribe(result => { console.log(`Dialog result: ${result}`);
-        this.loadMaterials();});
+        this.loadMaterials();
+        window.location.reload();
+      });
   }
 
   openEditDialog(materialId: number): void {
@@ -69,6 +71,8 @@ export class MaterialsTableComponent implements OnInit, OnChanges {
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
         this.loadMaterials();
+        window.location.reload();
+
       })
     }
   }
@@ -78,6 +82,7 @@ export class MaterialsTableComponent implements OnInit, OnChanges {
       { data: {materialId: materialId}});
 
     dialogRef.afterClosed().subscribe(result => {
-      this.loadMaterials();});
+      this.loadMaterials();
+      window.location.reload();});
   }
 }
