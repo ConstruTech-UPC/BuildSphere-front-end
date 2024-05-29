@@ -1,22 +1,26 @@
+.table-container {
+  background-color: #B79A72;
+}
+.table-field {
+  padding: 40px;
+}
+.list-title {
 
-.mat-table {
-  width: 100%; /* Haz que la tabla ocupe el 100% del contenedor */
-  max-width: 900px; /* Fija un ancho máximo para la tabla */
-  margin: 0 auto; /* Centra la tabla horizontalmente */
-  overflow-x: auto; /* Añade scroll horizontal si la tabla es demasiado ancha */
+  margin-bottom: 20px;
 }
 
-/* Estilo para las celdas */
-.mat-cell, .mat-header-cell {
-  padding: 10px; /* Añade un espacio interno a las celdas */
+.button-container {
+  background-color: #B79A72;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
-
-/* Estilo para los botones de acción */
-.mat-icon-button {
-  margin: 0 5px; /* Añade un pequeño margen a los botones de acción */
-}
-
-/* Estilo para el botón "Add worker" */
-.add-worker-button {
-  margin-top: 20px; /* Añade un margen superior al botón "Add worker" */
+.add-button {
+  color: white !important;
+  background-color: #FBC12E !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  justify-content: center !important;
 }

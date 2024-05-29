@@ -1,53 +1,60 @@
 
 
-<h2>Tasks Project</h2>
+<h2 class="list-title">Tasks Project</h2>
 
-<mat-table [dataSource]="dataSource">
+<div class="table-container">
+    <div class="table-field">
 
-  <ng-container matColumnDef="taskName">
-    <mat-header-cell *matHeaderCellDef> Task name </mat-header-cell>
-    <mat-cell *matCellDef="let task"> {{ task.taskName }} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="taskDescription">
-    <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-    <mat-cell *matCellDef="let task"> {{ task.taskDescription }} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="startDate">
-    <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
-    <mat-cell *matCellDef="let task"> {{ task.startDate }} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="maxEndDate">
-    <mat-header-cell *matHeaderCellDef> Max end date </mat-header-cell>
-    <mat-cell *matCellDef="let task"> {{ task.maxEndDate }} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="completion">
-    <mat-header-cell *matHeaderCellDef> Completion Percentage </mat-header-cell>
-    <mat-cell *matCellDef="let task"> {{ task.completionPercentage }} % </mat-cell>
-  </ng-container>
-  <!-- Columna de acciones -->
-  <ng-container matColumnDef="actions">
-    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-    <mat-cell *matCellDef="let task">
-      <button mat-icon-button (click)="openEditDialog(task.id)">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button mat-icon-button (click)="openDeleteDialog(task.id)">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </mat-cell>
-  </ng-container>
+        <mat-table [dataSource]="dataSource">
 
-  <mat-header-row *matHeaderRowDef="['taskName', 'taskDescription', 'startDate', 'maxEndDate', 'completion','actions']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['taskName', 'taskDescription', 'startDate', 'maxEndDate', 'completion','actions'];"></mat-row>
-</mat-table>
+            <ng-container matColumnDef="taskName">
+                <mat-header-cell *matHeaderCellDef> Task name </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{ task.taskName }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="taskDescription">
+                <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{ task.taskDescription }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="startDate">
+                <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{ task.startDate }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="maxEndDate">
+                <mat-header-cell *matHeaderCellDef> Max end date </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{ task.maxEndDate }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="completion">
+                <mat-header-cell *matHeaderCellDef> Completion Percentage </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{ task.completionPercentage }} % </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let task">
+                    <button mat-icon-button (click)="openEditDialog(task.id)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="openDeleteDialog(task.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="['taskName', 'taskDescription', 'startDate', 'maxEndDate', 'completion','actions']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['taskName', 'taskDescription', 'startDate', 'maxEndDate', 'completion','actions'];"></mat-row>
+        </mat-table>
 
 
-<mat-paginator [pageSizeOptions]="[5, 10, 20]"
-               showFirstLastButtons
-               aria-label="Select page of periodic elements">
-</mat-paginator>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
 
-<div>
-  <!-- Botones de acciones -->
-  <button mat-raised-button color="primary" (click)="openAddDialog()">Add task</button>
+        <div class="button-container">
+
+        </div>
+
+            <button mat-raised-button class="add-button" (click)="openAddDialog()">Add task</button>
+
+    </div>
 </div>
+
