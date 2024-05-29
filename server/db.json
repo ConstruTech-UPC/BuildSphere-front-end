@@ -148,7 +148,7 @@
       "id": 1,
       "projectId": 1,
       "fullName": "Juan Perez",
-      "teamId": 1,
+      "teamName": "Team A",
       "role": "Architect",
       "hoursWorked": 40
     },
@@ -156,7 +156,7 @@
       "id": 2,
       "projectId": 1,
       "fullName": "Maria Gonzalez",
-      "teamId": 2,
+      "teamName": "Team B",
       "role": "Civil Engineer",
       "hoursWorked": 35
     },
@@ -164,7 +164,7 @@
       "id": 3,
       "projectId": 1,
       "fullName": "Pedro Ramirez",
-      "teamId": 1,
+      "teamName": "Team B",
       "role": "Builder",
       "hoursWorked": 45
     },
@@ -172,7 +172,7 @@
       "id": 4,
       "projectId": 2,
       "fullName": "Ana Lopez",
-      "teamId": 2,
+      "teamName": "Team A",
       "role": "Electrician",
       "hoursWorked": 30
     },
@@ -180,7 +180,7 @@
       "id": 5,
       "projectId": 2,
       "fullName": "Carlos Martinez",
-      "teamId": 1,
+      "teamName": "Team B",
       "role": "Plumber",
       "hoursWorked": 50
     },
@@ -188,9 +188,25 @@
       "id": 6,
       "projectId": 2,
       "fullName": "Laura Rodriguez",
-      "teamId": 2,
+      "teamName": "Team A",
       "role": "Painter",
       "hoursWorked": 25
+    },
+    {
+      "id": 7,
+      "projectId": 1,
+      "fullName": "fafwa",
+      "teamName": "Team A",
+      "role": "wdadwad",
+      "hoursWorked": 0
+    },
+    {
+      "id": 9,
+      "projectId": 1,
+      "fullName": "Juanito Pepezito",
+      "teamName": "Team B",
+      "role": "Mezclador de mezclas",
+      "hoursWorked": 20
     }
   ],
   "teams": [
@@ -200,8 +216,8 @@
       "teamName": "Team A",
       "description": "Construction team for the structure",
       "assignedTasks": [
-        1,
-        2
+        "Excavate terrain",
+        "Install wiring"
       ]
     },
     {
@@ -210,8 +226,8 @@
       "teamName": "Team B",
       "description": "Electrical installations team",
       "assignedTasks": [
-        3,
-        4
+        "Install lighting fixtures",
+        "Lay foundations"
       ]
     },
     {
@@ -220,8 +236,8 @@
       "teamName": "Team C",
       "description": "Plumbing installations team",
       "assignedTasks": [
-        5,
-        6
+        "Install plumbing",
+        "Paint walls"
       ]
     },
     {
@@ -230,8 +246,18 @@
       "teamName": "Team D",
       "description": "Painting team",
       "assignedTasks": [
-        7,
-        8
+        "Tarea 1",
+        "Tarea 2"
+      ]
+    },
+    {
+      "id": 5,
+      "projectId": 1,
+      "teamName": "Team prueba",
+      "description": "Prueba de las tasks en team",
+      "assignedTasks": [
+        "Install lighting fixtures",
+        "Tarea prueba 2"
       ]
     }
   ],
