@@ -18,13 +18,17 @@
 <div class="form-group">
     <p>Reception Date</p>
 <mat-form-field appearance="fill">
-  <input matInput placeholder="Reception Date" [(ngModel)]="machine.receptionDate">
+  <input matInput [matDatepicker]="rdam" placeholder="Reception Date" [(ngModel)]="machine.receptionDate">
+    <mat-datepicker-toggle matIconSuffix [for]="rdam"/>
+    <mat-datepicker #rdam/>
 </mat-form-field>
 </div>
 <div class="form-group">
     <p>End Date</p>
 <mat-form-field appearance="fill">
-  <input matInput placeholder="End Date" [(ngModel)]="machine.endDate">
+  <input matInput [matDatepicker]="edam" placeholder="End Date" [(ngModel)]="machine.endDate">
+    <mat-datepicker-toggle matIconSuffix [for]="edam"/>
+    <mat-datepicker #edam/>
 </mat-form-field>
 </div>
 <div class="form-group">
