@@ -113,6 +113,8 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
+import { SupportManagementComponent } from './support/pages/support-management/support-management.component';
+import { SupportFormComponent } from './support/component/support-form/support-form.component';
 
 @NgModule({
   declarations: [
@@ -152,7 +154,9 @@ import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
     ProjectInformationManagementComponent,
     LoginComponent,
     SignupComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SupportManagementComponent,
+    SupportFormComponent
   ],
     imports: [
         BrowserModule,
