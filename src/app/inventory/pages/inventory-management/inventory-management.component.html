@@ -1,25 +1,26 @@
 <div class="inventory-management">
 <h1>Inventory Management</h1>
-<div class="table-management">
-<app-machinery-table [projectId]="projectId"></app-machinery-table>
-<app-materials-table [projectId]="projectId"></app-materials-table>
-</div>
-<div class="budget-project">
-    <table>
-        <tr>
-        <td class="budget-td">Assigned budget: </td>
-        <td class="budget-box" *appRechargeDirectives="project.budget">{{project.budget | currency }}</td>
-        </tr>
-        <tr>
-        <td class="budget-td">Current state of costs: </td>
-        <td class="budget-box" *appRechargeDirectives="totalInventoryCost">{{ totalInventoryCost | currency }}</td>
-        </tr>
-        <tr>
-        <td class="budget-td">Current budget status: </td>
-        <td class="budget-box" *appRechargeDirectives="remainingBudget">{{remainingBudget | currency }}</td>
-        </tr>
-    </table>
 
-</div>
+    <div class="table-management">
+        <div class="budget-table">
+        <h3>Budget status</h3>
+        <mat-table [dataSource]="budgetData">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                <mat-cell *matCellDef="let p"> {{ p.name }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="data">
+                <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+                <mat-cell *matCellDef="let p"> {{ p.data | currency }} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+        </div>
+        <app-machinery-table [projectId]="projectId"></app-machinery-table>
+        <app-materials-table [projectId]="projectId"></app-materials-table>
+    </div>
 
 </div>
