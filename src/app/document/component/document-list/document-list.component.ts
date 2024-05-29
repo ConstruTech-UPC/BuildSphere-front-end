@@ -1,7 +1,11 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDialog } from "@angular/material/dialog";
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { Sort } from '@angular/material/sort';
+
 import { Document } from "../../model/document.entity";
 import { DocumentService } from "../../service/documents-api.service";
-import { MatDialog } from "@angular/material/dialog";
 import { AddDocumentDialogComponent } from "../add-delete-edit-document-dialogs/add-document-dialog/add-document-dialog.component";
 import { EditDocumentDialogComponent } from "../add-delete-edit-document-dialogs/edit-document-dialog/edit-document-dialog.component";
 import { DeleteDocumentDialogComponent } from "../add-delete-edit-document-dialogs/delete-document-dialog/delete-document-dialog.component";
@@ -9,18 +13,24 @@ import { DeleteDocumentDialogComponent } from "../add-delete-edit-document-dialo
 @Component({
   selector: 'app-document-list',
   templateUrl: './document-list.component.html',
-  //styleUrls: ['./document-list.component.css']
+  styleUrls: ['./document-list.component.css'],
 })
-export class DocumentListComponent implements OnInit, OnChanges {
+export class DocumentListComponent implements OnInit, OnChanges, AfterViewInit {
 
   @Input() projectId!: number;
   documents: Document[] = [];
   displayedColumns: string[] = ['name', 'description', 'createdAt', 'actions'];
+  dataSource = new MatTableDataSource<Document>(this.documents);
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private dialog: MatDialog, private documentService: DocumentService) { }
 
   ngOnInit(): void {
     this.loadDocuments();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -31,10 +41,11 @@ export class DocumentListComponent implements OnInit, OnChanges {
 
   loadDocuments() {
     if (this.projectId && !isNaN(this.projectId)) {
-      console.log('Loading documents for projectId:', this.projectId);  // Debug logging
+      console.log('Loading documents for projectId:', this.projectId);
       this.documentService.getDocumentsByProject(this.projectId).subscribe(documents => {
         this.documents = documents;
-        console.log('Documents loaded:', documents);  // Debug logging
+        this.dataSource.data = this.documents;
+        console.log('Documents loaded:', documents);
       });
     } else {
       console.error('Invalid Project ID:', this.projectId);
@@ -98,5 +109,9 @@ export class DocumentListComponent implements OnInit, OnChanges {
         this.loadDocuments();
       });
     }
+  }
+
+  announceSortChange(sortState: Sort) {
+    console.log('Sort changed:', sortState);
   }
 }

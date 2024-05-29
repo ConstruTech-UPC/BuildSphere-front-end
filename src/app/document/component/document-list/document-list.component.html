@@ -1,39 +1,51 @@
-<h2>Documents Project</h2>
+<div class="list-container">
+    <h1 class="list-title">Documents</h1>
 
-<mat-table [dataSource]="documents">
+    <div class="table-container">
+        <div class="table-field">
+            <mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
 
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Document name </mat-header-cell>
-        <mat-cell *matCellDef="let document"> {{ document.name }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="description">
-        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-        <mat-cell *matCellDef="let document"> {{ document.description }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="createdAt">
-        <mat-header-cell *matHeaderCellDef> Created At </mat-header-cell>
-        <mat-cell *matCellDef="let document"> {{ document.createdAt | date }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-        <mat-cell *matCellDef="let document">
-            <button mat-icon-button (click)="openEditDialog(document.id)">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button (click)="openDeleteDialog(document.id)">
-                <mat-icon>delete</mat-icon>
-            </button>
-            <button mat-icon-button (click)="triggerFileInput(document.id)">
-                <mat-icon>attach_file</mat-icon>
-            </button>
-            <input type="file" (change)="onFileSelected($event, document.id)" hidden>
-        </mat-cell>
-    </ng-container>
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name"> Document name </mat-header-cell>
+                    <mat-cell *matCellDef="let document"> {{ document.name }} </mat-cell>
+                </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+                <ng-container matColumnDef="description">
+                    <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                    <mat-cell *matCellDef="let document"> {{ document.description }} </mat-cell>
+                </ng-container>
 
-<div>
-    <button mat-raised-button color="primary" (click)="openAddDialog()">Add Document</button>
+                <ng-container matColumnDef="createdAt">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Creation Date"> Created At </mat-header-cell>
+                    <mat-cell *matCellDef="let document"> {{ document.createdAt | date }} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                    <mat-cell *matCellDef="let document">
+                        <button mat-icon-button (click)="openEditDialog(document.id)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="openDeleteDialog(document.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="triggerFileInput(document.id)">
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                        <input type="file" (change)="onFileSelected($event, document.id)" hidden>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+            </mat-table>
+        </div>
+
+        <div class="button-container">
+
+        </div>
+        <button mat-raised-button class="add-button" (click)="openAddDialog()">Add Document</button>
+
+    </div>
 </div>
