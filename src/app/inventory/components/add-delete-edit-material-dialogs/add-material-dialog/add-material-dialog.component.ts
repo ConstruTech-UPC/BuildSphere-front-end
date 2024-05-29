@@ -21,6 +21,9 @@ export class AddMaterialDialogComponent implements OnInit {
   }
 
   addMaterial() {
+    this.material.projectId = Number(this.material.projectId);
+    this.material.amount = Number(this.material.amount);
+    this.material.totalCost = Number(this.material.totalCost);
     this.materialService.createMaterial(this.material.projectId, this.material)
       .subscribe(() => {this.dialogRef.close()})
   }
