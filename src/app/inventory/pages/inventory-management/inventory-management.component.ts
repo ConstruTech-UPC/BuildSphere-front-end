@@ -18,6 +18,7 @@ export class InventoryManagementComponent implements OnInit {
   totalMaterialCost: number = 0;
   totalMachineryCost: number = 0;
   remainingBudget: number = 0;
+  totalInventoryCost: number = 0;
 
   //constructor(private machineryService: MachineryService, private materialsService: MaterialsService) { }
   constructor(
@@ -44,6 +45,7 @@ export class InventoryManagementComponent implements OnInit {
   }
 
   loadProjectData() {
+      console.log('hola');
     this.projectService.getProjectById(this.projectId)
         .subscribe((project: Project) => {
           this.project = project;
@@ -56,7 +58,6 @@ export class InventoryManagementComponent implements OnInit {
         .subscribe((materials: Material[]) => {
           this.totalMaterialCost = materials.reduce((sum, material) =>
               sum + material.totalCost, 0);
-          this.calculateRemainingBudget();
             }
         );
 
@@ -64,11 +65,14 @@ export class InventoryManagementComponent implements OnInit {
         .subscribe((machines: Machine[]) => {
           this.totalMachineryCost = machines.reduce((sum, machine) =>
           sum + machine.totalCost, 0);
-          this.calculateRemainingBudget();
+            this.totalInventoryCost = this.totalMaterialCost + this.totalMachineryCost;
+            this.calculateRemainingBudget();
         });
+
+
   }
 
   calculateRemainingBudget() {
-    this.remainingBudget = this.project.budget - (this.totalMaterialCost + this.totalMachineryCost);
+    this.remainingBudget = this.project.budget - (this.totalInventoryCost);
   }
 }
