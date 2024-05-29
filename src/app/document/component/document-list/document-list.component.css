@@ -4,11 +4,9 @@
 
 .list-title {
     margin-bottom: 20px;
-    font-size: 40px;
 }
 
 .table-container {
-    margin: 20px;
     background-color: #B79A72;
 }
 
@@ -17,7 +15,5 @@
 }
 
 .add-button {
-    margin: 20px;
-    background-color: #192829; /* Customize this color as needed */
-    color: white;
+    margin: 0 0 50px 50px;
 }
