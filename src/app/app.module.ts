@@ -179,7 +179,7 @@ import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
         MatCardTitle,
         RouterOutlet,
         MatGridList,
-        MatGridListModule
+        MatGridListModule,
     ],
   providers: [
     provideAnimationsAsync()
