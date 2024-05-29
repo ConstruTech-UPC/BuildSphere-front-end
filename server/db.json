@@ -65,44 +65,82 @@
     {
       "id": 1,
       "projectId": 1,
-      "name": "PROJECT 1",
-      "description": "Description 1",
-      "createdAt": "2015-01-01T00:00:00Z"
+      "name": "Architectural Plans",
+      "description": "Plans for the construction of the building",
+      "createdAt": "2015-01-01T00:00:00Z",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     },
     {
       "id": 2,
       "projectId": 1,
-      "name": "PROJECT 1",
-      "description": "Description 2",
-      "createdAt": "2015-01-01T00:00:00Z"
+      "name": "Building Permits",
+      "description": "Permits for the construction of the building",
+      "createdAt": "2016-01-01T00:00:00Z",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     },
     {
       "id": 3,
       "projectId": 1,
-      "name": "PROJECT 1",
-      "description": "Description 3",
-      "createdAt": "2015-01-03T00:00:00Z"
+      "name": "Construction Contracts",
+      "description": "Contracts for the construction of the building",
+      "createdAt": "2015-01-03T00:00:00Z",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     },
     {
       "id": 4,
       "projectId": 2,
       "name": "PROJECT 2",
       "description": "Description 4",
-      "createdAt": "2015-01-04T00:00:00Z"
+      "createdAt": "2015-01-04T00:00:00Z",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     },
     {
       "id": 5,
       "projectId": 2,
       "name": "PROJECT 2",
       "description": "Description 5",
-      "createdAt": "2015-01-05T00:00:00Z"
+      "createdAt": "2015-01-05T00:00:00Z",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     },
     {
       "id": 6,
       "projectId": 2,
       "name": "PROJECT 2",
       "description": "Description 6",
-      "createdAt": "2015-01-06T00:00:00Z"
+      "createdAt": "2015-01-06T00:00:00Z",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
+    },
+    {
+      "id": 7,
+      "name": "Direction of providers",
+      "description": "Direction for all providers of the project",
+      "createdAt": "2024-08-04T05:00:00.000Z",
+      "projectId": 1,
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
+    },
+    {
+      "id": 8,
+      "name": "Secure for workers",
+      "description": "Contrat for secure for workers",
+      "createdAt": "2024-04-10T05:00:00.000Z",
+      "projectId": "1",
+      "fileName": "",
+      "fileType": "",
+      "fileUrl": ""
     }
   ],
   "workers": [

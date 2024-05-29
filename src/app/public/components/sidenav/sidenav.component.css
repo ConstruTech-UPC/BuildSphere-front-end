@@ -77,3 +77,8 @@
   border-radius: 50%; /* Make it circular */
   margin-right: 12px;
 }
+
+.mat-sidenav-content {
+  background-color: #F7F4F3; /* White background for main content */
+  padding: 16px; /* Padding for main content */
+}

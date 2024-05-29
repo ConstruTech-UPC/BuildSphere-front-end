@@ -1,0 +1,19 @@
+.list-container{
+    padding: 20px;
+}
+
+.list-title {
+    margin-bottom: 20px;
+}
+
+.table-container {
+    background-color: #B79A72;
+}
+
+.table-field {
+    padding: 50px;
+}
+
+.add-button {
+    margin: 0 0 50px 50px;
+}
