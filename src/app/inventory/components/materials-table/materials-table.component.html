@@ -14,7 +14,7 @@
 
   <ng-container matColumnDef="materialReceptionDate">
     <mat-header-cell *matHeaderCellDef> Reception Date </mat-header-cell>
-    <mat-cell *matCellDef="let material"> {{ material.receptionDate }} </mat-cell>
+    <mat-cell *matCellDef="let material"> {{ material.receptionDate | date }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="materialStatus">
