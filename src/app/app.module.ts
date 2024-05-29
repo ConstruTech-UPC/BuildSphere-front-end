@@ -10,7 +10,7 @@ import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatDivider} from "@angular/material/divider";
 import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
-import {MatFormField, MatHint, MatLabel} from "@angular/material/form-field";
+import {MatError, MatFormField, MatHint, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatButton, MatIconButton} from "@angular/material/button";
@@ -110,6 +110,8 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
 import {MatOption, MatSelect} from "@angular/material/select";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
+import {MatSort, MatSortHeader} from "@angular/material/sort";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -210,7 +212,11 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
         MatMenuTrigger,
         MatMenu,
         MatMenuItem,
-        MatHint
+        MatHint,
+        MatError,
+        MatSort,
+        MatSortHeader,
+        MatNativeDateModule
     ],
   providers: [MessageService, provideAnimationsAsync('noop')],
   bootstrap: [AppComponent]
