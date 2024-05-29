@@ -14,12 +14,12 @@
 
     <ng-container matColumnDef="machineReceptionDate">
         <mat-header-cell *matHeaderCellDef> Reception Date </mat-header-cell>
-        <mat-cell *matCellDef="let machine"> {{ machine.receptionDate }} </mat-cell>
+        <mat-cell *matCellDef="let machine"> {{ machine.receptionDate | date }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="machineEndDate">
         <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
-        <mat-cell *matCellDef="let machine"> {{ machine.endDate }} </mat-cell>
+        <mat-cell *matCellDef="let machine"> {{ machine.endDate | date }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="machineTotalCost">
