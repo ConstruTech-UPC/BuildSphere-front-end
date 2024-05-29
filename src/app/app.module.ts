@@ -96,44 +96,47 @@ import {ProjectFormComponent} from "./management/components/project-form/project
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 import {RouterOutlet} from "@angular/router";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SidenavComponent,
-    DocumentListComponent,
-    DocumentsManagementComponent,
-    EditDocumentDialogComponent,
-    DeleteDocumentDialogComponent,
-    AddDocumentDialogComponent,
-    AddTaskDialogComponent,
-    DeleteTaskDialogComponent,
-    EditTaskDialogComponent,
-    AddTeamDialogComponent,
-    DeleteTeamDialogComponent,
-    EditTeamDialogComponent,
-    AddWorkerDialogComponent,
-    DeleteWorkerDialogComponent,
-    EditWorkerDialogComponent,
-    TaskTableComponent,
-    TeamsTableComponent,
-    WorkersTableComponent,
-    CollaborationManagementComponent,
-    InventoryManagementComponent,
-    MachineryTableComponent,
-    MaterialsTableComponent,
-    AddMachineDialogComponent,
-    EditMachineDialogComponent,
-    DeleteMachineDialogComponent,
-    AddMaterialDialogComponent,
-    EditMaterialDialogComponent,
-    DeleteMaterialDialogComponent,
-    ProjectDashboardComponent,
-    ProjectListComponent,
-    ProjectCardComponent,
-    ProjectFormComponent,
-    ProjectInformationManagementComponent
-  ],
+    declarations: [
+        AppComponent,
+        SidenavComponent,
+        DocumentListComponent,
+        DocumentsManagementComponent,
+        EditDocumentDialogComponent,
+        DeleteDocumentDialogComponent,
+        AddDocumentDialogComponent,
+        AddTaskDialogComponent,
+        DeleteTaskDialogComponent,
+        EditTaskDialogComponent,
+        AddTeamDialogComponent,
+        DeleteTeamDialogComponent,
+        EditTeamDialogComponent,
+        AddWorkerDialogComponent,
+        DeleteWorkerDialogComponent,
+        EditWorkerDialogComponent,
+        TaskTableComponent,
+        TeamsTableComponent,
+        WorkersTableComponent,
+        CollaborationManagementComponent,
+        InventoryManagementComponent,
+        MachineryTableComponent,
+        MaterialsTableComponent,
+        AddMachineDialogComponent,
+        EditMachineDialogComponent,
+        DeleteMachineDialogComponent,
+        AddMaterialDialogComponent,
+        EditMaterialDialogComponent,
+        DeleteMaterialDialogComponent,
+        ProjectDashboardComponent,
+        ProjectListComponent,
+        ProjectCardComponent,
+        ProjectFormComponent,
+        ProjectInformationManagementComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -176,7 +179,12 @@ import {RouterOutlet} from "@angular/router";
         MatDialogClose,
         MatCardSubtitle,
         MatCardTitle,
-        RouterOutlet
+        RouterOutlet,
+        MatPaginator,
+        MatNativeDateModule,
+        MatDatepickerInput,
+        MatDatepickerToggle,
+        MatDatepicker
     ],
   providers: [
     provideAnimationsAsync()
