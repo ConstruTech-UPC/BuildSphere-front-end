@@ -1,5 +1,10 @@
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  position: relative;
+}
+
+.create-button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
 }
