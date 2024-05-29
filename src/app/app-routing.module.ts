@@ -10,6 +10,7 @@ import {
 import {WelcomeComponent} from "./authentication/components/welcome/welcome.component";
 import {LoginComponent} from "./authentication/components/login/login.component";
 import {SignupComponent} from "./authentication/components/signup/signup.component";
+import {SupportManagementComponent} from "./support/pages/support-management/support-management.component";
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
     path: 'projects/:projectId', component: ProjectDashboardComponent, children: [
       { path: 'documents', component: DocumentsManagementComponent },
       { path: 'collaboration', component: CollaborationManagementComponent },
-      { path: 'inventory', component: InventoryManagementComponent }
+      { path: 'inventory', component: InventoryManagementComponent },
+      { path: 'support', component: SupportManagementComponent }
     ]
   }
   

@@ -115,6 +115,12 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
 import { SupportManagementComponent } from './support/pages/support-management/support-management.component';
 import { SupportFormComponent } from './support/component/support-form/support-form.component';
+import {
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionPanelDescription, MatExpansionPanelHeader,
+    MatExpansionPanelTitle
+} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -223,7 +229,12 @@ import { SupportFormComponent } from './support/component/support-form/support-f
         MatSortHeader,
         MatNativeDateModule,
         MatGridList,
-        MatGridListModule
+        MatGridListModule,
+        MatAccordion,
+        MatExpansionPanel,
+        MatExpansionPanelTitle,
+        MatExpansionPanelDescription,
+        MatExpansionPanelHeader
     ],
   providers: [MessageService, provideAnimationsAsync('noop')],
   bootstrap: [AppComponent]
