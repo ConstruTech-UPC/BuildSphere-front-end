@@ -1,8 +1,11 @@
 <button mat-raised-button color="primary" (click)="openCreateDialog()">Create Project</button>
-<app-project-card *ngFor="let project of projects"
-                  [project]="project"
-                  (edit)="handleEdit($event)"
-                  (delete)="handleDelete($event)"
-                  (titleClick)="onProjectClick($event)">
 
-</app-project-card>
+<mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let project of projects">
+        <app-project-card [project]="project"
+                          (edit)="handleEdit($event)"
+                          (delete)="handleDelete($event)"
+                          (titleClick)="onProjectClick($event)">
+        </app-project-card>
+    </mat-grid-tile>
+</mat-grid-list>

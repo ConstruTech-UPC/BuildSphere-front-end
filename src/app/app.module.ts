@@ -96,6 +96,7 @@ import {ProjectFormComponent} from "./management/components/project-form/project
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 import {RouterOutlet} from "@angular/router";
+import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -176,7 +177,9 @@ import {RouterOutlet} from "@angular/router";
         MatDialogClose,
         MatCardSubtitle,
         MatCardTitle,
-        RouterOutlet
+        RouterOutlet,
+        MatGridList,
+        MatGridListModule
     ],
   providers: [
     provideAnimationsAsync()

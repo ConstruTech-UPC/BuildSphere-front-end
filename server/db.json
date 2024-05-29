@@ -8,7 +8,7 @@
       "startDate": "2024-04-01",
       "expectedEndDate": "2024-12-31",
       "budget": "1000000",
-      "urlImage": "https://www.google.com"
+      "urlImage": "https://th.bing.com/th/id/R.c8732a6fb7e99a7ca81b129fbe580947?rik=gMMlPvN6HBy0mg&pid=ImgRaw&r=0"
     },
     {
       "id": 2,
@@ -18,7 +18,28 @@
       "startDate": "2024-06-01",
       "expectedEndDate": "2024-12-31",
       "budget": "2000000",
-      "urlImage": "https://www.google.com"
+      "urlImage": "https://i1.wp.com/topserviceconstrucciones.com/wp-content/uploads/2021/04/top-service-construcciones-21.jpg?resize=1536%2C1022&ssl=1"
+    },
+
+    {
+      "id": 3,
+      "name": "ConstrucTech",
+      "description": "Construction project of a new building",
+      "location": "123 Main Street, City, Country",
+      "startDate": "2024-04-01",
+      "expectedEndDate": "2024-12-31",
+      "budget": "1000000",
+      "urlImage": "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?cs=srgb&dl=2-man-on-construction-site-during-daytime-159306.jpg&fm=jpg"
+    },
+    {
+      "id": 4,
+      "name": "Jerry Home",
+      "description": "Description of Project 2",
+      "location": "456 Main Street, City, Country",
+      "startDate": "2024-06-01",
+      "expectedEndDate": "2024-12-31",
+      "budget": "2000000",
+      "urlImage": "https://th.bing.com/th/id/OIP.6TqOBh75nP4VuhoIKYTNiAHaDt?w=2500&h=1250&rs=1&pid=ImgDetMain"
     }
   ],
   "documents": [
