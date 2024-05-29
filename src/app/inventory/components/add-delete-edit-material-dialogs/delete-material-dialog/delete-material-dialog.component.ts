@@ -22,12 +22,12 @@ export class DeleteMaterialDialogComponent implements OnInit {
 
   ngOnInit() { }
 
-  deleteMaterial(materialId: number) {
+  deleteMaterial() {
     this.materialService.deleteMaterial(this.data.materialId)
       .subscribe(() => {
-        this.dataSource.data = this.dataSource.data.filter((material: Material) => {
+        /*this.dataSource.data = this.dataSource.data.filter((material: Material) => {
           return material.id !== materialId ? material : false;
-        });
+        });*/
         this.dialogRef.close();
       });
     console.log('Material deleted successfully', this.data.materialId);
