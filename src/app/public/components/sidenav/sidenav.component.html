@@ -7,14 +7,14 @@
         </mat-toolbar>
         <mat-divider></mat-divider>
         <mat-nav-list>
-            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'documents']">
-                <mat-icon mat-list-icon>file_copy</mat-icon>Documents
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'inventory']">
+                <mat-icon mat-list-icon>layers</mat-icon>Resource Management
             </a>
             <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'collaboration']">
-                <mat-icon mat-list-icon>forum</mat-icon>Communication and Collaboration
+                <mat-icon mat-list-icon>chat</mat-icon>Collaboration
             </a>
-            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'inventory']">
-                <mat-icon mat-list-icon>build</mat-icon>Resource Management
+            <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'documents']">
+                <mat-icon mat-list-icon>description</mat-icon>Documents
             </a>
             <a mat-list-item [routerLink]="['/projects', selectedProject.id, 'support']">
                 <mat-icon mat-list-icon>help_outline</mat-icon>Support
