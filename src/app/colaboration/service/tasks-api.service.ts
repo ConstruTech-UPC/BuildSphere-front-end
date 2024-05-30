@@ -32,9 +32,6 @@ export class TasksService {
   }
 
   createTask(projectId: number, task: Task): Observable<Task> {
-
-    task.completionPercentage = Number(task.completionPercentage);
-
     return this.http.post<Task>(`${this.basePath}/projects/${projectId}/tasks`, task)
       .pipe(
         catchError(this.handleError)
@@ -51,7 +48,6 @@ export class TasksService {
   updateTask(taskId: number, task: Task): Observable<Task> {
 
     task.projectId = Number(task.projectId);
-    task.completionPercentage = Number(task.completionPercentage);
     return this.http.put<Task>(`${this.basePath}/tasks/${taskId}`, task)
       .pipe(
         catchError(this.handleError)
@@ -65,6 +61,11 @@ export class TasksService {
       );
   }
 
-
+  getTaskByIdTeam(teamId: number): Observable<Task[]>{
+    return this.http.get<Task[]>(`${this.basePath}/teams/${teamId}/tasks`)
+        .pipe(
+            catchError(this.handleError)
+        );
+  }
 
 }

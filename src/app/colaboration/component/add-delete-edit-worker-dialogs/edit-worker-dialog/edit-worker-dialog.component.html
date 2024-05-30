@@ -11,8 +11,8 @@
 
         <div class="form-group">
             <mat-form-field>
-                <mat-select placeholder="Team" [(ngModel)]="worker.teamName">
-                    <mat-option *ngFor="let team of teams" [value]="team.teamName">
+                <mat-select placeholder="Team" [(ngModel)]="selectedTeam">
+                    <mat-option *ngFor="let team of teams" [value]="team.id">
                         {{ team.teamName }}
                     </mat-option>
                 </mat-select>

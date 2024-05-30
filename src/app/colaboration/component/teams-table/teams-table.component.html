@@ -15,12 +15,7 @@
             <ng-container matColumnDef="assignedTasks">
                 <mat-header-cell *matHeaderCellDef> Assigned tasks </mat-header-cell>
                 <mat-cell *matCellDef="let team">
-                    <button mat-button [matMenuTriggerFor]="menu">Open tasks</button>
-                    <mat-menu #menu="matMenu">
-                        <ng-container *ngFor="let task of team.assignedTasks">
-                            <button mat-menu-item>{{ task}}</button>
-                        </ng-container>
-                    </mat-menu>
+                    <button mat-button (click)="openTasksDialog(team.id)">Open tasks</button>
                 </mat-cell>
             </ng-container>
 
@@ -50,7 +45,6 @@
         </div>
 
         <button mat-raised-button class="add-button" (click)="openAddDialog()">Add team</button>
-
 
     </div>
 </div>

@@ -113,6 +113,7 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
+import { TeamTasksDialogComponent } from './colaboration/component/add-delete-edit-team-dialogs/team-tasks-dialog/team-tasks-dialog.component';
 
 @NgModule({
   declarations: [
@@ -152,7 +153,8 @@ import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
     ProjectInformationManagementComponent,
     LoginComponent,
     SignupComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    TeamTasksDialogComponent
   ],
     imports: [
         BrowserModule,

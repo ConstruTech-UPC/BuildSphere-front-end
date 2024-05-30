@@ -11,6 +11,10 @@
                 <mat-header-cell *matHeaderCellDef> Task name </mat-header-cell>
                 <mat-cell *matCellDef="let task"> {{ task.taskName }} </mat-cell>
             </ng-container>
+            <ng-container matColumnDef="completion">
+                <mat-header-cell *matHeaderCellDef> Assigned team </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{ task.teamName }} </mat-cell>
+            </ng-container>
             <ng-container matColumnDef="taskDescription">
                 <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
                 <mat-cell *matCellDef="let task"> {{ task.taskDescription }} </mat-cell>
@@ -23,10 +27,7 @@
                 <mat-header-cell *matHeaderCellDef> Max end date </mat-header-cell>
                 <mat-cell *matCellDef="let task"> {{ task.maxEndDate }} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="completion">
-                <mat-header-cell *matHeaderCellDef> Completion Percentage </mat-header-cell>
-                <mat-cell *matCellDef="let task"> {{ task.completionPercentage }} % </mat-cell>
-            </ng-container>
+
             <ng-container matColumnDef="actions">
                 <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
                 <mat-cell *matCellDef="let task">
@@ -39,8 +40,8 @@
                 </mat-cell>
             </ng-container>
 
-            <mat-header-row *matHeaderRowDef="['taskName', 'taskDescription', 'startDate', 'maxEndDate', 'completion','actions']"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: ['taskName', 'taskDescription', 'startDate', 'maxEndDate', 'completion','actions'];"></mat-row>
+            <mat-header-row *matHeaderRowDef="['taskName', 'completion', 'taskDescription', 'startDate', 'maxEndDate','actions']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['taskName', 'completion', 'taskDescription', 'startDate', 'maxEndDate', 'actions'];"></mat-row>
         </mat-table>
 
 

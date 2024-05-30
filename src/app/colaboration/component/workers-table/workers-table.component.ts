@@ -11,6 +11,9 @@ import {
 } from "../add-delete-edit-worker-dialogs/edit-worker-dialog/edit-worker-dialog.component";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
+import {TeamsService} from "../../service/teams-api.service";
+import {Team} from "../../model/team.entity";
+import {forkJoin, map} from "rxjs";
 
 @Component({
   selector: 'app-workers-table',
@@ -20,25 +23,34 @@ import {MatPaginator} from "@angular/material/paginator";
 export class WorkersTableComponent implements OnInit {
 
   @Input() projectId!: number;
-  workers: Worker[] = [];
-
-
   dataSource: MatTableDataSource<Worker> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private dialog: MatDialog, private workerService: WorkersService) { }
+  constructor(private dialog: MatDialog, private workerService: WorkersService, private teamsService: TeamsService) { }
 
   ngOnInit(): void {
     this.loadWorkers();
   }
 
   loadWorkers(): void {
-    this.workerService.getWorkerByProject(this.projectId)
-      .subscribe(workers =>{
-        this.dataSource.data = workers;
+    this.workerService.getWorkerByProject(this.projectId).subscribe(workers => {
+      const teamRequests = workers.map(worker =>
+          this.teamsService.getTeamById(worker.teamId).pipe(
+              map(team => ({
+                ...worker,
+                teamName: team.teamName
+              }))
+          )
+      );
+      forkJoin(teamRequests).subscribe(updatedWorkers => {
+        this.dataSource.data = updatedWorkers;
         this.dataSource.paginator = this.paginator;
+      }, error => {
+        console.error('Failed to load team names', error);
       });
+    });
   }
+
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddWorkerDialogComponent, {
@@ -72,5 +84,7 @@ export class WorkersTableComponent implements OnInit {
       this.loadWorkers();
     })
   }
+
+
 
 }

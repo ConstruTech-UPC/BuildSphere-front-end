@@ -14,15 +14,6 @@
             </mat-form-field>
         </div>
 
-        <div class="form-group">
-            <mat-form-field>
-                <mat-label>Assigned tasks</mat-label>
-                <mat-select placeholder="Assigned tasks" [(ngModel)]="team.assignedTasks" multiple>
-                    <mat-option *ngFor="let task of tasks" [value]="task.taskName">{{ task.taskName }}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
         <div class="btn-container-team">
             <button mat-raised-button class="btn-edit-team" (click)="updateTeam()">Save</button>
             <button mat-raised-button color="warn" class="btn-cancel-team" (click)="dialogRef.close()">Cancel</button>

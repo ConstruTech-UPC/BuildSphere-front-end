@@ -3,6 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {TasksService} from "../../../service/tasks-api.service";
 import {Task} from "../../../model/task.entity";
 import {provideNativeDateAdapter} from "@angular/material/core";
+import {Team} from "../../../model/team.entity";
+import {TeamsService} from "../../../service/teams-api.service";
 
 @Component({
   selector: 'app-edit-task-dialog',
@@ -13,11 +15,15 @@ import {provideNativeDateAdapter} from "@angular/material/core";
 export class EditTaskDialogComponent implements OnInit{
 
   task!: Task;
+  teams: Team[] = [];
+  selectedTeam: number | undefined;
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { taskId: number },
-    private tasksApiService: TasksService
+    @Inject(MAT_DIALOG_DATA) public data: { taskId: number, projectId: number },
+    private tasksApiService: TasksService,
+    private teamsApiService: TeamsService
+
   ) { }
 
   ngOnInit(): void {
@@ -25,12 +31,23 @@ export class EditTaskDialogComponent implements OnInit{
       .subscribe(task => {
         this.task = task;
       });
+    this.loadTeams();
   }
 
   updateTask() {
-    this.tasksApiService.updateTask(this.task.id, this.task)
-      .subscribe(() => {
-        this.dialogRef.close();
-      });
+    if (this.selectedTeam !== undefined) {
+      this.task.teamId = this.selectedTeam;
+      this.tasksApiService.updateTask(this.task.id, this.task)
+          .subscribe(() => {
+            this.dialogRef.close();
+          });
+    }
+
+  }
+
+  loadTeams() {
+    this.teamsApiService.getTeamsByProject(this.data.projectId).subscribe(teams => {
+      this.teams = teams;
+    });
   }
 }

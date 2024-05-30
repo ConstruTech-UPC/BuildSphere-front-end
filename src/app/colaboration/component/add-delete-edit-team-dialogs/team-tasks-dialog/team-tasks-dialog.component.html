@@ -1,0 +1,40 @@
+<div class="add-dialog-task">
+    <div mat-dialog-content>
+
+        <h2>Tasks</h2>
+        <div class="table-container">
+            <div class="table-field">
+
+                <mat-table [dataSource]="dataSource">
+
+                    <ng-container matColumnDef="taskName">
+                        <mat-header-cell *matHeaderCellDef> Task name </mat-header-cell>
+                        <mat-cell *matCellDef="let task"> {{ task.taskName }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="taskDescription">
+                        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                        <mat-cell *matCellDef="let task"> {{ task.taskDescription }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="startDate">
+                        <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+                        <mat-cell *matCellDef="let task"> {{ task.startDate }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="maxEndDate">
+                        <mat-header-cell *matHeaderCellDef> Max end date </mat-header-cell>
+                        <mat-cell *matCellDef="let task"> {{ task.maxEndDate }} </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="['taskName', 'taskDescription', 'startDate', 'maxEndDate']"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: ['taskName', 'taskDescription', 'startDate', 'maxEndDate'];"></mat-row>
+                </mat-table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                               showFirstLastButtons
+                               aria-label="Select page of periodic elements">
+                </mat-paginator>
+
+            </div>
+        </div>
+    </div>
+</div>
+
