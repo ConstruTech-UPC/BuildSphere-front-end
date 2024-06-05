@@ -2,23 +2,6 @@
 <h1>Inventory Management</h1>
 
     <div class="table-management">
-        <div class="budget-table">
-        <h3>Budget status</h3>
-        <mat-table [dataSource]="budgetData">
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-                <mat-cell *matCellDef="let p"> {{ p.name }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="data">
-                <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
-                <mat-cell *matCellDef="let p"> {{ p.data | currency }} </mat-cell>
-            </ng-container>
-
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-        </mat-table>
-        </div>
         <app-machinery-table [projectId]="projectId"></app-machinery-table>
         <app-materials-table [projectId]="projectId"></app-materials-table>
     </div>

@@ -59,7 +59,6 @@ export class MachineryTableComponent implements OnInit , OnChanges {
     dialogRef.afterClosed()
       .subscribe(result => { console.log(`Dialog result: ${result}`);
         this.loadMachinery();
-        window.location.reload();
       });
 
 
@@ -73,7 +72,6 @@ export class MachineryTableComponent implements OnInit , OnChanges {
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
         this.loadMachinery();
-        window.location.reload();
       })
     }
   }
@@ -84,7 +82,6 @@ export class MachineryTableComponent implements OnInit , OnChanges {
 
     dialogRef.afterClosed().subscribe(result => {
       this.loadMachinery();
-      window.location.reload();
     });
   }
 }
