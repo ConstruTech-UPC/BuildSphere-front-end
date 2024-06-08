@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 
 import {MatDialog} from "@angular/material/dialog";
 import {Material} from "../../model/material.entity";
@@ -12,6 +12,8 @@ import {
 import {
   DeleteMaterialDialogComponent
 } from "../add-delete-edit-material-dialogs/delete-material-dialog/delete-material-dialog.component";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-materials-table',
@@ -21,6 +23,8 @@ import {
 export class MaterialsTableComponent implements OnInit, OnChanges {
   @Input() projectId!: number;
   materials: Material[] = [];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  dataSource: MatTableDataSource<Material> = new MatTableDataSource();
 
   constructor(private dialog:MatDialog, private materialsService: MaterialsService) { }
 
@@ -40,6 +44,7 @@ export class MaterialsTableComponent implements OnInit, OnChanges {
       this.materialsService.getMaterialsByProject(this.projectId)
           .subscribe(materials => {
             this.materials = materials;
+            this.dataSource.paginator = this.paginator;
             console.log('Materials loaded: ', materials);
           });
     } else {
@@ -53,7 +58,8 @@ export class MaterialsTableComponent implements OnInit, OnChanges {
 
     dialogRef.afterClosed()
       .subscribe(result => { console.log(`Dialog result: ${result}`);
-        this.loadMaterials();});
+        this.loadMaterials();
+      });
   }
 
   openEditDialog(materialId: number): void {
@@ -64,6 +70,7 @@ export class MaterialsTableComponent implements OnInit, OnChanges {
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
         this.loadMaterials();
+
       })
     }
   }

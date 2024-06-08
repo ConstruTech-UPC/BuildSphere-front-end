@@ -1,0 +1,47 @@
+.inventory-management {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 65vw;
+    max-height: 100vh;
+    margin-left: 20px;
+    margin-right: 90px;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.table-management {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #B79A72;
+}
+
+h1 {
+    color: black;
+    font-size: 2em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+h3 {
+    color: black;
+    font-weight: 500;
+
+}
+
+.budget-table {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #B79A72;
+
+}
+

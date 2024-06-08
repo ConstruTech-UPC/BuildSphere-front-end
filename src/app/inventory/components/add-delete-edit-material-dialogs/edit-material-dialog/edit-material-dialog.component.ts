@@ -21,6 +21,9 @@ export class EditMaterialDialogComponent implements OnInit {
   }
 
   updateMaterial() {
+    this.material.projectId = Number(this.material.projectId);
+    this.material.amount = Number(this.material.amount);
+    this.material.totalCost = Number(this.material.totalCost);
     this.materialService.updateMaterial(this.material.id, this.material)
       .subscribe(() => this.dialogRef.close());
   }

@@ -1,26 +1,49 @@
+<div class="edit-dialog-material">
+<div mat-dialog-content>
 <h1> Edit material's data </h1>
 
-
+    <div class="form-group-edit-material">
+        <p>Material</p>
 <mat-form-field>
   <input matInput placeholder="Material name" [(ngModel)]="material.materialName">
 </mat-form-field>
+</div>
+<div class="form-group-edit-material">
+<p>Description</p>
 <mat-form-field>
-  <input matInput placeholder="Description" [(ngModel)]="material.description">
+  <textarea matInput placeholder="Description" [(ngModel)]="material.description"></textarea>
 </mat-form-field>
+</div>
+<div class="form-group-edit-material">
+<p>Reception Date</p>
 <mat-form-field>
-  <input matInput placeholder="Reception Date" [(ngModel)]="material.receptionDate">
+  <input matInput [matDatepicker]="rdemat" placeholder="Reception Date" [(ngModel)]="material.receptionDate">
+    <mat-datepicker-toggle matSuffix [for]="rdemat"></mat-datepicker-toggle>
+    <mat-datepicker #rdemat></mat-datepicker>
 </mat-form-field>
+</div>
+<div class="form-group-edit-material">
+<p>Material Status</p>
 <mat-form-field>
     <input matInput placeholder="Material Status" [(ngModel)]="material.materialStatus">
 </mat-form-field>
+</div>
+<div class="form-group-edit-material">
+<p>Amount</p>
 <mat-form-field>
   <input matInput placeholder="Amount" [(ngModel)]="material.amount">
 </mat-form-field>
+</div>
+<div class="form-group-edit-material">
+<p>Total Cost</p>
 <mat-form-field>
   <input matInput placeholder="Total Cost" [(ngModel)]="material.totalCost">
 </mat-form-field>
+</div>
 
-<div>
-  <button mat-raised-button color="primary" (click)="updateMaterial()">Update</button>
-  <button mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>
+<div class="btn-container-material-edit">
+  <button mat-raised-button class="btn-edit-material" (click)="updateMaterial()">Update</button>
+  <button mat-raised-button color="warn" class="btn-cancel-material-edit" (click)="dialogRef.close()">Cancel</button>
+</div>
+</div>
 </div>

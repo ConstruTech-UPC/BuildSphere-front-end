@@ -14,12 +14,12 @@
 
     <ng-container matColumnDef="machineReceptionDate">
         <mat-header-cell *matHeaderCellDef> Reception Date </mat-header-cell>
-        <mat-cell *matCellDef="let machine"> {{ machine.receptionDate }} </mat-cell>
+        <mat-cell *matCellDef="let machine"> {{ machine.receptionDate | date }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="machineEndDate">
         <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
-        <mat-cell *matCellDef="let machine"> {{ machine.endDate }} </mat-cell>
+        <mat-cell *matCellDef="let machine"> {{ machine.endDate | date }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="machineTotalCost">
@@ -43,6 +43,8 @@
     <mat-row *matRowDef="let row; columns: [ 'machineName', 'machineDescription', 'machineReceptionDate', 'machineEndDate', 'machineTotalCost', 'actions'];"></mat-row>
 </mat-table>
 
-<div>
-    <button mat-raised-button color="primary" (click)="openAddDialog()"> Add Machine </button>
+<mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select a page of the machinery table"/>
+
+<div class="btn-container">
+    <button mat-raised-button class="btn-add-mac" (click)="openAddDialog()"> Add Machine </button>
 </div>

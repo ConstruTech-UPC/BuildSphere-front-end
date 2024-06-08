@@ -17,13 +17,14 @@ export class AddMachineDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.machine.projectId = this.data.projectId;
+   this.machine.projectId = this.data.projectId;
   }
 
   addMachine() {
+    this.machine.projectId = Number(this.machine.projectId);
+    this.machine.totalCost = Number(this.machine.totalCost);
    this.machineService.createMachine(this.machine.projectId, this.machine)
      .subscribe(() => {this.dialogRef.close();});
   }
-
 
 }

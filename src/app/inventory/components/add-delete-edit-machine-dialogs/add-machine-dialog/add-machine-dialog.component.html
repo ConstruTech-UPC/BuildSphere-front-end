@@ -1,22 +1,46 @@
+
+<div class="add-dialog-machine">
+<div mat-dialog-content>
 <h1> Add new machine </h1>
 
-<mat-form-field>
-  <input matInput placeholder="Machine name" [(ngModel)]="machine.machineName">
+<div class="form-group">
+    <p>Machine Name</p>
+<mat-form-field appearance="fill">
+  <input matInput placeholder="Machine Name" [(ngModel)]="machine.machineName">
 </mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="Description" [(ngModel)]="machine.description">
+</div>
+<div class="form-group">
+    <p>Description</p>
+<mat-form-field appearance="fill">
+    <textarea matInput placeholder="Description" [(ngModel)]="machine.description"></textarea>
 </mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="Reception Date" [(ngModel)]="machine.receptionDate">
+</div>
+<div class="form-group">
+    <p>Reception Date</p>
+<mat-form-field appearance="fill">
+  <input matInput [matDatepicker]="rdam" placeholder="Reception Date" [(ngModel)]="machine.receptionDate">
+    <mat-datepicker-toggle matIconSuffix [for]="rdam"/>
+    <mat-datepicker #rdam/>
 </mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="End Date" [(ngModel)]="machine.endDate">
+</div>
+<div class="form-group">
+    <p>End Date</p>
+<mat-form-field appearance="fill">
+  <input matInput [matDatepicker]="edam" placeholder="End Date" [(ngModel)]="machine.endDate">
+    <mat-datepicker-toggle matIconSuffix [for]="edam"/>
+    <mat-datepicker #edam/>
 </mat-form-field>
-<mat-form-field>
+</div>
+<div class="form-group">
+    <p>Total Cost</p>
+<mat-form-field appearance="fill">
   <input matInput placeholder="Total Cost" [(ngModel)]="machine.totalCost">
 </mat-form-field>
+</div>
 
-<div>
-  <button mat-raised-button color="primary" (click)="addMachine()">Add</button>
-  <button mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>
+<div class="btn-container-machine">
+  <button mat-raised-button class="btn-add-machine" (click)="addMachine()">Add</button>
+  <button mat-raised-button color="warn" class="btn-cancel-machine" (click)="dialogRef.close()">Cancel</button>
+</div>
+</div>
 </div>

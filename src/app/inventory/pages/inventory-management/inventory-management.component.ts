@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {MachineryService} from "../../services/machinery.service";
 import {MaterialsService} from "../../services/materials.service";
 import {ActivatedRoute} from "@angular/router";
+import {Project} from "../../../management/model/project.entity";
+import {ProjectsService} from "../../../management/services/projects.service";
+import {Material} from "../../model/material.entity";
+import {Machine} from "../../model/machine.entity";
 
 @Component({
   selector: 'app-inventory-management',
@@ -10,9 +14,14 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class InventoryManagementComponent implements OnInit {
   projectId!: number;
+  project: Project = new Project();
 
   //constructor(private machineryService: MachineryService, private materialsService: MaterialsService) { }
-  constructor(private route: ActivatedRoute) {
+  constructor(
+      private route: ActivatedRoute,
+      private machineryService: MachineryService,
+      private materialsService: MaterialsService,
+      private projectService: ProjectsService) {
   }
 
   ngOnInit() {
@@ -29,4 +38,5 @@ export class InventoryManagementComponent implements OnInit {
       console.error('No parent route found.');
     }
   }
+
 }

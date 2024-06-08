@@ -1,7 +1,11 @@
+<div class="delete-material-dialog">
+    <div mat-dialog-content>
 <h1> Confirm deletion </h1>
 <p> Are you sure you want to delete this machine? It cannot be undone. </p>
 
-<div>
-  <button mat-raised-button color="primary" (click)="deleteMaterial(material.id)">Delete</button>
-  <button mat-raised-button color="warm" (click)="cancel()">Cancel</button>
+<div class="btn-container-material-delete">
+  <button mat-raised-button class="btn-delete-material" (click)="deleteMaterial()">Delete</button>
+  <button mat-raised-button color="warm" class="btn-cancel-material-delete" (click)="cancel()">Cancel</button>
+</div>
+    </div>
 </div>

@@ -21,6 +21,8 @@ export class EditMachineDialogComponent implements OnInit {
   }
 
   updateMachine() {
+    this.machine.projectId = Number(this.machine.projectId);
+    this.machine.totalCost = Number(this.machine.totalCost);
     this.machineService.updateMachine(this.machine.id, this.machine)
       .subscribe(() => this.dialogRef.close());
   }
