@@ -1,9 +1,13 @@
+<div class="delete-worker-dialog">
+    <div>
+        <h2>Confirm deletion</h2>
 
-<h2>Confirm deletion</h2>
+        <p>Are you sure you want to delete this task?</p>
 
-<p>Are you sure you want to delete this task?</p>
-
-<div>
-  <button mat-raised-button color="warn" (click)="deleteWorker()">Eliminate</button>
-  <button mat-raised-button (click)="cancel()">Cancel</button>
+        <div class="btn-container-worker-delete">
+            <button mat-raised-button class="btn-delete-worker" (click)="deleteWorker()">Eliminate</button>
+            <button mat-raised-button color="warm" class="btn-cancel-worker-delete-delete" (click)="cancel()">Cancel</button>
+        </div>
+    </div>
 </div>
+

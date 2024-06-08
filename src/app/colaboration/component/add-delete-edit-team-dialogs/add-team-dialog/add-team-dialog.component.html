@@ -1,19 +1,26 @@
-<h2>Add new team</h2>
+<div class="add-dialog-team">
+    <div mat-dialog-content>
+        <h2>Add new team</h2>
 
-<mat-form-field>
-  <input matInput placeholder="Team name" [(ngModel)]="team.teamName">
-</mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="Team Description" [(ngModel)]="team.description">
-</mat-form-field>
-<mat-form-field>
-    <mat-label>Assigned tasks</mat-label>
-    <mat-select placeholder="Assigned tasks" [(ngModel)]="team.assignedTasks" multiple>
-        <mat-option *ngFor="let task of tasks" [value]="task.taskName">{{ task.taskName }}</mat-option>
-    </mat-select>
-</mat-form-field>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Team name" [(ngModel)]="team.teamName">
+            </mat-form-field>
+        </div>
 
-<div>
-  <button mat-raised-button color="primary" (click)="addTeam()">Add</button>
-  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Team Description" [(ngModel)]="team.description">
+            </mat-form-field>
+        </div>
+
+        <div class="btn-container-team">
+            <button mat-raised-button class="btn-add-team" (click)="addTeam()">Add</button>
+            <button mat-raised-button color="warn" class="btn-cancel-team" (click)="dialogRef.close()">Cancel</button>
+        </div>
+
+    </div>
+
 </div>
+
+

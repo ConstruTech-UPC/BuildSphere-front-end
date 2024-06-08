@@ -14,6 +14,7 @@ export class EditWorkerDialogComponent implements OnInit {
 
   worker!: Worker;
   teams: any[] = [];
+  selectedTeam: number | undefined;
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
@@ -31,10 +32,13 @@ export class EditWorkerDialogComponent implements OnInit {
   }
 
   updateWorker(){
-    this.workersApiService.updateWorker(this.worker.id, this.worker)
-      .subscribe(() => {
-        this.dialogRef.close();
-      })
+    if (this.selectedTeam !== undefined) {
+      this.worker.teamId = this.selectedTeam;
+      this.workersApiService.updateWorker(this.worker.id, this.worker)
+          .subscribe(() => {
+            this.dialogRef.close();
+          })
+    }
   }
 
   loadTeams() {

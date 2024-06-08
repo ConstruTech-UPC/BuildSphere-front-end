@@ -4,6 +4,7 @@ import {Worker} from "../../../model/worker.entity";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {WorkersService} from "../../../service/workers-api.service";
 import {TeamsService} from "../../../service/teams-api.service";
+import {Team} from "../../../model/team.entity";
 
 @Component({
   selector: 'app-add-worker-dialog',
@@ -13,7 +14,8 @@ import {TeamsService} from "../../../service/teams-api.service";
 export class AddWorkerDialogComponent implements OnInit {
 
   worker: Worker = new Worker();
-  teams: any[] = [];
+  teams: Team[] = [];
+  selectedTeam: number | undefined;
 
   constructor(
     public dialogRef: MatDialogRef<AddWorkerDialogComponent>,
@@ -28,10 +30,13 @@ export class AddWorkerDialogComponent implements OnInit {
   }
 
   addWorker(){
-    this.workersApiService.createWorker(this.worker.projectId, this.worker)
-      .subscribe(() =>{
-        this.dialogRef.close();
-      });
+    if (this.selectedTeam !== undefined) {
+      this.worker.teamId = this.selectedTeam;
+      this.workersApiService.createWorker(this.worker.projectId, this.worker)
+          .subscribe(() =>{
+            this.dialogRef.close();
+          });
+    }
   }
 
   loadTeams() {

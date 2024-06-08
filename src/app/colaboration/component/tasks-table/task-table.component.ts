@@ -8,6 +8,8 @@ import {EditTaskDialogComponent} from "../add-delete-edit-task-dialogs/edit-task
 import {DeleteTaskDialogComponent} from "../add-delete-edit-task-dialogs/delete-task-dialog/delete-task-dialog.component";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
+import {TeamsService} from "../../service/teams-api.service";
+import {forkJoin, map} from "rxjs";
 
 @Component({
   selector: 'app-tasks-table',
@@ -17,12 +19,10 @@ import {MatPaginator} from "@angular/material/paginator";
 export class TaskTableComponent implements OnInit{
 
   @Input() projectId!: number;
-
-
   dataSource: MatTableDataSource<Task> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private dialog: MatDialog, private tasksApiService: TasksService) { }
+  constructor(private dialog: MatDialog, private tasksApiService: TasksService, private teamsService: TeamsService) { }
 
 
   ngOnInit(): void {
@@ -30,32 +30,39 @@ export class TaskTableComponent implements OnInit{
   }
 
   loadTasks() {
-    this.tasksApiService.getTasksByProject(this.projectId)
-      .subscribe(tasks => {
-        this.dataSource.data = tasks;
-        this.dataSource.paginator = this.paginator;
-      });
+    this.tasksApiService.getTasksByProject(this.projectId).subscribe(tasks => {
+      const teamRequests = tasks.map(task =>
+              this.teamsService.getTeamById(task.teamId).pipe(
+                  map(team => ({
+                    ...task,
+                    teamName: team.teamName
+                  }))
+              )
+          );
+          forkJoin(teamRequests).subscribe(updatedTasks => {
+            this.dataSource.data = updatedTasks;
+            this.dataSource.paginator = this.paginator;
+          }, error => {
+            console.error('Failed to load team names', error);
+          });
+        });
   }
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddTaskDialogComponent, {
-      width: '500px',
-      height: '400px',
-      data: { projectId: this.projectId } // Pasamos el projectId al diálogo
+      data: { projectId: this.projectId }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       this.loadTasks();
-      // Puedes realizar acciones adicionales después de cerrar el diálogo si es necesario
+
     });
   }
   openEditDialog(taskId: number): void {
     if (taskId) {
       const dialogRef = this.dialog.open(EditTaskDialogComponent, {
-        width: '500px',
-        height: '400px',
-        data: {taskId: taskId}
+        data: {taskId: taskId, projectId: this.projectId}
       });
 
       dialogRef.afterClosed().subscribe(result => {
@@ -71,7 +78,6 @@ export class TaskTableComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Actualizar las tareas después de cerrar el diálogo
       this.loadTasks();
     });
   }

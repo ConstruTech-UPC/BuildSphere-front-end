@@ -1,20 +1,34 @@
-<h2>Add new worker</h2>
+<div class="add-dialog-worker">
 
-<mat-form-field>
-  <input matInput placeholder="Worker name" [(ngModel)]="worker.fullName">
-</mat-form-field>
-<mat-form-field>
-    <mat-select placeholder="Team" [(ngModel)]="worker.teamName">
-        <mat-option *ngFor="let team of teams" [value]="team.teamName">
-            {{ team.teamName }}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="Worker role" [(ngModel)]="worker.role">
-</mat-form-field>
+    <div mat-dialog-content>
+        <h2>Add new worker</h2>
 
-<div>
-  <button mat-raised-button color="primary" (click)="addWorker()">Add</button>
-  <button mat-raised-button (click)="dialogRef.close()">Cancel</button>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Worker name" [(ngModel)]="worker.fullName">
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-select placeholder="Team" [(ngModel)]="selectedTeam">
+                    <mat-option *ngFor="let team of teams" [value]="team.id">
+                        {{ team.teamName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Worker role" [(ngModel)]="worker.role">
+            </mat-form-field>
+        </div>
+
+        <div class="btn-container-worker">
+            <button mat-raised-button class="btn-add-worker" (click)="addWorker()">Add</button>
+            <button mat-raised-button color="warn" class="btn-cancel-worker" (click)="dialogRef.close()">Cancel</button>
+        </div>
+
+    </div>
 </div>

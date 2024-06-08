@@ -1,0 +1,68 @@
+.delete-team-dialog {
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    background-color: #B79A72;
+    color: #F7F4F3;
+    width: 500px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
+    font-weight: 500;
+
+}
+
+.mat-dialog-content {
+    background-color: #B79A72;
+}
+
+p {
+    text-align: left;
+    font-family: Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: black;
+    margin: 0.5px 0.5px 0.5px 0;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #F7F4F3;
+    margin: 0 0 20px 0;
+}
+
+.btn-cancel-team-delete {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-delete-team {
+    border-radius: 5px;
+    color: white;
+    background-color: #FBC12E;
+    padding: 5px 10px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.btn-container-team-delete {
+    background-color: #B79A72;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+

@@ -1,14 +1,26 @@
-/* Estilo para hacer la tabla responsive */
-.mat-table {
-  overflow-x: auto;
+.table-container {
+  background-color: #B79A72;
+}
+.table-field {
+  padding: 40px;
+}
+.list-title {
+
+  margin-bottom: 20px;
 }
 
-/* Estilo para separar la tabla de los bordes de la ventana */
-.mat-table-container {
-  margin: 100px; /* Puedes ajustar este valor según sea necesario */
+.button-container {
+  background-color: #B79A72;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
-
-/* Estilo para los botones de acciones */
-.actions-button {
-  margin-top: 20px; /* Ajusta este valor según sea necesario */
+.add-button {
+  color: white !important;
+  background-color: #FBC12E !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  justify-content: center !important;
 }

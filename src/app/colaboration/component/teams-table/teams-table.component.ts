@@ -8,6 +8,7 @@ import {DeleteTeamDialogComponent} from "../add-delete-edit-team-dialogs/delete-
 import {EditTeamDialogComponent} from "../add-delete-edit-team-dialogs/edit-team-dialog/edit-team-dialog.component";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
+import {TeamTasksDialogComponent} from "../add-delete-edit-team-dialogs/team-tasks-dialog/team-tasks-dialog.component";
 
 @Component({
   selector: 'app-teams-table',
@@ -37,8 +38,6 @@ export class TeamsTableComponent implements OnInit {
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddTeamDialogComponent,{
-      width: '500px',
-      height: '400px',
       data: {projectId: this.projectId}
     });
 
@@ -49,16 +48,25 @@ export class TeamsTableComponent implements OnInit {
   }
 
   openEditDialog(teamId: number): void {
-
     if(teamId) {
       const dialogRef = this.dialog.open(EditTeamDialogComponent, {
-        width: '500px',
-        height: '400px',
         data: {teamId: teamId, projectId: this.projectId}
       });
 
       dialogRef.afterClosed().subscribe(result => {
         this.loadTeams();
+      });
+    }
+  }
+
+  openTasksDialog(teamId: number): void {
+    if(teamId) {
+      const dialogRef = this.dialog.open(TeamTasksDialogComponent, {
+        data: {teamId: teamId, projectId: this.projectId}
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        this.loadTeams();//quitar?
       });
     }
   }

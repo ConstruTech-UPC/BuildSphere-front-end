@@ -1,4 +1,4 @@
-.edit-dialog-task {
+.add-dialog-task {
     font-size: 0.9rem;
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
@@ -15,7 +15,7 @@
     padding: 20px;
     margin: 0 auto;
     white-space: none;
-    height: 650px;
+    height: 500px;
     font-weight: 500;
 }
 .mat-dialog-content {
@@ -45,7 +45,7 @@ h2 {
     font-weight: 500;
 }
 
-.btn-edit-task {
+.btn-add-task {
     border-radius: 5px;
     color: white;
     background-color: #FBC12E;
