@@ -121,6 +121,9 @@ import {
     MatExpansionPanelDescription, MatExpansionPanelHeader,
     MatExpansionPanelTitle
 } from "@angular/material/expansion";
+import {
+    TeamTasksDialogComponent
+} from "./colaboration/component/add-delete-edit-team-dialogs/team-tasks-dialog/team-tasks-dialog.component";
 
 @NgModule({
   declarations: [
@@ -162,7 +165,8 @@ import {
     SignupComponent,
     WelcomeComponent,
     SupportManagementComponent,
-    SupportFormComponent
+    SupportFormComponent,
+    TeamTasksDialogComponent
   ],
     imports: [
         BrowserModule,
