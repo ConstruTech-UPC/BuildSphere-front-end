@@ -6,12 +6,14 @@ import {Task} from "../../../model/task.entity";
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {Team} from "../../../model/team.entity";
 import {TeamsService} from "../../../service/teams-api.service";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-task-dialog',
   templateUrl: './add-task-dialog.component.html',
   styleUrl: './add-task-dialog.component.css',
-  providers: [provideNativeDateAdapter()],
+  providers: [provideNativeDateAdapter(),
+    { provide: MatDialogRef, useValue: {} },],
 })
 export class AddTaskDialogComponent implements OnInit{
 

@@ -25,7 +25,7 @@ export class TeamsService {
   }
 
   getTeamsByProject(projectId: number): Observable<Team[]> {
-    return this.http.get<Team[]>(`${this.basePath}/projects/${projectId}/teams`)
+    return this.http.get<Team[]>(`http://localhost:8080/api/v1/projects/${projectId}/teams`)
       .pipe(
         catchError(this.handleError)
       );
@@ -33,16 +33,16 @@ export class TeamsService {
 
   createTeam(projectId: number, team: Team): Observable<Team> {
 
-    team.projectId = Number(team.projectId);
+    team.projectId = projectId;
 
-    return this.http.post<Team>(`${this.basePath}/projects/${projectId}/teams`, team)
+    return this.http.post<Team>(`http://localhost:8080/api/v1/teams`, team)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getTeamById(teamId: number): Observable<Team> {
-    return this.http.get<Team>(`${this.basePath}/teams/${teamId}`)
+    return this.http.get<Team>(`http://localhost:8080/api/v1/teams/${teamId}`)
       .pipe(
         catchError(this.handleError)
       );
@@ -52,15 +52,16 @@ export class TeamsService {
 
     team.projectId = Number(team.projectId);
 
-    return this.http.put<Team>(`${this.basePath}/teams/${teamId}`, team)
+    return this.http.put<Team>(`http://localhost:8080/api/v1/teams/${teamId}`, team)
       .pipe(
         catchError(this.handleError)
       );
 
   }
 
+  //Elimina el equipo pero sale un codigo de error 200
   deleteTeam(teamId: number): Observable<any> {
-    return this.http.delete<any>(`${this.basePath}/teams/${teamId}`)
+    return this.http.delete<any>(`http://localhost:8080/api/v1/teams/${teamId}`)
       .pipe(
         catchError(this.handleError)
       );

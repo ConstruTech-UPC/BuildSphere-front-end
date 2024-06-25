@@ -24,7 +24,7 @@ export class WorkersService {
   }
 
   getWorkerByProject(projectId: number): Observable<Worker[]> {
-    return this.http.get<Worker[]>(`${this.basePath}/projects/${projectId}/workers`)
+    return this.http.get<Worker[]>(`http://localhost:8080/api/v1/projects/${projectId}/workers`)
       .pipe(
         catchError(this.handleError)
       );
@@ -32,16 +32,16 @@ export class WorkersService {
 
   createWorker(projectId: number, worker: Worker): Observable<Worker> {
 
-    worker.projectId = Number(worker.projectId);
+    worker.projectId = projectId;
 
-    return this.http.post<Worker>(`${this.basePath}/projects/${projectId}/workers`, worker)
+    return this.http.post<Worker>(`http://localhost:8080/api/v1/workers`, worker)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getWorkerById(workerId: number): Observable<Worker> {
-    return this.http.get<Worker>(`${this.basePath}/workers/${workerId}`)
+    return this.http.get<Worker>(`http://localhost:8080/api/v1/workers/${workerId}`)
       .pipe(
         catchError(this.handleError)
       );
@@ -51,14 +51,15 @@ export class WorkersService {
     worker.projectId = Number(worker.projectId);
     worker.hoursWorked = Number(worker.hoursWorked);
 
-    return this.http.put<Worker>(`${this.basePath}/workers/${workerId}`, worker)
+    return this.http.put<Worker>(`http://localhost:8080/api/v1/workers/${workerId}`, worker)
       .pipe(
         catchError(this.handleError)
       );
   }
 
+  //Elimina el trabajador pero sale un codigo de error 200
   deleteWorker(workerId: number): Observable<any> {
-    return this.http.delete<any>(`${this.basePath}/workers/${workerId}`)
+    return this.http.delete<any>(`http://localhost:8080/api/v1/workers/${workerId}`)
       .pipe(
         catchError(this.handleError)
       );

@@ -11,6 +11,8 @@ export class TasksService {
 
   private basePath = 'http://localhost:3000';
 
+  private getTask = 'http://localhost:8080/api/v1/projects/{{projectId}}/tasks';
+
   constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
@@ -25,21 +27,23 @@ export class TasksService {
   }
 
   getTasksByProject(projectId: number): Observable<Task[]> {
-    return this.http.get<Task[]>(`${this.basePath}/projects/${projectId}/tasks`)
+    return this.http.get<Task[]>(`http://localhost:8080/api/v1/projects/${projectId}/tasks`)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   createTask(projectId: number, task: Task): Observable<Task> {
-    return this.http.post<Task>(`${this.basePath}/projects/${projectId}/tasks`, task)
+
+    task.projectId = projectId;
+    return this.http.post<Task>(`http://localhost:8080/api/v1/tasks`, task)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getTaskById(taskId: number): Observable<Task> {
-    return this.http.get<Task>(`${this.basePath}/tasks/${taskId}`)
+    return this.http.get<Task>(`http://localhost:8080/api/v1/tasks/${taskId}`)
       .pipe(
         catchError(this.handleError)
       );
@@ -48,21 +52,21 @@ export class TasksService {
   updateTask(taskId: number, task: Task): Observable<Task> {
 
     task.projectId = Number(task.projectId);
-    return this.http.put<Task>(`${this.basePath}/tasks/${taskId}`, task)
+    return this.http.put<Task>(`http://localhost:8080/api/v1/tasks/${taskId}`, task)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   deleteTask(taskId: number): Observable<any> {
-    return this.http.delete<any>(`${this.basePath}/tasks/${taskId}`)
+    return this.http.delete<any>(`http://localhost:8080/api/v1/tasks/${taskId}`)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getTaskByIdTeam(teamId: number): Observable<Task[]>{
-    return this.http.get<Task[]>(`${this.basePath}/teams/${teamId}/tasks`)
+    return this.http.get<Task[]>(`http://localhost:8080/api/v1/teams/${teamId}/tasks`)
         .pipe(
             catchError(this.handleError)
         );
