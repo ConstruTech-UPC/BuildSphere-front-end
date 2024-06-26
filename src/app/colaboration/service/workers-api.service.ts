@@ -8,7 +8,7 @@ import {Worker} from "../model/worker.entity";
 })
 export class WorkersService {
 
-  private basePath = 'http://localhost:3000';
+  private basePath = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 

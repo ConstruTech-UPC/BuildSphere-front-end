@@ -8,7 +8,7 @@ import {Material} from "../model/material.entity";
 })
 
 export class MaterialsService {
-  private basePath = 'http://localhost:3000/api/v1';
+  private basePath = 'http://localhost:8080/api/v1';
 
   constructor(private http: HttpClient) {
   }

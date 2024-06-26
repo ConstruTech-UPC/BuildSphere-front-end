@@ -15,7 +15,7 @@ import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import { DocumentListComponent } from './document/component/document-list/document-list.component';
-import { HttpClientModule, provideHttpClient, withInterceptors} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors} from '@angular/common/http';
 import { DocumentsManagementComponent } from './document/pages/documents-management/documents-management.component';
 import { EditDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/edit-document-dialog/edit-document-dialog.component';
 import { DeleteDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/delete-document-dialog/delete-document-dialog.component';
@@ -108,7 +108,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
-import {MatNativeDateModule} from "@angular/material/core";
+import {MatNativeDateModule, provideNativeDateAdapter} from "@angular/material/core";
 import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
 import { SupportManagementComponent } from './support/pages/support-management/support-management.component';
 import { SupportFormComponent } from './support/component/support-form/support-form.component';
@@ -122,10 +122,13 @@ import {
 import {
     TeamTasksDialogComponent
 } from "./colaboration/component/add-delete-edit-team-dialogs/team-tasks-dialog/team-tasks-dialog.component";
-import { AuthenticationSectionComponent } from './iam/components/authentication-section/authentication-section.component';
 import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
 import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
-import {authenticationInterceptor} from "./iam/services/authentication.interceptor";
+import {AuthenticationInterceptor} from "./iam/services/authentication.interceptor";
+import {ResetPasswordComponent} from "./iam/pages/reset-password/reset-password.component";
+import {ResetPasswordFormComponent} from "./iam/components/reset-password-form/reset-password-form.component";
+import {SignUpFormComponent} from "./iam/components/sign-up-form/sign-up-form.component";
+import {SignInFormComponent} from "./iam/components/sign-in-form/sign-in-form.component";
 
 @NgModule({
   declarations: [
@@ -167,8 +170,11 @@ import {authenticationInterceptor} from "./iam/services/authentication.intercept
     SupportFormComponent,
     TeamTasksDialogComponent,
       SignUpComponent,
+      SignUpFormComponent,
       SignInComponent,
-    AuthenticationSectionComponent
+      SignInFormComponent,
+      ResetPasswordComponent,
+      ResetPasswordFormComponent,
   ],
     imports: [
         BrowserModule,
@@ -243,7 +249,9 @@ import {authenticationInterceptor} from "./iam/services/authentication.intercept
         MatExpansionPanelHeader
     ],
   providers: [MessageService, provideAnimationsAsync(),
-      provideHttpClient(withInterceptors([authenticationInterceptor]))
+      provideNativeDateAdapter(),
+      { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true }
+
   ],
   bootstrap: [AppComponent]
 })

@@ -9,7 +9,7 @@ import {catchError, Observable, throwError} from "rxjs";
 })
 export class TasksService {
 
-  private basePath = 'http://localhost:3000';
+  private basePath = 'http://localhost:8080';
 
   private getTask = 'http://localhost:8080/api/v1/projects/{{projectId}}/tasks';
 

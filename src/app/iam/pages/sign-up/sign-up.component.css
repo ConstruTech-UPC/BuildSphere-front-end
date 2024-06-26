@@ -1,0 +1,30 @@
+.sign-up-container {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  align-items: center;
+}
+
+.app-sign-up-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.sign-up-image {
+  width: 100%;
+  max-width: 40rem;
+}
+
+@media (max-width: 1050px) {
+  .sign-up-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sign-up-image {
+    display: none;
+  }
+}

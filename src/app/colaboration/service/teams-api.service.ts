@@ -9,7 +9,7 @@ import {Team} from "../model/team.entity";
 })
 export class TeamsService {
 
-  private basePath = 'http://localhost:3000';
+  private basePath = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 

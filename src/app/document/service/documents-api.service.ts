@@ -8,7 +8,7 @@ import { Document } from "../model/document.entity";
 })
 export class DocumentService {
 
-  private basePath = 'http://localhost:3000';
+  private basePath = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
