@@ -10,7 +10,7 @@ import {throwError, Observable, catchError, retry} from "rxjs";
 })
 
 export class MachineryService {
-  private basePath = 'http://localhost:3000/api/v1';
+  private basePath = 'http://localhost:8080/api/v1';
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class MachineryService {
 
   createMachine(projectId: number, machine: Machine) {
     machine.projectId = Number(machine.projectId);
-    return this.http.post<Machine>(`${this.basePath}/projects/${projectId}/machines`, machine)
+    return this.http.post<Machine>(`${this.basePath}/machines`, machine)
       .pipe(retry(2), catchError(this.handleError));
   }
 

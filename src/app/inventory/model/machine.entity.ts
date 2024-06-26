@@ -3,8 +3,8 @@ export class Machine {
   projectId: number;
   machineName: string;
   description: string;
-  receptionDate: Date;
-  endDate: Date;
+  receptionDate: string;
+  endDate: string;
   totalCost: number;
 
   constructor() {
@@ -12,8 +12,8 @@ export class Machine {
     this.projectId = 0;
     this.machineName = '';
     this.description = '';
-    this.receptionDate = new Date();
-    this.endDate = new Date()
+    this.receptionDate = '';
+    this.endDate = '';
     this.totalCost = 0;
   }
 }
