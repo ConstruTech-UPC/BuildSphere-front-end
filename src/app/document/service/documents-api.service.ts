@@ -8,7 +8,7 @@ import { Document } from "../model/document.entity";
 })
 export class DocumentService {
 
-  private basePath = 'http://localhost:8080';
+  private basePath = 'http://localhost:8080/api/v1';
 
   constructor(private http: HttpClient) { }
 
@@ -32,7 +32,7 @@ export class DocumentService {
 
   createDocument(projectId: number, document: Document): Observable<Document> {
     document.projectId = Number(document.projectId);
-    return this.http.post<Document>(`${this.basePath}/projects/${projectId}/documents`, document)
+    return this.http.post<Document>(`${this.basePath}/documents`, document)
         .pipe(
             catchError(this.handleError)
         );

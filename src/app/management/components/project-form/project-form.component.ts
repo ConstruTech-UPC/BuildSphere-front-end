@@ -47,7 +47,7 @@ export class ProjectFormComponent implements OnInit {
         this.projectsService.createProject(this.projectForm.value).subscribe({
           next: (project) => {
             console.log('Project created', project);
-            this.dialogRef.close(project);  // Devuelve el proyecto creado
+            this.dialogRef.close(project); // Devuelve el proyecto creado
           },
           error: (error) => console.error('Failed to create project', error)
         });

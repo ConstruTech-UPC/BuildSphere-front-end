@@ -29,7 +29,7 @@ export class MaterialsService {
 
   createMaterial(projectId: number, material: Material) {
     material.projectId = Number(material.projectId);
-    return this.http.post<Material>(`${this.basePath}/projects/${projectId}/materials`, material)
+    return this.http.post<Material>(`${this.basePath}/materials`, material)
       .pipe(retry(2), catchError(this.handleError));
   }
 

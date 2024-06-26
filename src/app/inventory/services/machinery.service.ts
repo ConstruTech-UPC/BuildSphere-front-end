@@ -30,7 +30,7 @@ export class MachineryService {
 
   createMachine(projectId: number, machine: Machine) {
     machine.projectId = Number(machine.projectId);
-    return this.http.post<Machine>(`${this.basePath}/projects/${projectId}/machines`, machine)
+    return this.http.post<Machine>(`${this.basePath}/machines`, machine)
       .pipe(retry(2), catchError(this.handleError));
   }
 
