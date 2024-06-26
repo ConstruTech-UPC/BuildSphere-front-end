@@ -15,7 +15,7 @@ import {MatInput} from "@angular/material/input";
 import {NgOptimizedImage} from "@angular/common";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import { DocumentListComponent } from './document/component/document-list/document-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptors} from '@angular/common/http';
 import { DocumentsManagementComponent } from './document/pages/documents-management/documents-management.component';
 import { EditDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/edit-document-dialog/edit-document-dialog.component';
 import { DeleteDocumentDialogComponent } from './document/component/add-delete-edit-document-dialogs/delete-document-dialog/delete-document-dialog.component';
@@ -97,9 +97,6 @@ import {ProjectFormComponent} from "./management/components/project-form/project
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import { ProjectInformationManagementComponent } from './public/components/project-information-management/project-information-management.component';
 import {RouterOutlet} from "@angular/router";
-import { LoginComponent } from './authentication/components/login/login.component';
-import { SignupComponent } from './authentication/components/signup/signup.component';
-import { WelcomeComponent } from './authentication/components/welcome/welcome.component';
 import {InputTextModule} from "primeng/inputtext";
 import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
@@ -115,6 +112,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatGridList, MatGridListModule} from "@angular/material/grid-list";
 import { SupportManagementComponent } from './support/pages/support-management/support-management.component';
 import { SupportFormComponent } from './support/component/support-form/support-form.component';
+import {MAT_ERROR} from "@angular/material/form-field";
 import {
     MatAccordion,
     MatExpansionPanel,
@@ -124,6 +122,10 @@ import {
 import {
     TeamTasksDialogComponent
 } from "./colaboration/component/add-delete-edit-team-dialogs/team-tasks-dialog/team-tasks-dialog.component";
+import { AuthenticationSectionComponent } from './iam/components/authentication-section/authentication-section.component';
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {authenticationInterceptor} from "./iam/services/authentication.interceptor";
 
 @NgModule({
   declarations: [
@@ -161,12 +163,12 @@ import {
     ProjectCardComponent,
     ProjectFormComponent,
     ProjectInformationManagementComponent,
-    LoginComponent,
-    SignupComponent,
-    WelcomeComponent,
     SupportManagementComponent,
     SupportFormComponent,
-    TeamTasksDialogComponent
+    TeamTasksDialogComponent,
+      SignUpComponent,
+      SignInComponent,
+    AuthenticationSectionComponent
   ],
     imports: [
         BrowserModule,
@@ -240,7 +242,9 @@ import {
         MatExpansionPanelDescription,
         MatExpansionPanelHeader
     ],
-  providers: [MessageService, provideAnimationsAsync('noop')],
+  providers: [MessageService, provideAnimationsAsync(),
+      provideHttpClient(withInterceptors([authenticationInterceptor]))
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

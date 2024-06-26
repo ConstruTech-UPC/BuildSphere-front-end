@@ -7,16 +7,13 @@ import { InventoryManagementComponent } from './inventory/pages/inventory-manage
 import {
   ProjectInformationManagementComponent
 } from "./public/components/project-information-management/project-information-management.component";
-import {WelcomeComponent} from "./authentication/components/welcome/welcome.component";
-import {LoginComponent} from "./authentication/components/login/login.component";
-import {SignupComponent} from "./authentication/components/signup/signup.component";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
 import {SupportManagementComponent} from "./support/pages/support-management/support-management.component";
 
 const routes: Routes = [
-  {path: 'welcome', component: WelcomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: '',redirectTo: 'welcome', pathMatch: 'full'},
+
+  {path: '',redirectTo: '/sign-in', pathMatch: 'full'},
     
   { path: '', component: ProjectInformationManagementComponent },
   { path: 'projects', component: ProjectInformationManagementComponent },
@@ -27,7 +24,9 @@ const routes: Routes = [
       { path: 'inventory', component: InventoryManagementComponent },
       { path: 'support', component: SupportManagementComponent }
     ]
-  }
+  },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-up', component: SignUpComponent },
   
 ];
 
