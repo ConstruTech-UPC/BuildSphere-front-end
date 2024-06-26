@@ -16,6 +16,12 @@
 </div>
 <div class="form-group-edit-material">
 <p>Reception Date</p>
+<mat-form-field>
+  <input matInput [matDatepicker]="rdemat" placeholder="Reception Date" [(ngModel)]="material.receptionDate">
+    <mat-datepicker-toggle matSuffix [for]="rdemat"></mat-datepicker-toggle>
+    <mat-datepicker #rdemat></mat-datepicker>
+</mat-form-field>
+</div>
 <div class="form-group-edit-material">
 <p>Material Status</p>
 <mat-form-field>
