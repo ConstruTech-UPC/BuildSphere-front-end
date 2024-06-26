@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'projects/:projectId', component: ProjectDashboardComponent, children: [
       { path: 'documents', component: DocumentsManagementComponent },
       { path: 'collaboration', component: CollaborationManagementComponent },
-      { path: 'inventory', component: InventoryManagementComponent }
+      { path: 'resources', component: InventoryManagementComponent }
     ]
   }
 ];
